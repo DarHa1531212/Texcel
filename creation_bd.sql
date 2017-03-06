@@ -93,9 +93,9 @@ DROP TABLE dbo.PlateformeJeu;
 GO
 
 CREATE TABLE PlateformeJeu(
-idEmploye INT NOT NULL,
-idEquipe iNT NOT NULL,
-PRIMARY KEY(idEmploye,idEquipe)
+idPlateforme INT NOT NULL,
+idJeu iNT NOT NULL,
+PRIMARY KEY(idJeu,idPlateforme)
 );
 
 IF OBJECT_ID('dbo.Test') IS NOT NULL
