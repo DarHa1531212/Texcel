@@ -121,6 +121,13 @@
             this.ajouterUnOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.créerUnTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONNEXIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grbConnexion = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnConnexion = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -129,6 +136,7 @@
             this.grbCreerJeu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.grbConnexion.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -965,7 +973,7 @@
             this.cONNEXIONToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1272, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1489, 28);
             this.menuStrip1.TabIndex = 45;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1023,12 +1031,81 @@
             this.cONNEXIONToolStripMenuItem.Name = "cONNEXIONToolStripMenuItem";
             this.cONNEXIONToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.cONNEXIONToolStripMenuItem.Text = "Connexion";
+            this.cONNEXIONToolStripMenuItem.Click += new System.EventHandler(this.cONNEXIONToolStripMenuItem_Click);
+            // 
+            // grbConnexion
+            // 
+            this.grbConnexion.Controls.Add(this.btnConnexion);
+            this.grbConnexion.Controls.Add(this.textBox2);
+            this.grbConnexion.Controls.Add(this.textBox1);
+            this.grbConnexion.Controls.Add(this.label35);
+            this.grbConnexion.Controls.Add(this.label34);
+            this.grbConnexion.Location = new System.Drawing.Point(1079, 39);
+            this.grbConnexion.Name = "grbConnexion";
+            this.grbConnexion.Size = new System.Drawing.Size(238, 131);
+            this.grbConnexion.TabIndex = 48;
+            this.grbConnexion.TabStop = false;
+            this.grbConnexion.Text = "groupBox7";
+            this.grbConnexion.Visible = false;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(15, 24);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(69, 17);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "Identifiant";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(15, 52);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(92, 17);
+            this.label35.TabIndex = 1;
+            this.label35.Text = "Not de passe";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(121, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(121, 49);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.TabIndex = 3;
+            // 
+            // btnConnexion
+            // 
+            this.btnConnexion.Location = new System.Drawing.Point(54, 93);
+            this.btnConnexion.Name = "btnConnexion";
+            this.btnConnexion.Size = new System.Drawing.Size(82, 23);
+            this.btnConnexion.TabIndex = 4;
+            this.btnConnexion.Text = "connexion";
+            this.btnConnexion.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1111, 189);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 49;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1272, 823);
+            this.ClientSize = new System.Drawing.Size(1489, 823);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.grbConnexion);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -1042,7 +1119,8 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "tecxel";
-    //        this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.grbModiffierJeu.ResumeLayout(false);
@@ -1059,6 +1137,8 @@
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.grbConnexion.ResumeLayout(false);
+            this.grbConnexion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1158,6 +1238,13 @@
         private System.Windows.Forms.ToolStripMenuItem ajouterUnOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem créerUnTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cONNEXIONToolStripMenuItem;
+        private System.Windows.Forms.GroupBox grbConnexion;
+        private System.Windows.Forms.Button btnConnexion;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button button2;
     }
 }
 

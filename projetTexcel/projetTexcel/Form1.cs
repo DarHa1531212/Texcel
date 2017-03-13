@@ -21,12 +21,22 @@ namespace projetTexcel
         Form frmAjouterPlateforme = new Form();
         Form frmRecherche = new Form();
         Form frmAjoutOS = new Form();
+        Form frmConnexion = new Form();
+
 
         public Form1()
         {
             InitializeComponent();
 
             frmCreerTest.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmCreerJeu.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmModifierJeu.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmGererEmployes.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmCreerTest.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmAjouterPlateforme.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmRecherche.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmAjoutOS.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmConnexion.FormClosing += new FormClosingEventHandler(Fermerform);
 
         }
 
@@ -262,11 +272,45 @@ namespace projetTexcel
             frmCreerTest.Visible = true;
         }
 
+        public void afficherConnexion()
+        {
+            frmConnexion.MdiParent = this;
+            frmConnexion.Controls.Add(this.btnConnexion);
+            frmConnexion.Controls.Add(this.textBox2);
+            frmConnexion.Controls.Add(this.textBox1);
+            frmConnexion.Controls.Add(this.label35);
+            frmConnexion.Controls.Add(this.label34);
+            frmConnexion.Size = new System.Drawing.Size(258, 221);
+            frmConnexion.TabIndex = 48;
+            frmConnexion.TabStop = false;
+            frmConnexion.Text = "Connexion";
+
+            frmConnexion.Visible = true;
+            frmConnexion.Location = new System.Drawing.Point(1079, 39);
+
+        }
+
         public void Fermerform(Object form, FormClosingEventArgs e)
         {
             e.Cancel = true;
-// form.Visible = false;
+            ((Form)form).Visible = false;
         }
 
+        private void cONNEXIONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            afficherConnexion();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+      
     }
 }
