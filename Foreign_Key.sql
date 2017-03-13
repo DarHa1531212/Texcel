@@ -3,6 +3,7 @@ USE Texcel_Hans_MA
 
 
 ALTER TABLE Equipe ADD CONSTRAINT FK_Equipe_Employe FOREIGN KEY (idEmploye) REFERENCES Employe(idEmploye)
+SET IDENTITY_INSERT Employe ON;
 
 ALTER TABLE SystemeExploitation ADD CONSTRAINT FK_SystemExploitation_Employe FOREIGN KEY (idEmploye) REFERENCES Employe(idEmploye)
 

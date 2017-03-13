@@ -12,7 +12,7 @@ CREATE DATABASE Texcel_Hans_MA ON PRIMARY
   FILENAME = 'C:\BD\Texcel_Hans_MA_Log.ldf',
   SIZE = 5MB , MAXSIZE = 25MB , FILEGROWTH = 10% )
 GO
-
+SET DATEFORMAT YMD
 use Texcel_Hans_MA
 
 IF OBJECT_ID('dbo.Employe') IS NOT NULL
@@ -21,16 +21,16 @@ GO
 
 CREATE TABLE Employe(
 idEmploye INT IDENTITY(0,1) NOT NULL,
-nom VARCHAR NOT NULL,
-prenom VARCHAR NOT NULL,
+nom VARCHAR(50) NOT NULL,
+prenom VARCHAR(50) NOT NULL,
 DDN DATE NOT NULL,
-adresse VARCHAR NOT NULL,
-telephone VARCHAR NOT NULL,
+adresse VARCHAR(50) NOT NULL,
+telephone VARCHAR(50) NOT NULL,
 posteTelephonique CHAR(3) NOT NULL,
-matricule VARCHAR NOT NULL,
-identifiant VARCHAR NOT NULL,
-motDePasse VARCHAR NOT NULL,
-typeEmploi VARCHAR NOT NULL,
+matricule VARCHAR(50) NOT NULL,
+identifiant VARCHAR(50) NOT NULL,
+motDePasse VARCHAR(50) NOT NULL,
+typeEmploi VARCHAR(50) NOT NULL,
 tag VARCHAR NULL,
 PRIMARY KEY(idEmploye)
 );
