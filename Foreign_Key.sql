@@ -3,7 +3,7 @@ USE Texcel_Hans_MA
 
 
 ALTER TABLE Equipe ADD CONSTRAINT FK_Equipe_Employe FOREIGN KEY (idEmploye) REFERENCES Employe(idEmploye)
-SET IDENTITY_INSERT Employe ON;
+--SET IDENTITY_INSERT Employe ON;
 
 ALTER TABLE SystemeExploitation ADD CONSTRAINT FK_SystemExploitation_Employe FOREIGN KEY (idEmploye) REFERENCES Employe(idEmploye)
 
@@ -23,8 +23,9 @@ ALTER TABLE Jeu ADD CONSTRAINT FK_Jeu_Genre FOREIGN KEY (idGenre) REFERENCES Gen
 ALTER TABLE Jeu ADD CONSTRAINT FK_Jeu_Jeu FOREIGN KEY (idSimilaire) REFERENCES Jeu(idJeu)
 
 ALTER TABLE ProjetTest ADD CONSTRAINT FK_ProjetTest_Equipe FOREIGN KEY (idEquipe) REFERENCES Equipe(idEquipe)
-ALTER TABLE ProjetTest ADD CONSTRAINT FK_ProjetTest_Employe FOREIGN KEY (idEmploye) REFERENCES Employe(idEmploye)
+ALTER TABLE ProjetTest ADD CONSTRAINT FK_ProjetTest_Employe FOREIGN KEY (idEmploye) REFERENCES Employe(idEmploye)  
 ALTER TABLE ProjetTest ADD CONSTRAINT FK_ProjetTest_Jeu FOREIGN KEY (idJeu) REFERENCES Jeu(idJeu)
 
 ALTER TABLE EmployeEquipe ADD CONSTRAINT FK_EmployeEquipe_Equipe FOREIGN KEY (idEquipe) REFERENCES Equipe(idEquipe)
 ALTER TABLE EmployeEquipe ADD CONSTRAINT FK_EmployeEquipe_Employe FOREIGN KEY (idEmploye) REFERENCES Employe(idEmploye)
+ALTER TABLE EmployeEquipe ADD CONSTRAINT FK_EmployeEquipe_idTypeEmploi FOREIGN KEY (idTypeEmploi) REFERENCES TypeEmploi(idTypeEmploi)

@@ -3,15 +3,16 @@ IF EXISTS (SELECT * FROM sys.databases WHERE name = 'Texcel_Hans_MA')
 DROP DATABASE Texcel_Hans_MA;
 
 GO
-CREATE DATABASE Texcel_Hans_MA ON PRIMARY
-( NAME = 'Texcel_Hans_MA_Data',
-  FILENAME = 'C:\BD\Texcel_Hans_MA_Data.mdf',
-  SIZE = 10MB , MAXSIZE = UNLIMITED, FILEGROWTH = 1MB )
-  LOG ON
-( NAME = 'Texcel_Hans_MA_log',
-  FILENAME = 'C:\BD\Texcel_Hans_MA_Log.ldf',
-  SIZE = 5MB , MAXSIZE = 25MB , FILEGROWTH = 10% )
-GO
+CREATE DATABASE Texcel_Hans_MA
+-- ON PRIMARY
+--( NAME = 'Texcel_Hans_MA_Data',
+--  FILENAME = 'C:\BD\Texcel_Hans_MA_Data.mdf',
+--  SIZE = 10MB , MAXSIZE = UNLIMITED, FILEGROWTH = 1MB )
+--  LOG ON
+--( NAME = 'Texcel_Hans_MA_log',
+--  FILENAME = 'C:\BD\Texcel_Hans_MA_Log.ldf',
+--  SIZE = 5MB , MAXSIZE = 25MB , FILEGROWTH = 10% )
+--GO
 SET DATEFORMAT YMD
 use Texcel_Hans_MA
 
@@ -30,8 +31,8 @@ posteTelephonique CHAR(3) NOT NULL,
 matricule VARCHAR(50) NOT NULL,
 identifiant VARCHAR(50) NOT NULL,
 motDePasse VARCHAR(50) NOT NULL,
-typeEmploi VARCHAR(50) NOT NULL,
-tag VARCHAR NULL,
+typeEmploi INT NOT NULL,
+tagEmploye VARCHAR(1000) NULL,
 PRIMARY KEY(idEmploye)
 );
 
@@ -41,11 +42,11 @@ GO
 
 CREATE TABLE SystemeExploitation(
 idSystemeExploitation INT IDENTITY(0,1) NOT NULL,
-nom VARCHAR NOT NULL,
-code VARCHAR NOT NULL,
-edition VARCHAR NOT NULL,
-versionSysteme VARCHAR NOT NULL,
-tag VARCHAR NULL,
+nom VARCHAR(50) NOT NULL,
+code VARCHAR(50) NOT NULL,
+edition VARCHAR(50) NOT NULL,
+versionSysteme VARCHAR(50) NOT NULL,
+tag VARCHAR(1000) NULL,
 PRIMARY KEY(idSystemeExploitation),
 idEmploye int NOT NULL
 );
@@ -56,10 +57,10 @@ GO
 
 CREATE TABLE Plateforme(
 idPlateforme INT IDENTITY(0,1) NOT NULL,
-nom VARCHAR NOT NULL,
-configuration VARCHAR NOT NULL,
-typePlateforme VARCHAR NOT NULL,
-tag VARCHAR NULL,
+nom VARCHAR(50) NOT NULL,
+configuration VARCHAR(50) NOT NULL,
+typePlateforme VARCHAR(50) NOT NULL,
+tag VARCHAR(1000) NULL,
 PRIMARY KEY(idPlateforme),
 idEmploye INT NOT NULL,
 idSystemeExploitation INT NOT NULL
@@ -72,7 +73,8 @@ GO
 
 CREATE TABLE EmployeEquipe(
 idEmploye INT NOT NULL,
-idEquipe iNT NOT NULL,
+idEquipe iNT NOT NULL, 
+idTypeEmploi INT NOT NULL, 
 PRIMARY KEY(idEmploye,idEquipe)
 );
 
@@ -104,6 +106,8 @@ GO
 
 CREATE TABLE Test(
 idTest INT IDENTITY(0,1) NOT NULL,
+nomTest VARCHAR(50) NOT NULL,
+descriptionTest VARCHAR(50) NOT NULL,
 PRIMARY KEY(idTest),
 idEmploye INT NOT NULL,
 idProjetTest INT NOT NULL,
@@ -117,12 +121,12 @@ GO
 
 CREATE TABLE Jeu(
 idJeu INT IDENTITY(0,1) NOT NULL,
-nom VARCHAR  NOT NULL,
-developpeur VARCHAR  NOT NULL,
-descriptionJeu VARCHAR  NOT NULL,
-configurationMinimale VARCHAR  NOT NULL,
-classification VARCHAR  NOT NULL,
-tag VARCHAR  NULL,
+nom VARCHAR(50)  NOT NULL,
+developpeur VARCHAR(50)  NOT NULL,
+descriptionJeu VARCHAR(50)  NOT NULL,
+configurationMinimale VARCHAR(50)  NOT NULL,
+classification VARCHAR(50)  NOT NULL,
+tag VARCHAR(1000)  NULL,
 PRIMARY KEY(idJeu),
 idEmploye INT NOT NULL,
 idTheme INT NOT NULL,
@@ -137,8 +141,8 @@ GO
 
 CREATE TABLE Theme(
 idTheme INT IDENTITY(0,1) NOT NULL,
-nom VARCHAR  NOT NULL,
-descriptionTheme VARCHAR  NOT NULL,
+nom VARCHAR(50)  NOT NULL,
+descriptionTheme VARCHAR(1000)  NOT NULL,
 PRIMARY KEY(idTheme),
 );
 
@@ -150,8 +154,8 @@ GO
 
 CREATE TABLE Genre(
 idGenre INT IDENTITY(0,1) NOT NULL,
-nom VARCHAR  NOT NULL,
-descriptionGenre VARCHAR  NOT NULL,
+nom VARCHAR(50)  NOT NULL,
+descriptionGenre VARCHAR(1000)  NOT NULL,
 PRIMARY KEY(idGenre),
 );
 
@@ -164,8 +168,8 @@ GO
 
 CREATE TABLE CategorieTest(
 idCategorieTest INT IDENTITY(0,1) NOT NULL,
-nom VARCHAR  NOT NULL,
-descriptionategorieTest VARCHAR  NOT NULL,
+nom VARCHAR(50)  NOT NULL,
+descriptionategorieTest VARCHAR(1000)  NOT NULL,
 PRIMARY KEY(idCategorieTest),
 );
 
@@ -179,9 +183,20 @@ GO
 
 CREATE TABLE ProjetTest(
 idProjetTest INT IDENTITY(0,1) NOT NULL,
+nomProjet VARCHAR(50),
 PRIMARY KEY(idProjetTest),
 idEquipe INT NOT NULL,
 idEmploye INT NOT NULL,
 idJeu INT NOT NULL
+);
+IF OBJECT_ID('dbo.TypeEmploi') IS NOT NULL
+DROP TABLE dbo.TypeEmploi;
+GO
+
+CREATE TABLE TypeEmploi(
+idTypeEmploi INT IDENTITY(0,1) NOT NULL,
+nomEmploi VARCHAR(50) NOT NULL,
+descriptionTypeEmploi VARCHAR(50) NOT NULL,
+PRIMARY KEY(idTypeEmploi)
 );
 
