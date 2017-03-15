@@ -30,7 +30,6 @@
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnConfirmerCreerTest = new System.Windows.Forms.Button();
-            this.chkLstEmployesAssociesCreerTest = new System.Windows.Forms.CheckedListBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.combJeuAssocieCreerTest = new System.Windows.Forms.ComboBox();
@@ -46,7 +45,6 @@
             this.txtModClassification = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtModifGenre = new System.Windows.Forms.TextBox();
             this.txtModifConfigMin = new System.Windows.Forms.TextBox();
             this.txtModifDesc = new System.Windows.Forms.TextBox();
             this.txtModifDev = new System.Windows.Forms.TextBox();
@@ -60,23 +58,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.cmbRecherche = new System.Windows.Forms.ComboBox();
+            this.txtRechercheInformation = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.chkAdmin = new System.Windows.Forms.CheckBox();
             this.btnConfirmerGestionEmployes = new System.Windows.Forms.Button();
-            this.chkTesteur = new System.Windows.Forms.CheckBox();
-            this.chkDirecteur = new System.Windows.Forms.CheckBox();
-            this.chkCherEquipe = new System.Windows.Forms.CheckBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.txtMatricule = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtPosteTel = new System.Windows.Forms.TextBox();
+            this.txtGererEmployeTelRes = new System.Windows.Forms.TextBox();
+            this.txtGererEmployeNom = new System.Windows.Forms.TextBox();
+            this.txtGerereEmployePrenom = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -99,7 +92,6 @@
             this.txtCreerDev = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtConfigMin = new System.Windows.Forms.TextBox();
-            this.txtGenre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtClassification = new System.Windows.Forms.TextBox();
@@ -121,6 +113,20 @@
             this.ajouterUnOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.créerUnTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONNEXIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grbConnexion = new System.Windows.Forms.GroupBox();
+            this.btnConnexion = new System.Windows.Forms.Button();
+            this.txtConnexionMotDePasse = new System.Windows.Forms.TextBox();
+            this.txtConnexionIdentifiant = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.combGenre = new System.Windows.Forms.ComboBox();
+            this.cmbModifierGenre = new System.Windows.Forms.ComboBox();
+            this.txtGererEmployeAdresse = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.radDirecteur = new System.Windows.Forms.RadioButton();
+            this.radAdmin = new System.Windows.Forms.RadioButton();
+            this.radAucunDroit = new System.Windows.Forms.RadioButton();
+            this.cmbEmployeAssossie = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -129,12 +135,13 @@
             this.grbCreerJeu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.grbConnexion.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cmbEmployeAssossie);
             this.groupBox2.Controls.Add(this.btnConfirmerCreerTest);
-            this.groupBox2.Controls.Add(this.chkLstEmployesAssociesCreerTest);
             this.groupBox2.Controls.Add(this.label32);
             this.groupBox2.Controls.Add(this.label31);
             this.groupBox2.Controls.Add(this.combJeuAssocieCreerTest);
@@ -144,7 +151,7 @@
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Location = new System.Drawing.Point(32, 390);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(327, 254);
+            this.groupBox2.Size = new System.Drawing.Size(320, 180);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "créer un test";
@@ -152,25 +159,17 @@
             // 
             // btnConfirmerCreerTest
             // 
-            this.btnConfirmerCreerTest.Location = new System.Drawing.Point(9, 225);
+            this.btnConfirmerCreerTest.Location = new System.Drawing.Point(8, 145);
             this.btnConfirmerCreerTest.Name = "btnConfirmerCreerTest";
             this.btnConfirmerCreerTest.Size = new System.Drawing.Size(81, 23);
             this.btnConfirmerCreerTest.TabIndex = 27;
             this.btnConfirmerCreerTest.Text = "Confirmer";
             this.btnConfirmerCreerTest.UseVisualStyleBackColor = true;
             // 
-            // chkLstEmployesAssociesCreerTest
-            // 
-            this.chkLstEmployesAssociesCreerTest.FormattingEnabled = true;
-            this.chkLstEmployesAssociesCreerTest.Location = new System.Drawing.Point(152, 120);
-            this.chkLstEmployesAssociesCreerTest.Name = "chkLstEmployesAssociesCreerTest";
-            this.chkLstEmployesAssociesCreerTest.Size = new System.Drawing.Size(147, 89);
-            this.chkLstEmployesAssociesCreerTest.TabIndex = 27;
-            // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(9, 120);
+            this.label32.Location = new System.Drawing.Point(5, 120);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(137, 17);
             this.label32.TabIndex = 26;
@@ -195,7 +194,7 @@
             "debian/ubuntu",
             "fedora/red hat",
             "osX"});
-            this.combJeuAssocieCreerTest.Location = new System.Drawing.Point(95, 59);
+            this.combJeuAssocieCreerTest.Location = new System.Drawing.Point(159, 59);
             this.combJeuAssocieCreerTest.Name = "combJeuAssocieCreerTest";
             this.combJeuAssocieCreerTest.Size = new System.Drawing.Size(121, 24);
             this.combJeuAssocieCreerTest.TabIndex = 24;
@@ -219,14 +218,14 @@
             "debian/ubuntu",
             "fedora/red hat",
             "osX"});
-            this.cmbOS.Location = new System.Drawing.Point(95, 89);
+            this.cmbOS.Location = new System.Drawing.Point(159, 89);
             this.cmbOS.Name = "cmbOS";
             this.cmbOS.Size = new System.Drawing.Size(121, 24);
             this.cmbOS.TabIndex = 22;
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(95, 34);
+            this.textBox15.Location = new System.Drawing.Point(159, 34);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(100, 22);
             this.textBox15.TabIndex = 18;
@@ -242,6 +241,7 @@
             // 
             // grbModiffierJeu
             // 
+            this.grbModiffierJeu.Controls.Add(this.cmbModifierGenre);
             this.grbModiffierJeu.Controls.Add(this.btnConfirmerModifierJeu);
             this.grbModiffierJeu.Controls.Add(this.label28);
             this.grbModiffierJeu.Controls.Add(this.comboBox4);
@@ -249,7 +249,6 @@
             this.grbModiffierJeu.Controls.Add(this.txtModClassification);
             this.grbModiffierJeu.Controls.Add(this.label8);
             this.grbModiffierJeu.Controls.Add(this.label9);
-            this.grbModiffierJeu.Controls.Add(this.txtModifGenre);
             this.grbModiffierJeu.Controls.Add(this.txtModifConfigMin);
             this.grbModiffierJeu.Controls.Add(this.txtModifDesc);
             this.grbModiffierJeu.Controls.Add(this.txtModifDev);
@@ -330,13 +329,6 @@
             this.label9.TabIndex = 13;
             this.label9.Text = "thème";
             // 
-            // txtModifGenre
-            // 
-            this.txtModifGenre.Location = new System.Drawing.Point(187, 129);
-            this.txtModifGenre.Name = "txtModifGenre";
-            this.txtModifGenre.Size = new System.Drawing.Size(100, 22);
-            this.txtModifGenre.TabIndex = 12;
-            // 
             // txtModifConfigMin
             // 
             this.txtModifConfigMin.Location = new System.Drawing.Point(187, 102);
@@ -415,8 +407,8 @@
             this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.textBox23);
             this.groupBox4.Controls.Add(this.label17);
-            this.groupBox4.Controls.Add(this.comboBox1);
-            this.groupBox4.Controls.Add(this.textBox16);
+            this.groupBox4.Controls.Add(this.cmbRecherche);
+            this.groupBox4.Controls.Add(this.txtRechercheInformation);
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Location = new System.Drawing.Point(365, 331);
             this.groupBox4.Name = "groupBox4";
@@ -452,25 +444,25 @@
             this.label17.TabIndex = 20;
             this.label17.Text = "champ de recherche";
             // 
-            // comboBox1
+            // cmbRecherche
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbRecherche.FormattingEnabled = true;
+            this.cmbRecherche.Items.AddRange(new object[] {
             "Tous les chapms",
             "employés",
             "jeux",
             "employés"});
-            this.comboBox1.Location = new System.Drawing.Point(169, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 19;
+            this.cmbRecherche.Location = new System.Drawing.Point(169, 59);
+            this.cmbRecherche.Name = "cmbRecherche";
+            this.cmbRecherche.Size = new System.Drawing.Size(121, 24);
+            this.cmbRecherche.TabIndex = 19;
             // 
-            // textBox16
+            // txtRechercheInformation
             // 
-            this.textBox16.Location = new System.Drawing.Point(169, 31);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(100, 22);
-            this.textBox16.TabIndex = 18;
+            this.txtRechercheInformation.Location = new System.Drawing.Point(169, 31);
+            this.txtRechercheInformation.Name = "txtRechercheInformation";
+            this.txtRechercheInformation.Size = new System.Drawing.Size(100, 22);
+            this.txtRechercheInformation.TabIndex = 18;
             // 
             // label16
             // 
@@ -483,19 +475,19 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.chkAdmin);
+            this.groupBox5.Controls.Add(this.radAucunDroit);
+            this.groupBox5.Controls.Add(this.radAdmin);
+            this.groupBox5.Controls.Add(this.radDirecteur);
+            this.groupBox5.Controls.Add(this.txtGererEmployeAdresse);
+            this.groupBox5.Controls.Add(this.label36);
             this.groupBox5.Controls.Add(this.btnConfirmerGestionEmployes);
-            this.groupBox5.Controls.Add(this.chkTesteur);
-            this.groupBox5.Controls.Add(this.chkDirecteur);
-            this.groupBox5.Controls.Add(this.chkCherEquipe);
             this.groupBox5.Controls.Add(this.label26);
-            this.groupBox5.Controls.Add(this.textBox22);
+            this.groupBox5.Controls.Add(this.txtMatricule);
             this.groupBox5.Controls.Add(this.dateTimePicker1);
-            this.groupBox5.Controls.Add(this.textBox21);
-            this.groupBox5.Controls.Add(this.textBox20);
-            this.groupBox5.Controls.Add(this.textBox19);
-            this.groupBox5.Controls.Add(this.textBox18);
-            this.groupBox5.Controls.Add(this.textBox17);
+            this.groupBox5.Controls.Add(this.txtPosteTel);
+            this.groupBox5.Controls.Add(this.txtGererEmployeTelRes);
+            this.groupBox5.Controls.Add(this.txtGererEmployeNom);
+            this.groupBox5.Controls.Add(this.txtGerereEmployePrenom);
             this.groupBox5.Controls.Add(this.label25);
             this.groupBox5.Controls.Add(this.label24);
             this.groupBox5.Controls.Add(this.label23);
@@ -507,123 +499,81 @@
             this.groupBox5.Controls.Add(this.comboBox2);
             this.groupBox5.Location = new System.Drawing.Point(698, 39);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(375, 395);
+            this.groupBox5.Size = new System.Drawing.Size(390, 434);
             this.groupBox5.TabIndex = 20;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Gérer des employés";
             this.groupBox5.Visible = false;
             // 
-            // chkAdmin
-            // 
-            this.chkAdmin.AutoSize = true;
-            this.chkAdmin.Location = new System.Drawing.Point(169, 346);
-            this.chkAdmin.Name = "chkAdmin";
-            this.chkAdmin.Size = new System.Drawing.Size(121, 21);
-            this.chkAdmin.TabIndex = 41;
-            this.chkAdmin.Text = "Administrateur";
-            this.chkAdmin.UseVisualStyleBackColor = true;
-            // 
             // btnConfirmerGestionEmployes
             // 
-            this.btnConfirmerGestionEmployes.Location = new System.Drawing.Point(10, 366);
+            this.btnConfirmerGestionEmployes.Location = new System.Drawing.Point(10, 381);
             this.btnConfirmerGestionEmployes.Name = "btnConfirmerGestionEmployes";
             this.btnConfirmerGestionEmployes.Size = new System.Drawing.Size(81, 23);
             this.btnConfirmerGestionEmployes.TabIndex = 27;
             this.btnConfirmerGestionEmployes.Text = "Confirmer";
             this.btnConfirmerGestionEmployes.UseVisualStyleBackColor = true;
             // 
-            // chkTesteur
-            // 
-            this.chkTesteur.AutoSize = true;
-            this.chkTesteur.Location = new System.Drawing.Point(169, 292);
-            this.chkTesteur.Name = "chkTesteur";
-            this.chkTesteur.Size = new System.Drawing.Size(79, 21);
-            this.chkTesteur.TabIndex = 40;
-            this.chkTesteur.Text = "Testeur";
-            this.chkTesteur.UseVisualStyleBackColor = true;
-            // 
-            // chkDirecteur
-            // 
-            this.chkDirecteur.AutoSize = true;
-            this.chkDirecteur.Location = new System.Drawing.Point(169, 319);
-            this.chkDirecteur.Name = "chkDirecteur";
-            this.chkDirecteur.Size = new System.Drawing.Size(88, 21);
-            this.chkDirecteur.TabIndex = 39;
-            this.chkDirecteur.Text = "Directeur";
-            this.chkDirecteur.UseVisualStyleBackColor = true;
-            // 
-            // chkCherEquipe
-            // 
-            this.chkCherEquipe.AutoSize = true;
-            this.chkCherEquipe.Location = new System.Drawing.Point(169, 265);
-            this.chkCherEquipe.Name = "chkCherEquipe";
-            this.chkCherEquipe.Size = new System.Drawing.Size(119, 21);
-            this.chkCherEquipe.TabIndex = 38;
-            this.chkCherEquipe.Text = "Chef D\'équipe";
-            this.chkCherEquipe.UseVisualStyleBackColor = true;
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 265);
+            this.label26.Location = new System.Drawing.Point(6, 278);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(130, 17);
             this.label26.TabIndex = 37;
             this.label26.Text = "catégories d\'emploi";
             // 
-            // textBox22
+            // txtMatricule
             // 
-            this.textBox22.Location = new System.Drawing.Point(169, 234);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(100, 22);
-            this.textBox22.TabIndex = 36;
+            this.txtMatricule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMatricule.Location = new System.Drawing.Point(183, 245);
+            this.txtMatricule.Name = "txtMatricule";
+            this.txtMatricule.Size = new System.Drawing.Size(100, 22);
+            this.txtMatricule.TabIndex = 36;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(169, 150);
+            this.dateTimePicker1.Location = new System.Drawing.Point(183, 124);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 35;
             // 
-            // textBox21
+            // txtPosteTel
             // 
-            this.textBox21.Location = new System.Drawing.Point(169, 178);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(100, 22);
-            this.textBox21.TabIndex = 34;
+            this.txtPosteTel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPosteTel.Location = new System.Drawing.Point(183, 211);
+            this.txtPosteTel.Name = "txtPosteTel";
+            this.txtPosteTel.Size = new System.Drawing.Size(100, 22);
+            this.txtPosteTel.TabIndex = 33;
             // 
-            // textBox20
+            // txtGererEmployeTelRes
             // 
-            this.textBox20.Location = new System.Drawing.Point(169, 206);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(100, 22);
-            this.textBox20.TabIndex = 33;
+            this.txtGererEmployeTelRes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtGererEmployeTelRes.Location = new System.Drawing.Point(183, 153);
+            this.txtGererEmployeTelRes.Name = "txtGererEmployeTelRes";
+            this.txtGererEmployeTelRes.Size = new System.Drawing.Size(100, 22);
+            this.txtGererEmployeTelRes.TabIndex = 32;
             // 
-            // textBox19
+            // txtGererEmployeNom
             // 
-            this.textBox19.Location = new System.Drawing.Point(169, 122);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(100, 22);
-            this.textBox19.TabIndex = 32;
+            this.txtGererEmployeNom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtGererEmployeNom.Location = new System.Drawing.Point(183, 95);
+            this.txtGererEmployeNom.Name = "txtGererEmployeNom";
+            this.txtGererEmployeNom.Size = new System.Drawing.Size(100, 22);
+            this.txtGererEmployeNom.TabIndex = 31;
             // 
-            // textBox18
+            // txtGerereEmployePrenom
             // 
-            this.textBox18.Location = new System.Drawing.Point(169, 94);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(100, 22);
-            this.textBox18.TabIndex = 31;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(169, 66);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(100, 22);
-            this.textBox17.TabIndex = 30;
+            this.txtGerereEmployePrenom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtGerereEmployePrenom.Location = new System.Drawing.Point(183, 66);
+            this.txtGerereEmployePrenom.Name = "txtGerereEmployePrenom";
+            this.txtGerereEmployePrenom.Size = new System.Drawing.Size(100, 22);
+            this.txtGerereEmployePrenom.TabIndex = 30;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 181);
+            this.label25.Location = new System.Drawing.Point(6, 158);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(150, 17);
             this.label25.TabIndex = 29;
@@ -632,7 +582,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 209);
+            this.label24.Location = new System.Drawing.Point(6, 218);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(129, 17);
             this.label24.TabIndex = 28;
@@ -641,7 +591,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 237);
+            this.label23.Location = new System.Drawing.Point(6, 248);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(65, 17);
             this.label23.TabIndex = 27;
@@ -650,7 +600,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(6, 97);
+            this.label22.Location = new System.Drawing.Point(6, 68);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(56, 17);
             this.label22.TabIndex = 26;
@@ -659,16 +609,16 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 125);
+            this.label21.Location = new System.Drawing.Point(6, 98);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(150, 17);
+            this.label21.Size = new System.Drawing.Size(35, 17);
             this.label21.TabIndex = 25;
-            this.label21.Text = "Sélectionner l\'employé";
+            this.label21.Text = "nom";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 155);
+            this.label20.Location = new System.Drawing.Point(6, 128);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(38, 17);
             this.label20.TabIndex = 24;
@@ -700,7 +650,7 @@
             "employés",
             "jeux",
             "employés"});
-            this.comboBox2.Location = new System.Drawing.Point(169, 35);
+            this.comboBox2.Location = new System.Drawing.Point(183, 35);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 21;
@@ -710,7 +660,7 @@
             this.groupBox6.Controls.Add(this.btnConfirmerAjoutPlateforme);
             this.groupBox6.Controls.Add(this.txtPlateforme);
             this.groupBox6.Controls.Add(this.label29);
-            this.groupBox6.Location = new System.Drawing.Point(698, 440);
+            this.groupBox6.Location = new System.Drawing.Point(698, 486);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(365, 103);
             this.groupBox6.TabIndex = 21;
@@ -816,13 +766,6 @@
             this.txtConfigMin.Size = new System.Drawing.Size(100, 22);
             this.txtConfigMin.TabIndex = 11;
             // 
-            // txtGenre
-            // 
-            this.txtGenre.Location = new System.Drawing.Point(187, 133);
-            this.txtGenre.Name = "txtGenre";
-            this.txtGenre.Size = new System.Drawing.Size(100, 22);
-            this.txtGenre.TabIndex = 12;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -879,6 +822,7 @@
             // 
             // grbCreerJeu
             // 
+            this.grbCreerJeu.Controls.Add(this.combGenre);
             this.grbCreerJeu.Controls.Add(this.btnConfirmerCreationJeu);
             this.grbCreerJeu.Controls.Add(this.label27);
             this.grbCreerJeu.Controls.Add(this.combSelectEmpl);
@@ -886,7 +830,6 @@
             this.grbCreerJeu.Controls.Add(this.txtClassification);
             this.grbCreerJeu.Controls.Add(this.label7);
             this.grbCreerJeu.Controls.Add(this.label6);
-            this.grbCreerJeu.Controls.Add(this.txtGenre);
             this.grbCreerJeu.Controls.Add(this.txtConfigMin);
             this.grbCreerJeu.Controls.Add(this.txtDescription);
             this.grbCreerJeu.Controls.Add(this.txtCreerDev);
@@ -918,7 +861,7 @@
             this.groupBox1.Controls.Add(this.btnConfirmerAjoutOS);
             this.groupBox1.Controls.Add(this.txtOSNom);
             this.groupBox1.Controls.Add(this.label33);
-            this.groupBox1.Location = new System.Drawing.Point(698, 549);
+            this.groupBox1.Location = new System.Drawing.Point(698, 595);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(365, 103);
             this.groupBox1.TabIndex = 43;
@@ -965,7 +908,7 @@
             this.cONNEXIONToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1272, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1489, 28);
             this.menuStrip1.TabIndex = 45;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1023,12 +966,160 @@
             this.cONNEXIONToolStripMenuItem.Name = "cONNEXIONToolStripMenuItem";
             this.cONNEXIONToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.cONNEXIONToolStripMenuItem.Text = "Connexion";
+            this.cONNEXIONToolStripMenuItem.Click += new System.EventHandler(this.cONNEXIONToolStripMenuItem_Click);
+            // 
+            // grbConnexion
+            // 
+            this.grbConnexion.Controls.Add(this.btnConnexion);
+            this.grbConnexion.Controls.Add(this.txtConnexionMotDePasse);
+            this.grbConnexion.Controls.Add(this.txtConnexionIdentifiant);
+            this.grbConnexion.Controls.Add(this.label35);
+            this.grbConnexion.Controls.Add(this.label34);
+            this.grbConnexion.Location = new System.Drawing.Point(1094, 39);
+            this.grbConnexion.Name = "grbConnexion";
+            this.grbConnexion.Size = new System.Drawing.Size(238, 131);
+            this.grbConnexion.TabIndex = 48;
+            this.grbConnexion.TabStop = false;
+            this.grbConnexion.Text = "connexion";
+            this.grbConnexion.Visible = false;
+            // 
+            // btnConnexion
+            // 
+            this.btnConnexion.Location = new System.Drawing.Point(54, 93);
+            this.btnConnexion.Name = "btnConnexion";
+            this.btnConnexion.Size = new System.Drawing.Size(82, 23);
+            this.btnConnexion.TabIndex = 4;
+            this.btnConnexion.Text = "connexion";
+            this.btnConnexion.UseVisualStyleBackColor = true;
+            // 
+            // txtConnexionMotDePasse
+            // 
+            this.txtConnexionMotDePasse.Location = new System.Drawing.Point(121, 49);
+            this.txtConnexionMotDePasse.Name = "txtConnexionMotDePasse";
+            this.txtConnexionMotDePasse.Size = new System.Drawing.Size(100, 22);
+            this.txtConnexionMotDePasse.TabIndex = 3;
+            // 
+            // txtConnexionIdentifiant
+            // 
+            this.txtConnexionIdentifiant.Location = new System.Drawing.Point(121, 21);
+            this.txtConnexionIdentifiant.Name = "txtConnexionIdentifiant";
+            this.txtConnexionIdentifiant.Size = new System.Drawing.Size(100, 22);
+            this.txtConnexionIdentifiant.TabIndex = 2;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(15, 52);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(92, 17);
+            this.label35.TabIndex = 1;
+            this.label35.Text = "Not de passe";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(15, 24);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(69, 17);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "Identifiant";
+            // 
+            // combGenre
+            // 
+            this.combGenre.FormattingEnabled = true;
+            this.combGenre.Items.AddRange(new object[] {
+            "Tous les chapms",
+            "employés",
+            "jeux",
+            "employés"});
+            this.combGenre.Location = new System.Drawing.Point(185, 131);
+            this.combGenre.Name = "combGenre";
+            this.combGenre.Size = new System.Drawing.Size(121, 24);
+            this.combGenre.TabIndex = 26;
+            // 
+            // cmbModifierGenre
+            // 
+            this.cmbModifierGenre.FormattingEnabled = true;
+            this.cmbModifierGenre.Items.AddRange(new object[] {
+            "Tous les chapms",
+            "employés",
+            "jeux",
+            "employés"});
+            this.cmbModifierGenre.Location = new System.Drawing.Point(187, 122);
+            this.cmbModifierGenre.Name = "cmbModifierGenre";
+            this.cmbModifierGenre.Size = new System.Drawing.Size(121, 24);
+            this.cmbModifierGenre.TabIndex = 27;
+            // 
+            // txtGererEmployeAdresse
+            // 
+            this.txtGererEmployeAdresse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtGererEmployeAdresse.Location = new System.Drawing.Point(183, 183);
+            this.txtGererEmployeAdresse.Name = "txtGererEmployeAdresse";
+            this.txtGererEmployeAdresse.Size = new System.Drawing.Size(100, 22);
+            this.txtGererEmployeAdresse.TabIndex = 43;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(7, 188);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(59, 17);
+            this.label36.TabIndex = 42;
+            this.label36.Text = "adresse";
+            // 
+            // radDirecteur
+            // 
+            this.radDirecteur.AutoSize = true;
+            this.radDirecteur.Location = new System.Drawing.Point(173, 276);
+            this.radDirecteur.Name = "radDirecteur";
+            this.radDirecteur.Size = new System.Drawing.Size(85, 21);
+            this.radDirecteur.TabIndex = 44;
+            this.radDirecteur.Text = "directeur";
+            this.radDirecteur.UseVisualStyleBackColor = true;
+            // 
+            // radAdmin
+            // 
+            this.radAdmin.AutoSize = true;
+            this.radAdmin.Location = new System.Drawing.Point(173, 303);
+            this.radAdmin.Name = "radAdmin";
+            this.radAdmin.Size = new System.Drawing.Size(67, 21);
+            this.radAdmin.TabIndex = 45;
+            this.radAdmin.Text = "admin";
+            this.radAdmin.UseVisualStyleBackColor = true;
+            // 
+            // radAucunDroit
+            // 
+            this.radAucunDroit.AutoSize = true;
+            this.radAucunDroit.Checked = true;
+            this.radAucunDroit.Location = new System.Drawing.Point(173, 330);
+            this.radAucunDroit.Name = "radAucunDroit";
+            this.radAucunDroit.Size = new System.Drawing.Size(118, 21);
+            this.radAucunDroit.TabIndex = 46;
+            this.radAucunDroit.TabStop = true;
+            this.radAucunDroit.Text = "(aucubn droit)";
+            this.radAucunDroit.UseVisualStyleBackColor = true;
+            // 
+            // cmbEmployeAssossie
+            // 
+            this.cmbEmployeAssossie.FormattingEnabled = true;
+            this.cmbEmployeAssossie.Items.AddRange(new object[] {
+            "windows 7",
+            "windows8",
+            "windows 10",
+            "debian/ubuntu",
+            "fedora/red hat",
+            "osX"});
+            this.cmbEmployeAssossie.Location = new System.Drawing.Point(159, 113);
+            this.cmbEmployeAssossie.Name = "cmbEmployeAssossie";
+            this.cmbEmployeAssossie.Size = new System.Drawing.Size(121, 24);
+            this.cmbEmployeAssossie.TabIndex = 28;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1272, 823);
+            this.ClientSize = new System.Drawing.Size(1489, 823);
+            this.Controls.Add(this.grbConnexion);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -1042,7 +1133,8 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "tecxel";
-    //        this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.grbModiffierJeu.ResumeLayout(false);
@@ -1059,6 +1151,8 @@
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.grbConnexion.ResumeLayout(false);
+            this.grbConnexion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1073,7 +1167,6 @@
         private System.Windows.Forms.TextBox txtModClassification;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtModifGenre;
         private System.Windows.Forms.TextBox txtModifConfigMin;
         private System.Windows.Forms.TextBox txtModifDesc;
         private System.Windows.Forms.TextBox txtModifDev;
@@ -1085,15 +1178,14 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.ComboBox cmbRecherche;
+        private System.Windows.Forms.TextBox txtRechercheInformation;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtPosteTel;
+        private System.Windows.Forms.TextBox txtGererEmployeTelRes;
+        private System.Windows.Forms.TextBox txtGererEmployeNom;
+        private System.Windows.Forms.TextBox txtGerereEmployePrenom;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
@@ -1104,11 +1196,8 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox txtMatricule;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.CheckBox chkTesteur;
-        private System.Windows.Forms.CheckBox chkDirecteur;
-        private System.Windows.Forms.CheckBox chkCherEquipe;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.TextBox textBox23;
@@ -1124,7 +1213,6 @@
         private System.Windows.Forms.TextBox txtCreerDev;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtConfigMin;
-        private System.Windows.Forms.TextBox txtGenre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtClassification;
@@ -1135,13 +1223,11 @@
         private System.Windows.Forms.Button btnConfirmerCreationJeu;
         private System.Windows.Forms.Button btnConfirmerModifierJeu;
         private System.Windows.Forms.Button btnConfirmerGestionEmployes;
-        private System.Windows.Forms.CheckBox chkAdmin;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.ComboBox cmbOS;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.ComboBox combJeuAssocieCreerTest;
         private System.Windows.Forms.Button btnConfirmerCreerTest;
-        private System.Windows.Forms.CheckedListBox chkLstEmployesAssociesCreerTest;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnConfirmerAjoutPlateforme;
@@ -1158,6 +1244,20 @@
         private System.Windows.Forms.ToolStripMenuItem ajouterUnOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem créerUnTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cONNEXIONToolStripMenuItem;
+        private System.Windows.Forms.GroupBox grbConnexion;
+        private System.Windows.Forms.Button btnConnexion;
+        private System.Windows.Forms.TextBox txtConnexionMotDePasse;
+        private System.Windows.Forms.TextBox txtConnexionIdentifiant;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ComboBox combGenre;
+        private System.Windows.Forms.ComboBox cmbModifierGenre;
+        private System.Windows.Forms.TextBox txtGererEmployeAdresse;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.RadioButton radAucunDroit;
+        private System.Windows.Forms.RadioButton radAdmin;
+        private System.Windows.Forms.RadioButton radDirecteur;
+        private System.Windows.Forms.ComboBox cmbEmployeAssossie;
     }
 }
 

@@ -21,12 +21,23 @@ namespace projetTexcel
         Form frmAjouterPlateforme = new Form();
         Form frmRecherche = new Form();
         Form frmAjoutOS = new Form();
+        Form frmConnexion = new Form();
+
 
         public Form1()
         {
+            CTraitements traitements1 = new CTraitements();
             InitializeComponent();
 
             frmCreerTest.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmCreerJeu.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmModifierJeu.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmGererEmployes.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmCreerTest.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmAjouterPlateforme.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmRecherche.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmAjoutOS.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmConnexion.FormClosing += new FormClosingEventHandler(Fermerform);
 
         }
 
@@ -101,7 +112,6 @@ namespace projetTexcel
             frmCreerJeu.Controls.Add(this.txtClassification);
             frmCreerJeu.Controls.Add(this.label7);
             frmCreerJeu.Controls.Add(this.label6);
-            frmCreerJeu.Controls.Add(this.txtGenre);
             frmCreerJeu.Controls.Add(this.txtConfigMin);
             frmCreerJeu.Controls.Add(this.txtDescription);
             frmCreerJeu.Controls.Add(this.txtCreerDev);
@@ -132,7 +142,6 @@ namespace projetTexcel
             frmModifierJeu.Controls.Add(this.txtModClassification);
             frmModifierJeu.Controls.Add(this.label8);
             frmModifierJeu.Controls.Add(this.label9);
-            frmModifierJeu.Controls.Add(this.txtModifGenre);
             frmModifierJeu.Controls.Add(this.txtModifConfigMin);
             frmModifierJeu.Controls.Add(this.txtModifDesc);
             frmModifierJeu.Controls.Add(this.txtModifDev);
@@ -155,20 +164,18 @@ namespace projetTexcel
         {
 
             frmGererEmployes.MdiParent = this;
-
-            frmGererEmployes.Controls.Add(this.chkAdmin);
             frmGererEmployes.Controls.Add(this.btnConfirmerGestionEmployes);
-            frmGererEmployes.Controls.Add(this.chkTesteur);
-            frmGererEmployes.Controls.Add(this.chkDirecteur);
-            frmGererEmployes.Controls.Add(this.chkCherEquipe);
-            frmGererEmployes.Controls.Add(this.label26);
-            frmGererEmployes.Controls.Add(this.textBox22);
+            frmGererEmployes.Controls.Add(this.radAucunDroit);
+            frmGererEmployes.Controls.Add(this.radAdmin);
+            frmGererEmployes.Controls.Add(this.radDirecteur); frmGererEmployes.Controls.Add(this.label26);
+            frmGererEmployes.Controls.Add(this.txtMatricule);
             frmGererEmployes.Controls.Add(this.dateTimePicker1);
-            frmGererEmployes.Controls.Add(this.textBox21);
-            frmGererEmployes.Controls.Add(this.textBox20);
-            frmGererEmployes.Controls.Add(this.textBox19);
-            frmGererEmployes.Controls.Add(this.textBox18);
-            frmGererEmployes.Controls.Add(this.textBox17);
+            frmGererEmployes.Controls.Add(this.txtPosteTel);
+            frmGererEmployes.Controls.Add(this.txtGererEmployeTelRes);
+            frmGererEmployes.Controls.Add(this.txtGererEmployeNom);
+            frmGererEmployes.Controls.Add(this.txtGerereEmployePrenom);
+            frmGererEmployes.Controls.Add(this.txtGererEmployeAdresse);
+            frmGererEmployes.Controls.Add(this.label36);
             frmGererEmployes.Controls.Add(this.label25);
             frmGererEmployes.Controls.Add(this.label24);
             frmGererEmployes.Controls.Add(this.label23);
@@ -195,8 +202,8 @@ namespace projetTexcel
             frmRecherche.Controls.Add(this.button1);
             frmRecherche.Controls.Add(this.textBox23);
             frmRecherche.Controls.Add(this.label17);
-            frmRecherche.Controls.Add(this.comboBox1);
-            frmRecherche.Controls.Add(this.textBox16);
+            frmRecherche.Controls.Add(this.cmbRecherche);
+            frmRecherche.Controls.Add(this.txtRechercheInformation);
             frmRecherche.Controls.Add(this.label16);
             frmRecherche.Location = new System.Drawing.Point(365, 331);
 
@@ -243,9 +250,8 @@ namespace projetTexcel
         {
 
             frmCreerTest.MdiParent = this;
-
+            frmCreerTest.Controls.Add(this.cmbEmployeAssossie);
             frmCreerTest.Controls.Add(this.btnConfirmerCreerTest);
-            frmCreerTest.Controls.Add(this.chkLstEmployesAssociesCreerTest);
             frmCreerTest.Controls.Add(this.label32);
             frmCreerTest.Controls.Add(this.label31);
             frmCreerTest.Controls.Add(this.combJeuAssocieCreerTest);
@@ -262,11 +268,45 @@ namespace projetTexcel
             frmCreerTest.Visible = true;
         }
 
+        public void afficherConnexion()
+        {
+            frmConnexion.MdiParent = this;
+            frmConnexion.Controls.Add(this.btnConnexion);
+            frmConnexion.Controls.Add(this.txtConnexionMotDePasse);
+            frmConnexion.Controls.Add(this.txtConnexionIdentifiant);
+            frmConnexion.Controls.Add(this.label35);
+            frmConnexion.Controls.Add(this.label34);
+            frmConnexion.Size = new System.Drawing.Size(258, 221);
+            frmConnexion.TabIndex = 48;
+            frmConnexion.TabStop = false;
+            frmConnexion.Text = "Connexion";
+
+            frmConnexion.Visible = true;
+            frmConnexion.Location = new System.Drawing.Point(1079, 39);
+
+        }
+
         public void Fermerform(Object form, FormClosingEventArgs e)
         {
             e.Cancel = true;
-// form.Visible = false;
+            ((Form)form).Visible = false;
         }
 
+        private void cONNEXIONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            afficherConnexion();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+      
     }
 }
