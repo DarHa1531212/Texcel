@@ -13,10 +13,14 @@ namespace projetTexcel
 {
     public partial class Form1 : Form
     {
+        int niveauPermissions;
         Form frmCreerJeu = new Form();
+        Form frmCreerEquie = new Form();
+        Form frmAfficherBD = new Form();
         Form frmModifierJeu = new Form();
         Form frmGererEmployes = new Form();
         Form frmCreerTest = new Form();
+        CTraitements traitements1 = new CTraitements();
 
         Form frmAjouterPlateforme = new Form();
         Form frmRecherche = new Form();
@@ -26,7 +30,6 @@ namespace projetTexcel
 
         public Form1()
         {
-            CTraitements traitements1 = new CTraitements();
             InitializeComponent();
 
             frmCreerTest.FormClosing += new FormClosingEventHandler(Fermerform);
@@ -38,6 +41,9 @@ namespace projetTexcel
             frmRecherche.FormClosing += new FormClosingEventHandler(Fermerform);
             frmAjoutOS.FormClosing += new FormClosingEventHandler(Fermerform);
             frmConnexion.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmCreerTest.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmAfficherBD.FormClosing += new FormClosingEventHandler(Fermerform);
+
 
         }
 
@@ -101,13 +107,53 @@ namespace projetTexcel
 
         }
 
+        private void afficherBd()
+        {
+            //frmAfficherBD
+
+           frmAfficherBD.MdiParent = this;
+           frmAfficherBD.Controls.Add(this.cmbAfficherJeux);
+           frmAfficherBD.Controls.Add(this.cmbAfficherPlateformes);
+           frmAfficherBD.Controls.Add(this.cmbAfficherOS);
+           frmAfficherBD.Controls.Add(this.label39);
+           frmAfficherBD.Controls.Add(this.label38);
+           frmAfficherBD.Controls.Add(this.label37);
+           frmAfficherBD.Location = new System.Drawing.Point(1094, 178);
+           frmAfficherBD.Size = new System.Drawing.Size(370, 125);
+           frmAfficherBD.TabIndex = 50;
+           frmAfficherBD.TabStop = false;
+           frmAfficherBD.Text = "Afficher le contenu de la BD";
+           frmAfficherBD.Visible = true;
+        }
+
+        private void creerEquipe()
+        {
+            //groupBox7
+            //frmCreerEquie
+            frmCreerEquie.MdiParent = this;
+           frmCreerEquie.Controls.Add(this.button2);
+           frmCreerEquie.Controls.Add(this.cmbChefDEquipe);
+           frmCreerEquie.Controls.Add(this.chkLstBxTesteurs);
+           frmCreerEquie.Controls.Add(this.txtNomdEquipe);
+           frmCreerEquie.Controls.Add(this.label42);
+           frmCreerEquie.Controls.Add(this.label41);
+           frmCreerEquie.Controls.Add(this.label40);
+           frmCreerEquie.Location = new System.Drawing.Point(1094, 309);
+           frmCreerEquie.Size = new System.Drawing.Size(370, 203);
+           frmCreerEquie.TabIndex = 3;
+           frmCreerEquie.TabStop = false;
+           frmCreerEquie.Text = "Créer une équipe";
+
+            frmCreerEquie.Visible = true;
+
+
+        }
+
         private void CreerJeu()
         {
             frmCreerJeu.MdiParent = this;
 
             frmCreerJeu.Controls.Add(this.btnConfirmerCreationJeu);
-            frmCreerJeu.Controls.Add(this.label27);
-            frmCreerJeu.Controls.Add(this.combSelectEmpl);
             frmCreerJeu.Controls.Add(this.txtTheme);
             frmCreerJeu.Controls.Add(this.txtClassification);
             frmCreerJeu.Controls.Add(this.label7);
@@ -121,6 +167,7 @@ namespace projetTexcel
             frmCreerJeu.Controls.Add(this.label3);
             frmCreerJeu.Controls.Add(this.label2);
             frmCreerJeu.Controls.Add(this.label1);
+            frmCreerJeu.Controls.Add(this.combGenre);
             frmCreerJeu.Location = new System.Drawing.Point(12, 12);
             frmCreerJeu.Name = "frmCreerJeu";
             frmCreerJeu.Size = new System.Drawing.Size(327, 286);
@@ -257,7 +304,7 @@ namespace projetTexcel
             frmCreerTest.Controls.Add(this.combJeuAssocieCreerTest);
             frmCreerTest.Controls.Add(this.label30);
             frmCreerTest.Controls.Add(this.cmbOS);
-            frmCreerTest.Controls.Add(this.textBox15);
+            frmCreerTest.Controls.Add(this.txtNomTest);
             frmCreerTest.Controls.Add(this.label15);
             frmCreerTest.Location = new System.Drawing.Point(32, 390);
             frmCreerTest.Size = new System.Drawing.Size(327, 254);
@@ -297,16 +344,151 @@ namespace projetTexcel
             afficherConnexion();
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+
+
+        private void btnConnexion_Click(object sender, EventArgs e)
+        {
+            if (txtConnexionIdentifiant.Text == "")
+                MessageBox.Show("id vide. vuillez le remplire");
+            else if (txtConnexionMotDePasse.Text == "")
+                MessageBox.Show("mdp vide. vuillez le remplire");
+            else
+
+                if (traitements1.connexion(txtConnexionIdentifiant.Text, txtConnexionMotDePasse.Text) == -1)
+            {
+                MessageBox.Show("login failed");
+            }
+            else
+            { 
+                niveauPermissions = traitements1.connexion(txtConnexionIdentifiant.Text, txtConnexionMotDePasse.Text);
+                frmConnexion.Visible = false;
+                atribuerDroits();
+            }
+
+
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            afficherConnexion();
+
+        }
+
+        private void atribuerDroits()
+        {
+            if (niveauPermissions == 2)
+                autorisatonsAdministrateur();
+            else
+                autorisationsDirecteur();
+        }
+        private void autorisatonsAdministrateur()
+        {
+            //creer consulter sytèmes d'exploitation, plateforme, jeu, employé
+            ajouterUnOSToolStripMenuItem.Enabled = true;
+            ajouterUnePlateformeToolStripMenuItem.Enabled = true;
+            effetuerUneRechercheToolStripMenuItem.Enabled = true;
+            créerUnTestToolStripMenuItem.Enabled = true;
+            créerUnJeuToolStripMenuItem.Enabled = true;
+            modifierUnJeuToolStripMenuItem.Enabled = true;
+            gérerUnEmployéToolStripMenuItem.Enabled = true;
+
+        }
+        private void autorisationsDirecteur()
+        {
+            effetuerUneRechercheToolStripMenuItem.Enabled = true;
+            afficherDesInformationsToolStripMenuItem.Enabled = true;
+            creerEquipeToolStripMenuItem.Enabled = true;
+
+        }
+
+        private void afficherDesInformationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            afficherBd();
+            afficherBd();
+
+        }
+
+        private void creerEquipeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            creerEquipe();
+            creerEquipe();
+
+
+        }
+
+        private void btnConfirmerCreationJeu_Click(object sender, EventArgs e)
+        {
+            if (validationCreerJeuNonVide())
+            {
+                //appel de la bd
+                MessageBox.Show("tout ok");
+
+            }
+            else
+             MessageBox.Show("un ou plusieurs champs sont vides. veuillez réessayer");
+            
+
+
+        }
+        private bool validationCreerJeuNonVide()
+        {
+            bool correct = true;
+            correct = true;
+            if (txtNomEmpl.Text == "")
+                correct = false;
+            if (txtCreerDev.Text == "")
+                correct = false;
+            if (txtDescription.Text == "")
+                correct = false;
+            if (txtConfigMin.Text == "")
+                correct = false;
+            if (txtClassification.Text == "")
+                correct = false;
+            if (txtTheme.Text == "")
+                correct = false;
+            if (combGenre.SelectedIndex == -1)
+                correct = false;
+
+            return correct;
+        }
+
+        private void btnConfirmerModifierJeu_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void btnConfirmerCreerTest_Click(object sender, EventArgs e)
         {
+
+            if (validationCreerTestNonVide())
+            {
+                //appel de la bd
+                MessageBox.Show("tout ok");
+
+            }
+            else
+                MessageBox.Show("un ou plusieurs champs sont vides. veuillez réessayer");
 
         }
 
-      
+        private bool validationCreerTestNonVide()
+        {
+           
+            bool correct = true;
+            correct = true;
+            if (txtNomTest.Text == "")
+                correct = false;
+            if (combJeuAssocieCreerTest.SelectedIndex == -1)
+                correct = false;
+            if (cmbOS.SelectedIndex == -1)
+                correct = false;
+            if (cmbEmployeAssossie.SelectedIndex == -1)
+                correct = false;
+
+
+
+            return correct;
+        }
     }
 }

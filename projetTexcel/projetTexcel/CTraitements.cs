@@ -38,8 +38,16 @@ namespace projetTexcel
         {
         }
 
-        public void connexion(string id, string mdp)
-        { }
+        public int connexion(string id, string mdp)
+        {
+            if (id == "patate" && mdp == "123")
+                return 1;
+            else if (id == "potato" && mdp == "123")
+                return 2;
+
+            else
+                return -1;
+        }
 
     }
 }
