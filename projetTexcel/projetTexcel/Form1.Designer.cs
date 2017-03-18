@@ -986,6 +986,7 @@
             this.btnConfirmerAjoutOS.TabIndex = 42;
             this.btnConfirmerAjoutOS.Text = "Confirmer";
             this.btnConfirmerAjoutOS.UseVisualStyleBackColor = true;
+            this.btnConfirmerAjoutOS.Click += new System.EventHandler(this.btnConfirmerAjoutOS_Click);
             // 
             // txtOSNom
             // 
@@ -1068,10 +1069,12 @@
             this.modifierUnJeuToolStripMenuItem.Name = "modifierUnJeuToolStripMenuItem";
             this.modifierUnJeuToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.modifierUnJeuToolStripMenuItem.Text = "Modifier un jeu";
+            this.modifierUnJeuToolStripMenuItem.Visible = false;
             this.modifierUnJeuToolStripMenuItem.Click += new System.EventHandler(this.modifierUnJeuToolStripMenuItem_Click);
             // 
             // ajouterUnOSToolStripMenuItem
             // 
+            this.ajouterUnOSToolStripMenuItem.Enabled = false;
             this.ajouterUnOSToolStripMenuItem.Name = "ajouterUnOSToolStripMenuItem";
             this.ajouterUnOSToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
             this.ajouterUnOSToolStripMenuItem.Text = "ajouter un OS";

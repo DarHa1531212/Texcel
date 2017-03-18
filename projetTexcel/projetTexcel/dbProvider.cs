@@ -23,9 +23,9 @@ namespace projetTexcel
         public List<List<object>>[] contenBD()
         {
             List<List<object>>[] tableau = new List<List<object>>[3];
-            tableau[0] = VueRecherche(3,"*");
-            tableau[1] = VueRecherche(1,"*");
-            tableau[2] = VueRecherche(2,"*");
+            tableau[0] = VueRecherche(3,"nom");
+            tableau[1] = VueRecherche(1,"nom");
+            tableau[2] = VueRecherche(2,"nom");
             return tableau;
         }
 
