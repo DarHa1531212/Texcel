@@ -141,8 +141,8 @@ namespace projetTexcel
 
         private void afficherLesOS(List<List<object>>[] tableau)
         {
-            bool dejaRun;
-            dejaRun = false;
+            bool dejaRun = false;
+            
 
                 if (!dejaRun)
             {
@@ -455,7 +455,6 @@ namespace projetTexcel
 
         private void afficherDesInformationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            afficherBd();
             afficherBd();
 
         }

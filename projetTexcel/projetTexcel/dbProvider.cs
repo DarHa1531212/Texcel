@@ -48,6 +48,7 @@ namespace projetTexcel
                 lecteur = cmd.ExecuteReader();
                 while (lecteur.Read())
                 {
+                    liste = new List<object>();
                     i = 0;
                     try
                     {
