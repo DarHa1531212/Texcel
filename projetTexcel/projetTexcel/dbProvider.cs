@@ -48,6 +48,7 @@ namespace projetTexcel
                 lecteur = cmd.ExecuteReader();
                 while (lecteur.Read())
                 {
+                    i = 0;
                     try
                     {
                         while (true)
@@ -58,9 +59,7 @@ namespace projetTexcel
                     }
                     catch (Exception)
                     {
-                        liste2.Add(liste);
-
-                        break;
+                        liste2.Add(liste);                        
                     }
 
 
