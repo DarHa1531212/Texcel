@@ -123,8 +123,9 @@ namespace projetTexcel
            frmAfficherBD.Controls.Add(this.label39);
            frmAfficherBD.Controls.Add(this.label38);
            frmAfficherBD.Controls.Add(this.label37);
-           frmAfficherBD.Location = new System.Drawing.Point(1094, 178);
-           frmAfficherBD.Size = new System.Drawing.Size(370, 125);
+            frmAfficherBD.Location = new System.Drawing.Point(1094, 178);
+         //   frmAfficherBD.StartPosition = (1094, 178);
+            frmAfficherBD.Size = new System.Drawing.Size(370, 125);
            frmAfficherBD.TabIndex = 50;
            frmAfficherBD.TabStop = false;
            frmAfficherBD.Text = "Afficher le contenu de la BD";
@@ -146,6 +147,7 @@ namespace projetTexcel
 
                 if (!dejaRun)
             {
+                cmbAfficherOS.Items.Clear();
                 foreach (var item in tableau[0])
                 {
                     foreach (var item2 in item)
@@ -164,6 +166,8 @@ namespace projetTexcel
 
             if (!dejaRun)
             {
+                cmbAfficherPlateformes.Items.Clear();
+
                 foreach (var item in tableau[1])
                 {
                     foreach (var item2 in item)
@@ -189,7 +193,7 @@ namespace projetTexcel
            frmCreerEquie.Controls.Add(this.label41);
            frmCreerEquie.Controls.Add(this.label40);
            frmCreerEquie.Location = new System.Drawing.Point(1094, 309);
-           frmCreerEquie.Size = new System.Drawing.Size(370, 203);
+           frmCreerEquie.Size = new System.Drawing.Size(400, 253);
            frmCreerEquie.TabIndex = 3;
            frmCreerEquie.TabStop = false;
            frmCreerEquie.Text = "Créer une équipe";
@@ -220,7 +224,7 @@ namespace projetTexcel
             frmCreerJeu.Controls.Add(this.combGenre);
             frmCreerJeu.Location = new System.Drawing.Point(12, 12);
             frmCreerJeu.Name = "frmCreerJeu";
-            frmCreerJeu.Size = new System.Drawing.Size(327, 286);
+            frmCreerJeu.Size = new System.Drawing.Size(327, 293);
             frmCreerJeu.TabIndex = 0;
             frmCreerJeu.TabStop = false;
             frmCreerJeu.Text = "créer un jeu";
@@ -284,7 +288,7 @@ namespace projetTexcel
             frmGererEmployes.Controls.Add(this.lblSelecctionnerEmploye);
             frmGererEmployes.Controls.Add(this.cmbSelectionEmploye);
             frmGererEmployes.Location = new System.Drawing.Point(698, 12);
-            frmGererEmployes.Size = new System.Drawing.Size(375, 395);
+            frmGererEmployes.Size = new System.Drawing.Size(375, 425);
             frmGererEmployes.TabIndex = 20;
             frmGererEmployes.TabStop = false;
             frmGererEmployes.Text = "Gérer des employés";
@@ -456,7 +460,7 @@ namespace projetTexcel
         private void afficherDesInformationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             afficherBd();
-            afficherBd();
+           // afficherBd();
 
         }
 

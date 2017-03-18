@@ -936,7 +936,7 @@
             this.grbCreerJeu.Controls.Add(this.label1);
             this.grbCreerJeu.Location = new System.Drawing.Point(24, 71);
             this.grbCreerJeu.Name = "grbCreerJeu";
-            this.grbCreerJeu.Size = new System.Drawing.Size(327, 286);
+            this.grbCreerJeu.Size = new System.Drawing.Size(327, 293);
             this.grbCreerJeu.TabIndex = 0;
             this.grbCreerJeu.TabStop = false;
             this.grbCreerJeu.Text = "créer un jeu";
@@ -957,7 +957,7 @@
             // 
             // btnConfirmerCreationJeu
             // 
-            this.btnConfirmerCreationJeu.Location = new System.Drawing.Point(7, 246);
+            this.btnConfirmerCreationJeu.Location = new System.Drawing.Point(6, 209);
             this.btnConfirmerCreationJeu.Name = "btnConfirmerCreationJeu";
             this.btnConfirmerCreationJeu.Size = new System.Drawing.Size(81, 23);
             this.btnConfirmerCreationJeu.TabIndex = 25;
@@ -1042,7 +1042,6 @@
             // 
             // gérerUnEmployéToolStripMenuItem
             // 
-            this.gérerUnEmployéToolStripMenuItem.Enabled = false;
             this.gérerUnEmployéToolStripMenuItem.Name = "gérerUnEmployéToolStripMenuItem";
             this.gérerUnEmployéToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.gérerUnEmployéToolStripMenuItem.Text = "Gérer un employé";
