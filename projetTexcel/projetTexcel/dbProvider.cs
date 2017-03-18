@@ -31,12 +31,54 @@ namespace projetTexcel
 
         public List<List<object>> VueRecherche(int table, string champs)
         {
+            if (table == 4)
+            {
+                VueEquipe();
+                return null;
+            }
+            else
+            {
+
+                List<object> liste = new List<object>();
+                List<List<object>> liste2 = new List<List<object>>();
+                int i = 0;
+                ctn.Open();
+                cmd = ctn.CreateCommand();
+                cmd.CommandText = "SELECT " + champs + " FROM " + determineTable(table);
+                lecteur = cmd.ExecuteReader();
+                while (lecteur.Read())
+                {
+                    try
+                    {
+                        while (true)
+                        {
+                            liste.Add(lecteur.GetValue(i));
+                            i++;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        liste2.Add(liste);
+
+                        break;
+                    }
+
+
+                }
+                ctn.Close();
+                lecteur.Close();
+                return liste2;
+            }
+        }
+
+        public List<List<object>> VueEquipe()
+        {
             List<object> liste = new List<object>();
             List<List<object>> liste2 = new List<List<object>>();
             int i = 0;
             ctn.Open();
             cmd = ctn.CreateCommand();
-            cmd.CommandText = "SELECT "+champs+" FROM "+determineTable(table);
+            cmd.CommandText =" SELECT nomEquipe,nom,nomEmploi FROM VueEmployeEquipe JOIN VueEmploye ON VueEmployeEquipe.idEmploye = VueEmploye.idEmploye JOIN VueEquipe ON VueEquipe.idEquipe = VueEmployeEquipe.idEquipe JOIN VueTypeEmploi ON VueEmployeEquipe.idTypeEmploi = VueTypeEmploi.idTypeEmploi";
             lecteur = cmd.ExecuteReader();
             while (lecteur.Read())
             {
