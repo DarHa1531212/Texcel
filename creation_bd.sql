@@ -1,9 +1,10 @@
 use master
 IF EXISTS (SELECT * FROM sys.databases WHERE name = 'Texcel_Hans_MA')
-DROP DATABASE Texcel_Hans_MA;
+DROP DATABASE Texcel_Hans_MA
 
 GO
 CREATE DATABASE Texcel_Hans_MA
+go
 -- ON PRIMARY
 --( NAME = 'Texcel_Hans_MA_Data',
 --  FILENAME = 'C:\BD\Texcel_Hans_MA_Data.mdf',
@@ -13,7 +14,7 @@ CREATE DATABASE Texcel_Hans_MA
 --  FILENAME = 'C:\BD\Texcel_Hans_MA_Log.ldf',
 --  SIZE = 5MB , MAXSIZE = 25MB , FILEGROWTH = 10% )
 --GO
-SET DATEFORMAT YMD
+--SET DATEFORMAT YMD
 use Texcel_Hans_MA
 
 IF OBJECT_ID('dbo.Employe') IS NOT NULL
@@ -32,7 +33,6 @@ matricule VARCHAR(50) NOT NULL,
 identifiant VARCHAR(50) NOT NULL,
 motDePasse VARCHAR(50) NOT NULL,
 typeEmploi INT NOT NULL,
-tagEmploye VARCHAR(1000) NULL,
 PRIMARY KEY(idEmploye)
 );
 
@@ -46,7 +46,6 @@ nom VARCHAR(50) NOT NULL,
 code VARCHAR(50) NOT NULL,
 edition VARCHAR(50) NOT NULL,
 versionSysteme VARCHAR(50) NOT NULL,
-tag VARCHAR(1000) NULL,
 PRIMARY KEY(idSystemeExploitation),
 idEmploye int NOT NULL
 );
@@ -60,7 +59,6 @@ idPlateforme INT IDENTITY(0,1) NOT NULL,
 nom VARCHAR(50) NOT NULL,
 configuration VARCHAR(50) NOT NULL,
 typePlateforme VARCHAR(50) NOT NULL,
-tag VARCHAR(1000) NULL,
 PRIMARY KEY(idPlateforme),
 idEmploye INT NOT NULL,
 idSystemeExploitation INT NOT NULL
@@ -84,6 +82,7 @@ GO
 
 CREATE TABLE Equipe(
 idEquipe INT IDENTITY(0,1) NOT NULL,
+nomEquipe VARCHAR(50) NOT NULL,
 PRIMARY KEY(idEquipe),
 idEmploye INT NOT NULL
 );
@@ -126,7 +125,6 @@ developpeur VARCHAR(50)  NOT NULL,
 descriptionJeu VARCHAR(50)  NOT NULL,
 configurationMinimale VARCHAR(50)  NOT NULL,
 classification VARCHAR(50)  NOT NULL,
-tag VARCHAR(1000)  NULL,
 PRIMARY KEY(idJeu),
 idEmploye INT NOT NULL,
 idTheme INT NOT NULL,

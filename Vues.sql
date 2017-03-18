@@ -8,12 +8,14 @@ GO
 	go
 	CREATE VIEW VueEmploye AS 
 
-	SELECT * FROM Employe
+	SELECT idEmploye,nom,prenom,DDN,adresse,telephone,posteTelephonique,matricule,identifiant,motDePasse,TypeEmploi ,
+	CONCAT(idEmploye,nom,prenom,DDN,adresse,telephone,posteTelephonique,matricule,identifiant,motDePasse,TypeEmploi ) AS 'tag'
+	FROM Employe
 	GO
-	--SET IDENTITY_INSERT VueEmploye ON
+	insert into VueEmploye(nom,prenom,DDN,adresse,telephone,posteTelephonique,matricule,identifiant,motDePasse,
+typeEmploi) VALUES('nom','prenom','29-01-2017','3505','418','444','321312','identifiant','mot',1)
 
-
-	
+	SELECT * from VueEmploye
 -- vue pour la table os
 GO
 
@@ -22,7 +24,8 @@ DROP VIEW dbo.VueSystemeExploitation;
 GO
 CREATE VIEW VueSystemeExploitation AS 
 
-SELECT * FROM SystemeExploitation 
+SELECT idSystemeExploitation,nom,code,edition,versionSysteme,idEmploye,CONCAT(idSystemeExploitation,nom,code,edition,versionSysteme,idEmploye) AS 'tag'
+FROM SystemeExploitation
 
 -- vue pour la table plateforme
 GO
@@ -32,7 +35,8 @@ DROP VIEW dbo.VuePlateforme;
 GO
 CREATE VIEW VuePlateforme AS 
 
-SELECT * FROM Plateforme 
+SELECT idPlateforme,nom,configuration,typePlateforme,idEmploye,idSystemeExploitation, 
+CONCAT(idPlateforme,nom,configuration,typePlateforme,idEmploye,idSystemeExploitation)  AS 'tag' FROM Plateforme 
 
 -- vue pour la table Jeu
 GO
@@ -42,7 +46,9 @@ DROP VIEW dbo.VueJeu;
 GO
 CREATE VIEW VueJeu AS 
 
-SELECT * FROM Jeu 
+SELECT idJeu,nom,developpeur,descriptionJeu,configurationMinimale,classification,idEmploye,idTheme,idGenre,idSimilaire,
+CONCAT(idJeu,nom,developpeur,descriptionJeu,configurationMinimale,classification,idEmploye,idTheme,idGenre,idSimilaire) AS 'tag' FROM Jeu 
+
 -- vue pour la table ProjetTest
 GO
 
@@ -50,8 +56,7 @@ IF OBJECT_ID('dbo.VueProjetTest') IS NOT NULL
 DROP VIEW dbo.VueProjetTest;
 GO
 CREATE VIEW VueProjetTest AS 
-
-SELECT * FROM ProjetTest 
+SELECT idProjetTest,nomProjet,idEquipe,idEmploye,idJeu,CONCAT(idProjetTest,nomProjet,idEquipe,idEmploye,idJeu) AS 'tag' FROM ProjetTest 
 
 -- vue pour la table Equipe
 GO
@@ -61,7 +66,7 @@ DROP VIEW dbo.VueEquipe;
 GO
 CREATE VIEW VueEquipe AS 
 
-SELECT * FROM Equipe 
+SELECT idEquipe,nomEquipe,idEmploye,CONCAT(idEquipe,nomEquipe,idEmploye) AS 'tag' FROM Equipe 
 
 
 -- vue pour la table theme
@@ -72,7 +77,7 @@ DROP VIEW dbo.VueTheme;
 GO
 CREATE VIEW VueTheme AS 
 
-SELECT * FROM Theme 
+SELECT idTheme,nom,descriptionTheme,CONCAT(idTheme,nom,descriptionTheme) AS 'tag' FROM Theme 
 
 
 -- vue pour la table Genre
@@ -84,7 +89,7 @@ DROP VIEW dbo.VueGenre;
 GO
 CREATE VIEW VueGenre AS 
 
-SELECT * FROM Genre 
+SELECT idGenre,nom,descriptionGenre,CONCAT(idGenre,nom,descriptionGenre) AS 'tag' FROM Genre 
 
 
 -- vue pour la table VueTest
@@ -95,7 +100,8 @@ DROP VIEW dbo.VueTest;
 GO
 CREATE VIEW VueTest AS 
 
-SELECT * FROM Test 
+SELECT idTest,nomTest,descriptionTest,idEmploye,idProjetTest,idCategorieTest
+,CONCAT(idTest,nomTest,descriptionTest,idEmploye,idProjetTest,idCategorieTest) as 'TAG' FROM Test 
 
 
 -- vue pour la table EmployeEquipe
@@ -108,7 +114,7 @@ DROP VIEW dbo.VueEmployeEquipe;
 GO
 CREATE VIEW VueEmployeEquipe AS 
 
-SELECT * FROM EmployeEquipe 
+SELECT idEmploye,idEquipe,idTypeEmploi, CONCAT(idEmploye,idEmploye,idTypeEmploi) AS 'tag' FROM EmployeEquipe 
 
 -- vue pour la table CategorieTest
 GO
@@ -119,7 +125,7 @@ DROP VIEW dbo.VueCategorieTest;
 GO
 CREATE VIEW VueCategorieTest AS 
 
-SELECT * FROM CategorieTest
+SELECT idCategorieTest,nom,descriptionategorieTest,CONCAT(idCategorieTest,nom,descriptionategorieTest) AS 'tag' FROM CategorieTest
 
 -- vue pour la table Plateforme Jeu
 GO
@@ -128,5 +134,5 @@ DROP VIEW dbo.VuePlateformeJeu;
 GO
 CREATE VIEW VuePlateformeJeu AS 
 
-SELECT * FROM PlateformeJeu
+SELECT idPlateforme,idJeu,CONCAT(idPlateforme,idJeu) AS 'tag' FROM PlateformeJeu
 
