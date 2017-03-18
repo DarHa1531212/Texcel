@@ -8,7 +8,7 @@ namespace projetTexcel
 {
     class CTraitements
     {
-
+        dbProvider Données1 = new dbProvider();
         public void CreerJeu(string Nom, string dev, string desc, string configMini, int codeGenre, int classification, int Employe)
         {
 
