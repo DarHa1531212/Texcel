@@ -70,7 +70,15 @@ namespace projetTexcel
                 return liste2;
             }
         }
+        public void ajouterPlateforme(string plateforme)
+        {
 
+        }
+
+        public void ajouterOS(string OS)
+        {
+
+        }
         public List<List<object>> VueEquipe()
         {
             List<object> liste = new List<object>();

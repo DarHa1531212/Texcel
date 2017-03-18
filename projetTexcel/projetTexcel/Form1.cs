@@ -134,6 +134,7 @@ namespace projetTexcel
             tableau = traitements1.afficherBD();
             afficherLesOS(tableau);
             afficherLesPlateformes(tableau);
+            afficherLesJeux(tableau);
             //MessageBox.Show("" + tableau[0])
 
             //  
@@ -180,6 +181,27 @@ namespace projetTexcel
 
         }
 
+        private void afficherLesJeux (List<List<object>>[] tableau)
+        {
+            bool dejaRun;
+            dejaRun = false;
+
+            if (!dejaRun)
+            {
+                cmbAfficherJeux.Items.Clear();
+
+                foreach (var item in tableau[2])
+                {
+                    foreach (var item2 in item)
+                    {
+                        cmbAfficherJeux.Items.Add(item2);
+                    }
+                }
+                dejaRun = true;
+            }
+
+        }
+
         private void creerEquipe()
         {
             //groupBox7
@@ -215,7 +237,7 @@ namespace projetTexcel
             frmCreerJeu.Controls.Add(this.txtConfigMin);
             frmCreerJeu.Controls.Add(this.txtDescription);
             frmCreerJeu.Controls.Add(this.txtCreerDev);
-            frmCreerJeu.Controls.Add(this.txtNomEmpl);
+            frmCreerJeu.Controls.Add(this.txtNomCreerJeu);
             frmCreerJeu.Controls.Add(this.label5);
             frmCreerJeu.Controls.Add(this.label4);
             frmCreerJeu.Controls.Add(this.label3);
@@ -460,10 +482,8 @@ namespace projetTexcel
         private void afficherDesInformationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             afficherBd();
-<<<<<<< HEAD
-           // afficherBd();
-=======
->>>>>>> 8e9fdc2e2398acc057b4d5feb2e48edf5817351e
+            afficherBd();
+
 
         }
 
@@ -480,8 +500,7 @@ namespace projetTexcel
             if (validationCreerJeuNonVide())
             {
                 //appel de la bd
-                MessageBox.Show("tout ok");
-
+                traitements1.CreerJeu(txtNomCreerJeu.Text, txtCreerDev.Text, txtDescription.Text, txtConfigMin.Text, combGenre.Text, txtClassification.Text, txtTheme.Text, cmbEmployeCreationJeu.Text);
             }
             else
              MessageBox.Show("un ou plusieurs champs sont vides. veuillez réessayer");
@@ -493,22 +512,11 @@ namespace projetTexcel
         {
             bool correct = true;
             correct = true;
-            if (txtNomEmpl.Text == "")
+            if (txtNomCreerJeu.Text == "" || txtCreerDev.Text == "" || txtDescription.Text == "" || txtConfigMin.Text == "" || txtClassification.Text == "" || txtTheme.Text == "" || combGenre.SelectedIndex == -1 || cmbSelectionEmploye.SelectedIndex== -1)
                 correct = false;
-            if (txtCreerDev.Text == "")
-                correct = false;
-            if (txtDescription.Text == "")
-                correct = false;
-            if (txtConfigMin.Text == "")
-                correct = false;
-            if (txtClassification.Text == "")
-                correct = false;
-            if (txtTheme.Text == "")
-                correct = false;
-            if (combGenre.SelectedIndex == -1)
-                correct = false;
-
-            return correct;
+          
+               
+                return correct;
         }
 
         private void btnConfirmerModifierJeu_Click(object sender, EventArgs e)
