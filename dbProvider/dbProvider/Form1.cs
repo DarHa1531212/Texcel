@@ -21,13 +21,17 @@ namespace dbProvider
         private void recher()
         {
             string message = "";
-            List<List<object>> liste = new List<List<object>>();
-            liste = db.recherche();
-            foreach (var chose in liste)
+            List<List<object>>[] liste = new List<List<object>>[3];
+            liste = db.contenBD();
+            for (int i = 0; i < 3; i++)
             {
-                foreach (var chose2 in chose)
+
+                foreach (var chose in liste[i])
                 {
-                    message += chose2.ToString();
+                    foreach (var chose2 in chose)
+                    {
+                        message += chose2.ToString();
+                    }
                 }
             }
             MessageBox.Show(message);
