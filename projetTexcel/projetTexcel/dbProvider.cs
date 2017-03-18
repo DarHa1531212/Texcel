@@ -23,19 +23,19 @@ namespace projetTexcel
         public List<List<object>>[] contenBD()
         {
             List<List<object>>[] tableau = new List<List<object>>[3];
-            tableau[0] = VueOS();
-            tableau[1] = VuePlateforme();
-            tableau[2] = VueJeu();
+            tableau[0] = VueRecherche("VueSystemeExploitation","*");
+            tableau[1] = VueRecherche("VuePlateforme","*");
+            tableau[2] = VueRecherche("VueJeu","*");
             return tableau;
         }
-        public List<List<object>> VueEmploye()
+        public List<List<object>> VueRecherche(string table, string champs)
         {
             List<object> liste = new List<object>();
             List<List<object>> liste2 = new List<List<object>>();
             int i = 0;
             ctn.Open();
             cmd = ctn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM VueEmploye";
+            cmd.CommandText = "SELECT "+champs+" FROM "+table;
             lecteur = cmd.ExecuteReader();
             while (lecteur.Read())
             {
@@ -60,78 +60,14 @@ namespace projetTexcel
             lecteur.Close();
             return liste2;
         }
-        public List<List<object>> VueOS()
+        public List<List<object>> VueRecherche(string table, string champs,string recherche)
         {
             List<object> liste = new List<object>();
             List<List<object>> liste2 = new List<List<object>>();
             int i = 0;
             ctn.Open();
             cmd = ctn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM VueSystemeExploitation";
-            lecteur = cmd.ExecuteReader();
-            while (lecteur.Read())
-            {
-                try
-                {
-                    while (true)
-                    {
-                        liste.Add(lecteur.GetValue(i));
-                        i++;
-                    }
-                }
-                catch (Exception)
-                {
-                    liste2.Add(liste);
-
-                    break;
-                }
-
-
-            }
-            ctn.Close();
-            lecteur.Close();
-            return liste2;
-        }
-        public List<List<object>> VuePlateforme()
-        {
-            List<object> liste = new List<object>();
-            List<List<object>> liste2 = new List<List<object>>();
-            int i = 0;
-            ctn.Open();
-            cmd = ctn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM VuePlateforme";
-            lecteur = cmd.ExecuteReader();
-            while (lecteur.Read())
-            {
-                try
-                {
-                    while (true)
-                    {
-                        liste.Add(lecteur.GetValue(i));
-                        i++;
-                    }
-                }
-                catch (Exception)
-                {
-                    liste2.Add(liste);
-
-                    break;
-                }
-
-
-            }
-            ctn.Close();
-            lecteur.Close();
-            return liste2;
-        }
-        public List<List<object>> VueJeu()
-        {
-            List<object> liste = new List<object>();
-            List<List<object>> liste2 = new List<List<object>>();
-            int i = 0;
-            ctn.Open();
-            cmd = ctn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM VueJeu";
+            cmd.CommandText = "SELECT " + champs + " FROM " + table +"WHERE tag LIKE" +recherche;
             lecteur = cmd.ExecuteReader();
             while (lecteur.Read())
             {
