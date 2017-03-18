@@ -24,7 +24,7 @@ namespace projetTexcel
 
         }
 
-        public void Recherche(string InformationCherchee, string tableDeRecherche)
+        public void Recherche(string InformationCherchee, int tableDeRecherche)
         {
 
         }
@@ -48,6 +48,8 @@ namespace projetTexcel
             else
                 return -1;
         }
+
+
 
     }
 }

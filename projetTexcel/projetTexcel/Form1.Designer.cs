@@ -57,7 +57,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnConfirmer = new System.Windows.Forms.Button();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.cmbRecherche = new System.Windows.Forms.ComboBox();
@@ -84,8 +84,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.lblSelecctionnerEmploye = new System.Windows.Forms.Label();
+            this.cmbSelectionEmploye = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btnConfirmerAjoutPlateforme = new System.Windows.Forms.Button();
             this.txtPlateforme = new System.Windows.Forms.TextBox();
@@ -142,6 +142,7 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
+            this.chkNouvelEmploye = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -451,7 +452,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.btnConfirmer);
             this.groupBox4.Controls.Add(this.textBox23);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.cmbRecherche);
@@ -465,14 +466,15 @@
             this.groupBox4.Text = "effectuer une recherche";
             this.groupBox4.Visible = false;
             // 
-            // button1
+            // btnConfirmer
             // 
-            this.button1.Location = new System.Drawing.Point(9, 233);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 23);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Confirmer";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnConfirmer.Location = new System.Drawing.Point(9, 233);
+            this.btnConfirmer.Name = "btnConfirmer";
+            this.btnConfirmer.Size = new System.Drawing.Size(81, 23);
+            this.btnConfirmer.TabIndex = 42;
+            this.btnConfirmer.Text = "Confirmer";
+            this.btnConfirmer.UseVisualStyleBackColor = true;
+            this.btnConfirmer.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox23
             // 
@@ -495,10 +497,10 @@
             // 
             this.cmbRecherche.FormattingEnabled = true;
             this.cmbRecherche.Items.AddRange(new object[] {
-            "Tous les chapms",
-            "employés",
-            "jeux",
-            "employés"});
+            "Plateforme",
+            "Jeu",
+            "Système d\'exploitation",
+            "Équipe"});
             this.cmbRecherche.Location = new System.Drawing.Point(169, 59);
             this.cmbRecherche.Name = "cmbRecherche";
             this.cmbRecherche.Size = new System.Drawing.Size(121, 24);
@@ -522,6 +524,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.chkNouvelEmploye);
             this.groupBox5.Controls.Add(this.radAucunDroit);
             this.groupBox5.Controls.Add(this.radAdmin);
             this.groupBox5.Controls.Add(this.radDirecteur);
@@ -542,8 +545,8 @@
             this.groupBox5.Controls.Add(this.label21);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Controls.Add(this.label19);
-            this.groupBox5.Controls.Add(this.label18);
-            this.groupBox5.Controls.Add(this.comboBox2);
+            this.groupBox5.Controls.Add(this.lblSelecctionnerEmploye);
+            this.groupBox5.Controls.Add(this.cmbSelectionEmploye);
             this.groupBox5.Location = new System.Drawing.Point(698, 39);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(390, 434);
@@ -556,7 +559,7 @@
             // 
             this.radAucunDroit.AutoSize = true;
             this.radAucunDroit.Checked = true;
-            this.radAucunDroit.Location = new System.Drawing.Point(173, 330);
+            this.radAucunDroit.Location = new System.Drawing.Point(175, 350);
             this.radAucunDroit.Name = "radAucunDroit";
             this.radAucunDroit.Size = new System.Drawing.Size(118, 21);
             this.radAucunDroit.TabIndex = 46;
@@ -567,7 +570,7 @@
             // radAdmin
             // 
             this.radAdmin.AutoSize = true;
-            this.radAdmin.Location = new System.Drawing.Point(173, 303);
+            this.radAdmin.Location = new System.Drawing.Point(175, 323);
             this.radAdmin.Name = "radAdmin";
             this.radAdmin.Size = new System.Drawing.Size(67, 21);
             this.radAdmin.TabIndex = 45;
@@ -577,7 +580,7 @@
             // radDirecteur
             // 
             this.radDirecteur.AutoSize = true;
-            this.radDirecteur.Location = new System.Drawing.Point(173, 276);
+            this.radDirecteur.Location = new System.Drawing.Point(175, 296);
             this.radDirecteur.Name = "radDirecteur";
             this.radDirecteur.Size = new System.Drawing.Size(85, 21);
             this.radDirecteur.TabIndex = 44;
@@ -587,7 +590,7 @@
             // txtGererEmployeAdresse
             // 
             this.txtGererEmployeAdresse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGererEmployeAdresse.Location = new System.Drawing.Point(183, 183);
+            this.txtGererEmployeAdresse.Location = new System.Drawing.Point(185, 203);
             this.txtGererEmployeAdresse.Name = "txtGererEmployeAdresse";
             this.txtGererEmployeAdresse.Size = new System.Drawing.Size(100, 22);
             this.txtGererEmployeAdresse.TabIndex = 43;
@@ -595,7 +598,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(7, 188);
+            this.label36.Location = new System.Drawing.Point(9, 208);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(59, 17);
             this.label36.TabIndex = 42;
@@ -603,17 +606,18 @@
             // 
             // btnConfirmerGestionEmployes
             // 
-            this.btnConfirmerGestionEmployes.Location = new System.Drawing.Point(10, 381);
+            this.btnConfirmerGestionEmployes.Location = new System.Drawing.Point(12, 354);
             this.btnConfirmerGestionEmployes.Name = "btnConfirmerGestionEmployes";
             this.btnConfirmerGestionEmployes.Size = new System.Drawing.Size(81, 23);
             this.btnConfirmerGestionEmployes.TabIndex = 27;
             this.btnConfirmerGestionEmployes.Text = "Confirmer";
             this.btnConfirmerGestionEmployes.UseVisualStyleBackColor = true;
+            this.btnConfirmerGestionEmployes.Click += new System.EventHandler(this.btnConfirmerGestionEmployes_Click);
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 278);
+            this.label26.Location = new System.Drawing.Point(8, 298);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(130, 17);
             this.label26.TabIndex = 37;
@@ -622,14 +626,14 @@
             // txtMatricule
             // 
             this.txtMatricule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMatricule.Location = new System.Drawing.Point(183, 245);
+            this.txtMatricule.Location = new System.Drawing.Point(185, 265);
             this.txtMatricule.Name = "txtMatricule";
             this.txtMatricule.Size = new System.Drawing.Size(100, 22);
             this.txtMatricule.TabIndex = 36;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(183, 124);
+            this.dateTimePicker1.Location = new System.Drawing.Point(185, 144);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 35;
@@ -637,7 +641,7 @@
             // txtPosteTel
             // 
             this.txtPosteTel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPosteTel.Location = new System.Drawing.Point(183, 211);
+            this.txtPosteTel.Location = new System.Drawing.Point(185, 231);
             this.txtPosteTel.Name = "txtPosteTel";
             this.txtPosteTel.Size = new System.Drawing.Size(100, 22);
             this.txtPosteTel.TabIndex = 33;
@@ -645,7 +649,7 @@
             // txtGererEmployeTelRes
             // 
             this.txtGererEmployeTelRes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGererEmployeTelRes.Location = new System.Drawing.Point(183, 153);
+            this.txtGererEmployeTelRes.Location = new System.Drawing.Point(185, 173);
             this.txtGererEmployeTelRes.Name = "txtGererEmployeTelRes";
             this.txtGererEmployeTelRes.Size = new System.Drawing.Size(100, 22);
             this.txtGererEmployeTelRes.TabIndex = 32;
@@ -653,7 +657,7 @@
             // txtGererEmployeNom
             // 
             this.txtGererEmployeNom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGererEmployeNom.Location = new System.Drawing.Point(183, 95);
+            this.txtGererEmployeNom.Location = new System.Drawing.Point(185, 115);
             this.txtGererEmployeNom.Name = "txtGererEmployeNom";
             this.txtGererEmployeNom.Size = new System.Drawing.Size(100, 22);
             this.txtGererEmployeNom.TabIndex = 31;
@@ -661,7 +665,7 @@
             // txtGerereEmployePrenom
             // 
             this.txtGerereEmployePrenom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGerereEmployePrenom.Location = new System.Drawing.Point(183, 66);
+            this.txtGerereEmployePrenom.Location = new System.Drawing.Point(185, 86);
             this.txtGerereEmployePrenom.Name = "txtGerereEmployePrenom";
             this.txtGerereEmployePrenom.Size = new System.Drawing.Size(100, 22);
             this.txtGerereEmployePrenom.TabIndex = 30;
@@ -669,7 +673,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 158);
+            this.label25.Location = new System.Drawing.Point(8, 178);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(150, 17);
             this.label25.TabIndex = 29;
@@ -678,7 +682,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 218);
+            this.label24.Location = new System.Drawing.Point(8, 238);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(129, 17);
             this.label24.TabIndex = 28;
@@ -687,7 +691,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 248);
+            this.label23.Location = new System.Drawing.Point(8, 268);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(65, 17);
             this.label23.TabIndex = 27;
@@ -696,7 +700,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(6, 68);
+            this.label22.Location = new System.Drawing.Point(8, 88);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(56, 17);
             this.label22.TabIndex = 26;
@@ -705,7 +709,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 98);
+            this.label21.Location = new System.Drawing.Point(8, 118);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(35, 17);
             this.label21.TabIndex = 25;
@@ -714,7 +718,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 128);
+            this.label20.Location = new System.Drawing.Point(8, 148);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(38, 17);
             this.label20.TabIndex = 24;
@@ -723,33 +727,35 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 69);
+            this.label19.Location = new System.Drawing.Point(8, 89);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(35, 17);
             this.label19.TabIndex = 23;
             this.label19.Text = "nom";
             // 
-            // label18
+            // lblSelecctionnerEmploye
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 38);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(150, 17);
-            this.label18.TabIndex = 22;
-            this.label18.Text = "Sélectionner l\'employé";
+            this.lblSelecctionnerEmploye.AutoSize = true;
+            this.lblSelecctionnerEmploye.Location = new System.Drawing.Point(8, 58);
+            this.lblSelecctionnerEmploye.Name = "lblSelecctionnerEmploye";
+            this.lblSelecctionnerEmploye.Size = new System.Drawing.Size(150, 17);
+            this.lblSelecctionnerEmploye.TabIndex = 22;
+            this.lblSelecctionnerEmploye.Text = "Sélectionner l\'employé";
+            this.lblSelecctionnerEmploye.Visible = false;
             // 
-            // comboBox2
+            // cmbSelectionEmploye
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbSelectionEmploye.FormattingEnabled = true;
+            this.cmbSelectionEmploye.Items.AddRange(new object[] {
             "Tous les chapms",
             "employés",
             "jeux",
             "employés"});
-            this.comboBox2.Location = new System.Drawing.Point(183, 35);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 21;
+            this.cmbSelectionEmploye.Location = new System.Drawing.Point(185, 55);
+            this.cmbSelectionEmploye.Name = "cmbSelectionEmploye";
+            this.cmbSelectionEmploye.Size = new System.Drawing.Size(121, 24);
+            this.cmbSelectionEmploye.TabIndex = 21;
+            this.cmbSelectionEmploye.Visible = false;
             // 
             // groupBox6
             // 
@@ -911,7 +917,7 @@
             this.grbCreerJeu.Controls.Add(this.label3);
             this.grbCreerJeu.Controls.Add(this.label2);
             this.grbCreerJeu.Controls.Add(this.label1);
-            this.grbCreerJeu.Location = new System.Drawing.Point(25, 71);
+            this.grbCreerJeu.Location = new System.Drawing.Point(24, 71);
             this.grbCreerJeu.Name = "grbCreerJeu";
             this.grbCreerJeu.Size = new System.Drawing.Size(327, 286);
             this.grbCreerJeu.TabIndex = 0;
@@ -1272,6 +1278,17 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "nom d\'équipe";
             // 
+            // chkNouvelEmploye
+            // 
+            this.chkNouvelEmploye.AutoSize = true;
+            this.chkNouvelEmploye.Location = new System.Drawing.Point(12, 21);
+            this.chkNouvelEmploye.Name = "chkNouvelEmploye";
+            this.chkNouvelEmploye.Size = new System.Drawing.Size(142, 21);
+            this.chkNouvelEmploye.TabIndex = 48;
+            this.chkNouvelEmploye.Text = "Créer un employe";
+            this.chkNouvelEmploye.UseVisualStyleBackColor = true;
+            this.chkNouvelEmploye.CheckedChanged += new System.EventHandler(this.chkNouvelEmploye_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1356,8 +1373,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label lblSelecctionnerEmploye;
+        private System.Windows.Forms.ComboBox cmbSelectionEmploye;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtMatricule;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -1390,7 +1407,7 @@
         private System.Windows.Forms.ComboBox combJeuAssocieCreerTest;
         private System.Windows.Forms.Button btnConfirmerCreerTest;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnConfirmer;
         private System.Windows.Forms.Button btnConfirmerAjoutPlateforme;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnConfirmerAjoutOS;
@@ -1436,6 +1453,7 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.ToolStripMenuItem afficherDesInformationsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creerEquipeToolStripMenuItem;
+        private System.Windows.Forms.CheckBox chkNouvelEmploye;
     }
 }
 

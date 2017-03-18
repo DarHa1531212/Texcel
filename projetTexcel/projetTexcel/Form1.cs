@@ -221,6 +221,7 @@ namespace projetTexcel
             frmGererEmployes.Controls.Add(this.txtGererEmployeTelRes);
             frmGererEmployes.Controls.Add(this.txtGererEmployeNom);
             frmGererEmployes.Controls.Add(this.txtGerereEmployePrenom);
+            frmGererEmployes.Controls.Add(this.chkNouvelEmploye);
             frmGererEmployes.Controls.Add(this.txtGererEmployeAdresse);
             frmGererEmployes.Controls.Add(this.label36);
             frmGererEmployes.Controls.Add(this.label25);
@@ -230,8 +231,8 @@ namespace projetTexcel
             frmGererEmployes.Controls.Add(this.label21);
             frmGererEmployes.Controls.Add(this.label20);
             frmGererEmployes.Controls.Add(this.label19);
-            frmGererEmployes.Controls.Add(this.label18);
-            frmGererEmployes.Controls.Add(this.comboBox2);
+            frmGererEmployes.Controls.Add(this.lblSelecctionnerEmploye);
+            frmGererEmployes.Controls.Add(this.cmbSelectionEmploye);
             frmGererEmployes.Location = new System.Drawing.Point(698, 12);
             frmGererEmployes.Size = new System.Drawing.Size(375, 395);
             frmGererEmployes.TabIndex = 20;
@@ -246,7 +247,7 @@ namespace projetTexcel
 
             frmRecherche.MdiParent = this;
 
-            frmRecherche.Controls.Add(this.button1);
+            frmRecherche.Controls.Add(this.btnConfirmer);
             frmRecherche.Controls.Add(this.textBox23);
             frmRecherche.Controls.Add(this.label17);
             frmRecherche.Controls.Add(this.cmbRecherche);
@@ -489,6 +490,67 @@ namespace projetTexcel
 
 
             return correct;
+        }
+
+        private void chkNouvelEmploye_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkNouvelEmploye.Checked)
+            {
+                cmbSelectionEmploye.Visible = true;
+                lblSelecctionnerEmploye.Visible = true;
+            }
+                
+            else
+            {
+                cmbSelectionEmploye.Visible = false;
+                lblSelecctionnerEmploye.Visible = false;
+            }
+                
+
+
+        }
+        private void creerEmploye()
+        {
+            bool correcte;
+            correcte = true;
+
+
+
+        }
+
+        private void btnConfirmerGestionEmployes_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int champReherche;
+           
+            switch (cmbRecherche.Text)
+            {
+                case "Plateforme":
+                    champReherche = 1;
+                    break;
+                case "Jeu":
+                    champReherche = 2;
+                    break;
+                case "Système d'exploitation":
+                    champReherche = 3;
+                    break;
+                case "Équipe":
+                    champReherche = 4;
+                    break;
+
+                default:
+                    champReherche = -1;
+                    break;
+            }
+
+            if (champReherche == -1 || txtRechercheInformation.Text == null)
+                MessageBox.Show("Un ou plusieurs champs sont vides. veuillez les remplire");
+            else
+            traitements1.Recherche(txtRechercheInformation.Text, champReherche);
         }
     }
 }
