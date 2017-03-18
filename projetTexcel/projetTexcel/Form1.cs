@@ -13,6 +13,7 @@ namespace projetTexcel
 {
     public partial class Form1 : Form
     {
+        int niveauPermissionsCreationEMploye = 0;
         int niveauPermissions;
         Form frmCreerJeu = new Form();
         Form frmCreerEquie = new Form();
@@ -216,7 +217,7 @@ namespace projetTexcel
             frmGererEmployes.Controls.Add(this.radAdmin);
             frmGererEmployes.Controls.Add(this.radDirecteur); frmGererEmployes.Controls.Add(this.label26);
             frmGererEmployes.Controls.Add(this.txtMatricule);
-            frmGererEmployes.Controls.Add(this.dateTimePicker1);
+            frmGererEmployes.Controls.Add(this.dateDDN);
             frmGererEmployes.Controls.Add(this.txtPosteTel);
             frmGererEmployes.Controls.Add(this.txtGererEmployeTelRes);
             frmGererEmployes.Controls.Add(this.txtGererEmployeNom);
@@ -494,8 +495,9 @@ namespace projetTexcel
 
         private void chkNouvelEmploye_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkNouvelEmploye.Checked)
+            if (! chkNouvelEmploye.Checked)
             {
+                /*afficher les employés dans le combobox*/
                 cmbSelectionEmploye.Visible = true;
                 lblSelecctionnerEmploye.Visible = true;
             }
@@ -513,14 +515,28 @@ namespace projetTexcel
         {
             bool correcte;
             correcte = true;
+            //si  un seul des  champs est vide, l'employé ne peux pas être créé
+            if (txtGerereEmployePrenom.Text == "" || txtGererEmployeNom.Text == "" || dateDDN.Value > DateTime.Today  ||  txtGererEmployeTelRes.Text == "" || txtGererEmployeAdresse.Text == "" || txtPosteTel.Text =="" || txtMatricule.Text == "")
+                correcte = false;
 
 
-
+            if (correcte)
+                traitements1.creerEmploye(txtGererEmployeNom.Text, txtGerereEmployePrenom.Text, dateDDN.Value, txtGererEmployeTelRes.Text, txtPosteTel.Text, txtMatricule.Text, niveauPermissionsCreationEMploye, txtGererEmployeAdresse.Text);
+            else
+                MessageBox.Show("Un ou plusieurs champs sont invalides. veuillez réessayer.");
+  
         }
+
+        private void gererEmployes()
+        { }
 
         private void btnConfirmerGestionEmployes_Click(object sender, EventArgs e)
         {
-           
+            if ( chkNouvelEmploye.Checked)
+                creerEmploye();
+            else
+                gererEmployes();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -552,5 +568,30 @@ namespace projetTexcel
             else
             traitements1.Recherche(txtRechercheInformation.Text, champReherche);
         }
+
+        private void radDirecteur_CheckedChanged(object sender, EventArgs e)
+        {
+            niveauPermissionsCreationEMploye = 1;
+        }
+
+        private void radAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+            niveauPermissionsCreationEMploye = 2;
+        }
+
+        private void radAucunDroit_CheckedChanged(object sender, EventArgs e)
+        {
+            niveauPermissionsCreationEMploye = 0;
+        }
+
+        private void btnConfirmerAjoutPlateforme_Click(object sender, EventArgs e)
+        {
+            if (txtPlateforme.Text == "")
+                MessageBox.Show("Vous devez spécifier un nom de plateforme avant de pouvior l'ajouter");
+            else
+                traitements1.ajouterPlateforme(txtPlateforme.Text);
+        }
+
+  
     }
 }

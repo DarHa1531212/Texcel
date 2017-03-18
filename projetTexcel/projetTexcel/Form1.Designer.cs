@@ -64,6 +64,7 @@
             this.txtRechercheInformation = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.chkNouvelEmploye = new System.Windows.Forms.CheckBox();
             this.radAucunDroit = new System.Windows.Forms.RadioButton();
             this.radAdmin = new System.Windows.Forms.RadioButton();
             this.radDirecteur = new System.Windows.Forms.RadioButton();
@@ -72,7 +73,7 @@
             this.btnConfirmerGestionEmployes = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.txtMatricule = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateDDN = new System.Windows.Forms.DateTimePicker();
             this.txtPosteTel = new System.Windows.Forms.TextBox();
             this.txtGererEmployeTelRes = new System.Windows.Forms.TextBox();
             this.txtGererEmployeNom = new System.Windows.Forms.TextBox();
@@ -142,7 +143,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.chkNouvelEmploye = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -533,7 +533,7 @@
             this.groupBox5.Controls.Add(this.btnConfirmerGestionEmployes);
             this.groupBox5.Controls.Add(this.label26);
             this.groupBox5.Controls.Add(this.txtMatricule);
-            this.groupBox5.Controls.Add(this.dateTimePicker1);
+            this.groupBox5.Controls.Add(this.dateDDN);
             this.groupBox5.Controls.Add(this.txtPosteTel);
             this.groupBox5.Controls.Add(this.txtGererEmployeTelRes);
             this.groupBox5.Controls.Add(this.txtGererEmployeNom);
@@ -555,6 +555,19 @@
             this.groupBox5.Text = "Gérer des employés";
             this.groupBox5.Visible = false;
             // 
+            // chkNouvelEmploye
+            // 
+            this.chkNouvelEmploye.AutoSize = true;
+            this.chkNouvelEmploye.Checked = true;
+            this.chkNouvelEmploye.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkNouvelEmploye.Location = new System.Drawing.Point(12, 21);
+            this.chkNouvelEmploye.Name = "chkNouvelEmploye";
+            this.chkNouvelEmploye.Size = new System.Drawing.Size(142, 21);
+            this.chkNouvelEmploye.TabIndex = 48;
+            this.chkNouvelEmploye.Text = "Créer un employe";
+            this.chkNouvelEmploye.UseVisualStyleBackColor = true;
+            this.chkNouvelEmploye.CheckedChanged += new System.EventHandler(this.chkNouvelEmploye_CheckedChanged);
+            // 
             // radAucunDroit
             // 
             this.radAucunDroit.AutoSize = true;
@@ -566,6 +579,7 @@
             this.radAucunDroit.TabStop = true;
             this.radAucunDroit.Text = "(aucubn droit)";
             this.radAucunDroit.UseVisualStyleBackColor = true;
+            this.radAucunDroit.CheckedChanged += new System.EventHandler(this.radAucunDroit_CheckedChanged);
             // 
             // radAdmin
             // 
@@ -576,6 +590,7 @@
             this.radAdmin.TabIndex = 45;
             this.radAdmin.Text = "admin";
             this.radAdmin.UseVisualStyleBackColor = true;
+            this.radAdmin.CheckedChanged += new System.EventHandler(this.radAdmin_CheckedChanged);
             // 
             // radDirecteur
             // 
@@ -586,6 +601,7 @@
             this.radDirecteur.TabIndex = 44;
             this.radDirecteur.Text = "directeur";
             this.radDirecteur.UseVisualStyleBackColor = true;
+            this.radDirecteur.CheckedChanged += new System.EventHandler(this.radDirecteur_CheckedChanged);
             // 
             // txtGererEmployeAdresse
             // 
@@ -631,12 +647,12 @@
             this.txtMatricule.Size = new System.Drawing.Size(100, 22);
             this.txtMatricule.TabIndex = 36;
             // 
-            // dateTimePicker1
+            // dateDDN
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(185, 144);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 35;
+            this.dateDDN.Location = new System.Drawing.Point(185, 144);
+            this.dateDDN.Name = "dateDDN";
+            this.dateDDN.Size = new System.Drawing.Size(200, 22);
+            this.dateDDN.TabIndex = 35;
             // 
             // txtPosteTel
             // 
@@ -778,6 +794,7 @@
             this.btnConfirmerAjoutPlateforme.TabIndex = 42;
             this.btnConfirmerAjoutPlateforme.Text = "Confirmer";
             this.btnConfirmerAjoutPlateforme.UseVisualStyleBackColor = true;
+            this.btnConfirmerAjoutPlateforme.Click += new System.EventHandler(this.btnConfirmerAjoutPlateforme_Click);
             // 
             // txtPlateforme
             // 
@@ -1024,6 +1041,7 @@
             // 
             // gérerUnEmployéToolStripMenuItem
             // 
+            this.gérerUnEmployéToolStripMenuItem.Enabled = false;
             this.gérerUnEmployéToolStripMenuItem.Name = "gérerUnEmployéToolStripMenuItem";
             this.gérerUnEmployéToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.gérerUnEmployéToolStripMenuItem.Text = "Gérer un employé";
@@ -1031,6 +1049,7 @@
             // 
             // effetuerUneRechercheToolStripMenuItem
             // 
+            this.effetuerUneRechercheToolStripMenuItem.Enabled = false;
             this.effetuerUneRechercheToolStripMenuItem.Name = "effetuerUneRechercheToolStripMenuItem";
             this.effetuerUneRechercheToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
             this.effetuerUneRechercheToolStripMenuItem.Text = "effetuer une recherche";
@@ -1038,6 +1057,7 @@
             // 
             // ajouterUnePlateformeToolStripMenuItem
             // 
+            this.ajouterUnePlateformeToolStripMenuItem.Enabled = false;
             this.ajouterUnePlateformeToolStripMenuItem.Name = "ajouterUnePlateformeToolStripMenuItem";
             this.ajouterUnePlateformeToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
             this.ajouterUnePlateformeToolStripMenuItem.Text = "ajouter une plateforme";
@@ -1278,17 +1298,6 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "nom d\'équipe";
             // 
-            // chkNouvelEmploye
-            // 
-            this.chkNouvelEmploye.AutoSize = true;
-            this.chkNouvelEmploye.Location = new System.Drawing.Point(12, 21);
-            this.chkNouvelEmploye.Name = "chkNouvelEmploye";
-            this.chkNouvelEmploye.Size = new System.Drawing.Size(142, 21);
-            this.chkNouvelEmploye.TabIndex = 48;
-            this.chkNouvelEmploye.Text = "Créer un employe";
-            this.chkNouvelEmploye.UseVisualStyleBackColor = true;
-            this.chkNouvelEmploye.CheckedChanged += new System.EventHandler(this.chkNouvelEmploye_CheckedChanged);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1377,7 +1386,7 @@
         private System.Windows.Forms.ComboBox cmbSelectionEmploye;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtMatricule;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateDDN;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.TextBox textBox23;
