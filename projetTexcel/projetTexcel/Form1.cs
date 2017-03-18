@@ -13,6 +13,8 @@ namespace projetTexcel
 {
     public partial class Form1 : Form
     {
+
+         
         int niveauPermissionsCreationEMploye = 0;
         int niveauPermissions;
         Form frmCreerJeu = new Form();
@@ -110,9 +112,11 @@ namespace projetTexcel
 
         private void afficherBd()
         {
+            List<List<object>>[] tableau = new List<List<object>>[3];
+
             //frmAfficherBD
 
-           frmAfficherBD.MdiParent = this;
+            frmAfficherBD.MdiParent = this;
            frmAfficherBD.Controls.Add(this.cmbAfficherJeux);
            frmAfficherBD.Controls.Add(this.cmbAfficherPlateformes);
            frmAfficherBD.Controls.Add(this.cmbAfficherOS);
@@ -125,13 +129,58 @@ namespace projetTexcel
            frmAfficherBD.TabStop = false;
            frmAfficherBD.Text = "Afficher le contenu de la BD";
            frmAfficherBD.Visible = true;
+
+            tableau = traitements1.afficherBD();
+            afficherLesOS(tableau);
+            afficherLesPlateformes(tableau);
+            //MessageBox.Show("" + tableau[0])
+
+            //  
+
+        }
+
+        private void afficherLesOS(List<List<object>>[] tableau)
+        {
+            bool dejaRun;
+            dejaRun = false;
+
+                if (!dejaRun)
+            {
+                foreach (var item in tableau[0])
+                {
+                    foreach (var item2 in item)
+                    {
+                        cmbAfficherOS.Items.Add(item2);
+                    }
+                }
+                dejaRun = true;
+            }            
+        }
+
+        private void afficherLesPlateformes (List<List<object>>[] tableau)
+        {
+            bool dejaRun;
+            dejaRun = false;
+
+            if (!dejaRun)
+            {
+                foreach (var item in tableau[1])
+                {
+                    foreach (var item2 in item)
+                    {
+                        cmbAfficherPlateformes.Items.Add(item2);
+                    }
+                }
+                dejaRun = true;
+            }
+
         }
 
         private void creerEquipe()
         {
             //groupBox7
             //frmCreerEquie
-            frmCreerEquie.MdiParent = this;
+           frmCreerEquie.MdiParent = this;
            frmCreerEquie.Controls.Add(this.button2);
            frmCreerEquie.Controls.Add(this.cmbChefDEquipe);
            frmCreerEquie.Controls.Add(this.chkLstBxTesteurs);
@@ -592,6 +641,12 @@ namespace projetTexcel
                 traitements1.ajouterPlateforme(txtPlateforme.Text);
         }
 
-  
+        private void btnConfirmerAjoutOS_Click(object sender, EventArgs e)
+        {
+            if (txtOSNom.Text == "")
+                MessageBox.Show("Vous devez spécifier un nom de plateforme avant de pouvior l'ajouter");
+            else
+                traitements1.ajouterOS(txtOSNom.Text);
+        }
     }
 }

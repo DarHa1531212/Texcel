@@ -53,6 +53,12 @@ namespace projetTexcel
                 return -1;
         }
 
+        public List<List<object>>[] afficherBD()
+        {
+            
+            return Données1.contenBD();
+        }
+
 
 
     }
