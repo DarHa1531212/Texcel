@@ -23,19 +23,20 @@ namespace projetTexcel
         public List<List<object>>[] contenBD()
         {
             List<List<object>>[] tableau = new List<List<object>>[3];
-            tableau[0] = VueRecherche("VueSystemeExploitation","*");
-            tableau[1] = VueRecherche("VuePlateforme","*");
-            tableau[2] = VueRecherche("VueJeu","*");
+            tableau[0] = VueRecherche(3,"*");
+            tableau[1] = VueRecherche(1,"*");
+            tableau[2] = VueRecherche(2,"*");
             return tableau;
         }
-        public List<List<object>> VueRecherche(string table, string champs)
+
+        public List<List<object>> VueRecherche(int table, string champs)
         {
             List<object> liste = new List<object>();
             List<List<object>> liste2 = new List<List<object>>();
             int i = 0;
             ctn.Open();
             cmd = ctn.CreateCommand();
-            cmd.CommandText = "SELECT "+champs+" FROM "+table;
+            cmd.CommandText = "SELECT "+champs+" FROM "+determineTable(table);
             lecteur = cmd.ExecuteReader();
             while (lecteur.Read())
             {
@@ -60,14 +61,14 @@ namespace projetTexcel
             lecteur.Close();
             return liste2;
         }
-        public List<List<object>> VueRecherche(string table, string champs,string recherche)
+        public List<List<object>> VueRecherche(int table, string champs,string recherche)
         {
             List<object> liste = new List<object>();
             List<List<object>> liste2 = new List<List<object>>();
             int i = 0;
             ctn.Open();
             cmd = ctn.CreateCommand();
-            cmd.CommandText = "SELECT " + champs + " FROM " + table +"WHERE tag LIKE" +recherche;
+            cmd.CommandText = "SELECT " + champs + " FROM " + determineTable(table) +"WHERE tag LIKE %" +recherche+"%";
             lecteur = cmd.ExecuteReader();
             while (lecteur.Read())
             {
@@ -91,6 +92,26 @@ namespace projetTexcel
             ctn.Close();
             lecteur.Close();
             return liste2;
+        }
+        public string determineTable(int choix)
+        {
+            string valeur = "";
+            switch (choix)
+            {
+                case 1:
+                    valeur = "VuePlateforme";
+                    break;
+                case 2:
+                    valeur = "VueJeu";
+                    break;
+                case 3:
+                    valeur = "VueSystemeExploitation";
+                    break;
+                case 4:
+                    valeur = "VueEquipe";
+                    break;
+            }
+            return valeur;
         }
     }
 }

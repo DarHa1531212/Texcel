@@ -76,6 +76,7 @@ idTypeEmploi INT NOT NULL,
 PRIMARY KEY(idEmploye,idEquipe)
 );
 
+INSERT INTO EmployeEquipe(idEmploye,idEquipe,idTypeEmploi) VALUES(3,1,0)
 IF OBJECT_ID('dbo.Equipe') IS NOT NULL
 DROP TABLE dbo.Equipe;
 GO
@@ -86,6 +87,7 @@ nomEquipe VARCHAR(50) NOT NULL,
 PRIMARY KEY(idEquipe),
 idEmploye INT NOT NULL
 );
+INSERT INTO Equipe(nomEquipe,idEmploye) VALUES('equipeTest',1)
 
 
 
@@ -197,4 +199,12 @@ nomEmploi VARCHAR(50) NOT NULL,
 descriptionTypeEmploi VARCHAR(50) NOT NULL,
 PRIMARY KEY(idTypeEmploi)
 );
+INSERT INTO TypeEmploi(nomEmploi,descriptionTypeEmploi) VALUES ('testtype','desssssccccc')
 
+SELECT nomEquipe,nom,nomEmploi FROM VueEmployeEquipe
+JOIN VueEmploye
+ON VueEmployeEquipe.idEmploye = VueEmploye.idEmploye
+JOIN VueEquipe 
+ON VueEquipe.idEquipe = VueEmployeEquipe.idEquipe
+JOIN VueTypeEmploi
+ON VueEmployeEquipe.idTypeEmploi = VueTypeEmploi.idTypeEmploi
