@@ -43,9 +43,9 @@ namespace projetTexcel
         {
             Données1.ajouterPlateforme(plateforme);
         }
-        public void ajouterOS(string os)
+        public void ajouterOS(string os, string Edition, string version, int idEmploye)
         {
-            Données1.ajouterOS(os);
+            Données1.ajouterOS(os, Edition, version, idEmploye);
         }
 
         public int connexion(string id, string mdp)

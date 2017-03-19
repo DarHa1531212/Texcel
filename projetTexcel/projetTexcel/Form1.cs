@@ -14,7 +14,7 @@ namespace projetTexcel
     public partial class Form1 : Form
     {
 
-         
+        int idEmploye = -1;
         int niveauPermissionsCreationEMploye = 0;
         int niveauPermissions;
         Form frmCreerJeu = new Form();
@@ -357,7 +357,7 @@ namespace projetTexcel
 
         public void ajouterOS()
         {
-            frmAjoutOS.MdiParent = this;
+            /*frmAjoutOS.MdiParent = this;
             frmAjoutOS.Controls.Add(this.btnConfirmerAjoutOS);
             frmAjoutOS.Controls.Add(this.txtOSNom);
             frmAjoutOS.Controls.Add(this.label33);
@@ -367,207 +367,233 @@ namespace projetTexcel
             frmAjoutOS.TabIndex = 43;
             frmAjoutOS.TabStop = false;
             frmAjoutOS.Text = "ajouter un OS";
+            frmAjoutOS.Visible = true; */
+            frmAjoutOS.MdiParent = this;
+            frmAjoutOS.Controls.Add(this.txtAjouterOSVersion);
+            frmAjoutOS.Controls.Add(this.label27);
+            frmAjoutOS.Controls.Add(this.txtAjouterOSEdition);
+            frmAjoutOS.Controls.Add(this.label18);
+            frmAjoutOS.Controls.Add(this.btnConfirmerAjoutOS);
+            frmAjoutOS.Controls.Add(this.txtOSNom);
+            frmAjoutOS.Controls.Add(this.label33);
+            frmAjoutOS.Location = new System.Drawing.Point(698, 595);
+            frmAjoutOS.Size = new System.Drawing.Size(365, 180);
+            frmAjoutOS.TabIndex = 43;
+            frmAjoutOS.TabStop = false;
+            frmAjoutOS.Text = "ajouter un OS";
             frmAjoutOS.Visible = true;
-        }
 
-        public void creerTest()
+
+}
+
+        public bool ValidationAjouterOS()
         {
-
-            frmCreerTest.MdiParent = this;
-            frmCreerTest.Controls.Add(this.cmbEmployeAssossie);
-            frmCreerTest.Controls.Add(this.btnConfirmerCreerTest);
-            frmCreerTest.Controls.Add(this.label32);
-            frmCreerTest.Controls.Add(this.label31);
-            frmCreerTest.Controls.Add(this.combJeuAssocieCreerTest);
-            frmCreerTest.Controls.Add(this.label30);
-            frmCreerTest.Controls.Add(this.cmbOS);
-            frmCreerTest.Controls.Add(this.txtNomTest);
-            frmCreerTest.Controls.Add(this.label15);
-            frmCreerTest.Location = new System.Drawing.Point(32, 390);
-            frmCreerTest.Size = new System.Drawing.Size(327, 254);
-            frmCreerTest.TabIndex = 1;
-            frmCreerTest.TabStop = false;
-            frmCreerTest.Text = "créer un test";
-
-            frmCreerTest.Visible = true;
-        }
-
-        public void afficherConnexion()
-        {
-            frmConnexion.MdiParent = this;
-            frmConnexion.Controls.Add(this.btnConnexion);
-            frmConnexion.Controls.Add(this.txtConnexionMotDePasse);
-            frmConnexion.Controls.Add(this.txtConnexionIdentifiant);
-            frmConnexion.Controls.Add(this.label35);
-            frmConnexion.Controls.Add(this.label34);
-            frmConnexion.Size = new System.Drawing.Size(258, 221);
-            frmConnexion.TabIndex = 48;
-            frmConnexion.TabStop = false;
-            frmConnexion.Text = "Connexion";
-
-            frmConnexion.Visible = true;
-            frmConnexion.Location = new System.Drawing.Point(1079, 39);
-
-        }
-
-        public void Fermerform(Object form, FormClosingEventArgs e)
-        {
-            e.Cancel = true;
-            ((Form)form).Visible = false;
-        }
-
-        private void cONNEXIONToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            afficherConnexion();
-        }
-
-
-
-        private void btnConnexion_Click(object sender, EventArgs e)
-        {
-            string identifiant = "", mdp = "";
-            identifiant = txtConnexionIdentifiant.Text;
-            mdp = txtConnexionMotDePasse.Text;
-            int verif = traitements1.connexion(identifiant, mdp);
-
-
-            if (txtConnexionIdentifiant.Text == "")
-                MessageBox.Show("id vide. vuillez le remplire");
-            else if (txtConnexionMotDePasse.Text == "")
-                MessageBox.Show("mdp vide. vuillez le remplire");
-            else
-            
-            {
-                
-                frmConnexion.Visible = false;
-                atribuerDroits(verif);
-            }
-
-
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            afficherConnexion();
-
-        }
-
-        private void atribuerDroits(int niveau)
-        {
-            if (niveau == 2)
-                autorisatonsAdministrateur();
-            else if(niveau == 1)
-                autorisationsDirecteur();
-            else if (niveau == -1)
-            {
-                MessageBox.Show("identifiant ou mot de passe incorrecte");
-            }
-        }
-        private void autorisatonsAdministrateur()
-        {
-            //creer consulter sytèmes d'exploitation, plateforme, jeu, employé
-            ajouterUnOSToolStripMenuItem.Enabled = true;
-            ajouterUnePlateformeToolStripMenuItem.Enabled = true;
-            effetuerUneRechercheToolStripMenuItem.Enabled = true;
-            créerUnTestToolStripMenuItem.Enabled = true;
-            créerUnJeuToolStripMenuItem.Enabled = true;
-            modifierUnJeuToolStripMenuItem.Enabled = true;
-            gérerUnEmployéToolStripMenuItem.Enabled = true;
-
-        }
-        private void autorisationsDirecteur()
-        {
-            effetuerUneRechercheToolStripMenuItem.Enabled = true;
-            afficherDesInformationsToolStripMenuItem.Enabled = true;
-            creerEquipeToolStripMenuItem.Enabled = true;
-
-        }
-
-        private void afficherDesInformationsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            afficherBd();
-            afficherBd();
-
-
-        }
-
-        private void creerEquipeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            creerEquipe();
-            creerEquipe();
-
-
-        }
-
-        private void btnConfirmerCreationJeu_Click(object sender, EventArgs e)
-        {
-            if (validationCreerJeuNonVide())
-            {
-                //appel de la bd
-                traitements1.CreerJeu(txtNomCreerJeu.Text, txtCreerDev.Text, txtDescription.Text, txtConfigMin.Text, txtGenre.Text, txtClassification.Text, txtTheme.Text);
-            }
-            else
-             MessageBox.Show("un ou plusieurs champs sont vides. veuillez réessayer");
-            
-
-
-        }
-        private bool validationCreerJeuNonVide()
-        {
-            bool correct = true;
+            bool correct;
             correct = true;
-            if (txtNomCreerJeu.Text == "" || txtCreerDev.Text == "" || txtDescription.Text == "" || txtConfigMin.Text == "" || txtClassification.Text == "" || txtTheme.Text == "" || txtGenre.Text == "" )
+            if (txtOSNom.Text == "" || txtAjouterOSEdition.Text == "" || txtAjouterOSVersion.Text == "")
                 correct = false;
-          
-               
-                return correct;
-        }
-
-        private void btnConfirmerModifierJeu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnConfirmerCreerTest_Click(object sender, EventArgs e)
-        {
-
-            if (validationCreerTestNonVide())
-            {
-                //appel de la bd
-                MessageBox.Show("tout ok");
-
-            }
-            else
-                MessageBox.Show("un ou plusieurs champs sont vides. veuillez réessayer");
-
-        }
-
-        private bool validationCreerTestNonVide()
-        {
-           
-            bool correct = true;
-            correct = true;
-            if (txtNomTest.Text == "")
-                correct = false;
-            if (combJeuAssocieCreerTest.SelectedIndex == -1)
-                correct = false;
-            if (cmbOS.SelectedIndex == -1)
-                correct = false;
-            if (cmbEmployeAssossie.SelectedIndex == -1)
-                correct = false;
-
-
 
             return correct;
         }
 
-        private void chkNouvelEmploye_CheckedChanged(object sender, EventArgs e)
-        {
-            if (! chkNouvelEmploye.Checked)
-            {
-                /*afficher les employés dans le combobox*/
-                cmbSelectionEmploye.Visible = true;
+public void creerTest()
+{
+
+frmCreerTest.MdiParent = this;
+frmCreerTest.Controls.Add(this.cmbEmployeAssossie);
+frmCreerTest.Controls.Add(this.btnConfirmerCreerTest);
+frmCreerTest.Controls.Add(this.label32);
+frmCreerTest.Controls.Add(this.label31);
+frmCreerTest.Controls.Add(this.combJeuAssocieCreerTest);
+frmCreerTest.Controls.Add(this.label30);
+frmCreerTest.Controls.Add(this.cmbOS);
+frmCreerTest.Controls.Add(this.txtNomTest);
+frmCreerTest.Controls.Add(this.label15);
+frmCreerTest.Location = new System.Drawing.Point(32, 390);
+frmCreerTest.Size = new System.Drawing.Size(327, 254);
+frmCreerTest.TabIndex = 1;
+frmCreerTest.TabStop = false;
+frmCreerTest.Text = "créer un test";
+
+frmCreerTest.Visible = true;
+}
+
+public void afficherConnexion()
+{
+frmConnexion.MdiParent = this;
+frmConnexion.Controls.Add(this.btnConnexion);
+frmConnexion.Controls.Add(this.txtConnexionMotDePasse);
+frmConnexion.Controls.Add(this.txtConnexionIdentifiant);
+frmConnexion.Controls.Add(this.label35);
+frmConnexion.Controls.Add(this.label34);
+frmConnexion.Size = new System.Drawing.Size(258, 221);
+frmConnexion.TabIndex = 48;
+frmConnexion.TabStop = false;
+frmConnexion.Text = "Connexion";
+
+frmConnexion.Visible = true;
+frmConnexion.Location = new System.Drawing.Point(1079, 39);
+
+}
+
+public void Fermerform(Object form, FormClosingEventArgs e)
+{
+e.Cancel = true;
+((Form)form).Visible = false;
+}
+
+private void cONNEXIONToolStripMenuItem_Click(object sender, EventArgs e)
+{
+afficherConnexion();
+}
+
+
+
+private void btnConnexion_Click(object sender, EventArgs e)
+{
+string identifiant = "", mdp = "";
+identifiant = txtConnexionIdentifiant.Text;
+mdp = txtConnexionMotDePasse.Text;
+int verif = traitements1.connexion(identifiant, mdp);
+
+
+if (txtConnexionIdentifiant.Text == "")
+    MessageBox.Show("id vide. vuillez le remplire");
+else if (txtConnexionMotDePasse.Text == "")
+    MessageBox.Show("mdp vide. vuillez le remplire");
+else
+
+{
+
+    frmConnexion.Visible = false;
+    atribuerDroits(verif);
+}
+
+
+
+}
+
+private void Form1_Load(object sender, EventArgs e)
+{
+afficherConnexion();
+
+}
+
+private void atribuerDroits(int niveau)
+{
+if (niveau == 2)
+    autorisatonsAdministrateur();
+else if(niveau == 1)
+    autorisationsDirecteur();
+else if (niveau == -1)
+{
+    MessageBox.Show("identifiant ou mot de passe incorrecte");
+}
+}
+private void autorisatonsAdministrateur()
+{
+//creer consulter sytèmes d'exploitation, plateforme, jeu, employé
+ajouterUnOSToolStripMenuItem.Enabled = true;
+ajouterUnePlateformeToolStripMenuItem.Enabled = true;
+effetuerUneRechercheToolStripMenuItem.Enabled = true;
+créerUnTestToolStripMenuItem.Enabled = true;
+créerUnJeuToolStripMenuItem.Enabled = true;
+modifierUnJeuToolStripMenuItem.Enabled = true;
+gérerUnEmployéToolStripMenuItem.Enabled = true;
+
+}
+private void autorisationsDirecteur()
+{
+effetuerUneRechercheToolStripMenuItem.Enabled = true;
+afficherDesInformationsToolStripMenuItem.Enabled = true;
+creerEquipeToolStripMenuItem.Enabled = true;
+
+}
+
+private void afficherDesInformationsToolStripMenuItem_Click(object sender, EventArgs e)
+{
+afficherBd();
+afficherBd();
+
+
+}
+
+private void creerEquipeToolStripMenuItem_Click(object sender, EventArgs e)
+{
+creerEquipe();
+creerEquipe();
+
+
+}
+
+private void btnConfirmerCreationJeu_Click(object sender, EventArgs e)
+{
+if (validationCreerJeuNonVide())
+{
+    //appel de la bd
+    traitements1.CreerJeu(txtNomCreerJeu.Text, txtCreerDev.Text, txtDescription.Text, txtConfigMin.Text, txtGenre.Text, txtClassification.Text, txtTheme.Text);
+}
+else
+ MessageBox.Show("un ou plusieurs champs sont vides. veuillez réessayer");
+
+
+
+}
+private bool validationCreerJeuNonVide()
+{
+bool correct = true;
+correct = true;
+if (txtNomCreerJeu.Text == "" || txtCreerDev.Text == "" || txtDescription.Text == "" || txtConfigMin.Text == "" || txtClassification.Text == "" || txtTheme.Text == "" || txtGenre.Text == "" )
+    correct = false;
+
+
+    return correct;
+}
+
+private void btnConfirmerModifierJeu_Click(object sender, EventArgs e)
+{
+
+}
+
+private void btnConfirmerCreerTest_Click(object sender, EventArgs e)
+{
+
+if (validationCreerTestNonVide())
+{
+    //appel de la bd
+    MessageBox.Show("tout ok");
+
+}
+else
+    MessageBox.Show("un ou plusieurs champs sont vides. veuillez réessayer");
+
+}
+
+private bool validationCreerTestNonVide()
+{
+
+bool correct = true;
+correct = true;
+if (txtNomTest.Text == "")
+    correct = false;
+if (combJeuAssocieCreerTest.SelectedIndex == -1)
+    correct = false;
+if (cmbOS.SelectedIndex == -1)
+    correct = false;
+if (cmbEmployeAssossie.SelectedIndex == -1)
+    correct = false;
+
+
+
+return correct;
+}
+
+private void chkNouvelEmploye_CheckedChanged(object sender, EventArgs e)
+{
+if (! chkNouvelEmploye.Checked)
+{
+    /*afficher les employés dans le combobox*/
+            cmbSelectionEmploye.Visible = true;
                 lblSelecctionnerEmploye.Visible = true;
             }
                 
@@ -663,10 +689,12 @@ namespace projetTexcel
 
         private void btnConfirmerAjoutOS_Click(object sender, EventArgs e)
         {
-            if (txtOSNom.Text == "")
-                MessageBox.Show("Vous devez spécifier un nom de plateforme avant de pouvior l'ajouter");
+            if (ValidationAjouterOS())
+                traitements1.ajouterOS(txtOSNom.Text, txtAjouterOSEdition.Text, txtAjouterOSVersion.Text, idEmploye);
             else
-                traitements1.ajouterOS(txtOSNom.Text);
+                MessageBox.Show("Vous devez spécifier un nom de plateforme avant de pouvior l'ajouter");
+
+           
         }
 
         //private void txtGenre_Click(object sender, EventArgs e)
@@ -677,5 +705,7 @@ namespace projetTexcel
         {
             txtGenre.Text = valeur.ToString();
         }
+
+
     }
 }

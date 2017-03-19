@@ -108,6 +108,10 @@
             this.txtGenre = new System.Windows.Forms.TextBox();
             this.btnConfirmerCreationJeu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtAjouterOSVersion = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtAjouterOSEdition = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.btnConfirmerAjoutOS = new System.Windows.Forms.Button();
             this.txtOSNom = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
@@ -961,20 +965,56 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtAjouterOSVersion);
+            this.groupBox1.Controls.Add(this.label27);
+            this.groupBox1.Controls.Add(this.txtAjouterOSEdition);
+            this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.btnConfirmerAjoutOS);
             this.groupBox1.Controls.Add(this.txtOSNom);
             this.groupBox1.Controls.Add(this.label33);
             this.groupBox1.Location = new System.Drawing.Point(698, 595);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(365, 103);
+            this.groupBox1.Size = new System.Drawing.Size(365, 180);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ajouter un OS";
             this.groupBox1.Visible = false;
             // 
+            // txtAjouterOSVersion
+            // 
+            this.txtAjouterOSVersion.Location = new System.Drawing.Point(165, 79);
+            this.txtAjouterOSVersion.Name = "txtAjouterOSVersion";
+            this.txtAjouterOSVersion.Size = new System.Drawing.Size(142, 22);
+            this.txtAjouterOSVersion.TabIndex = 46;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(10, 82);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(56, 17);
+            this.label27.TabIndex = 45;
+            this.label27.Text = "Version";
+            // 
+            // txtAjouterOSEdition
+            // 
+            this.txtAjouterOSEdition.Location = new System.Drawing.Point(164, 55);
+            this.txtAjouterOSEdition.Name = "txtAjouterOSEdition";
+            this.txtAjouterOSEdition.Size = new System.Drawing.Size(142, 22);
+            this.txtAjouterOSEdition.TabIndex = 44;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(9, 58);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(51, 17);
+            this.label18.TabIndex = 43;
+            this.label18.Text = "Édition";
+            // 
             // btnConfirmerAjoutOS
             // 
-            this.btnConfirmerAjoutOS.Location = new System.Drawing.Point(10, 61);
+            this.btnConfirmerAjoutOS.Location = new System.Drawing.Point(12, 131);
             this.btnConfirmerAjoutOS.Name = "btnConfirmerAjoutOS";
             this.btnConfirmerAjoutOS.Size = new System.Drawing.Size(81, 23);
             this.btnConfirmerAjoutOS.TabIndex = 42;
@@ -994,9 +1034,9 @@
             this.label33.AutoSize = true;
             this.label33.Location = new System.Drawing.Point(7, 31);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(93, 17);
+            this.label33.Size = new System.Drawing.Size(85, 17);
             this.label33.TabIndex = 0;
-            this.label33.Text = "nopm de l\'OS";
+            this.label33.Text = "nom de l\'OS";
             // 
             // menuStrip1
             // 
@@ -1067,7 +1107,6 @@
             // 
             // ajouterUnOSToolStripMenuItem
             // 
-            this.ajouterUnOSToolStripMenuItem.Enabled = false;
             this.ajouterUnOSToolStripMenuItem.Name = "ajouterUnOSToolStripMenuItem";
             this.ajouterUnOSToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
             this.ajouterUnOSToolStripMenuItem.Text = "ajouter un OS";
@@ -1459,6 +1498,10 @@
         private System.Windows.Forms.ToolStripMenuItem creerEquipeToolStripMenuItem;
         private System.Windows.Forms.CheckBox chkNouvelEmploye;
         private System.Windows.Forms.TextBox txtGenre;
+        private System.Windows.Forms.TextBox txtAjouterOSEdition;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtAjouterOSVersion;
+        private System.Windows.Forms.Label label27;
     }
 }
 
