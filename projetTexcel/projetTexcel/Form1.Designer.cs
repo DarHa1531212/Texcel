@@ -39,7 +39,7 @@
             this.txtNomTest = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.grbModiffierJeu = new System.Windows.Forms.GroupBox();
-            this.label45 = new System.Windows.Forms.Label();
+            this.label45i = new System.Windows.Forms.Label();
             this.cmbModifierJeuAfficherJeux = new System.Windows.Forms.ComboBox();
             this.cmbModifierGenre = new System.Windows.Forms.ComboBox();
             this.btnConfirmerModifierJeu = new System.Windows.Forms.Button();
@@ -155,11 +155,8 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-=======
             this.label45 = new System.Windows.Forms.Label();
             this.txtSysteme = new System.Windows.Forms.TextBox();
->>>>>>> 9f5e7712b96e3e9688f15d009b1ae0d69562f97e
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -292,7 +289,7 @@
             // 
             // grbModiffierJeu
             // 
-            this.grbModiffierJeu.Controls.Add(this.label45);
+            this.grbModiffierJeu.Controls.Add(this.label45i);
             this.grbModiffierJeu.Controls.Add(this.cmbModifierJeuAfficherJeux);
             this.grbModiffierJeu.Controls.Add(this.cmbModifierGenre);
             this.grbModiffierJeu.Controls.Add(this.btnConfirmerModifierJeu);
@@ -321,12 +318,12 @@
             // 
             // label45
             // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(12, 23);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(125, 17);
-            this.label45.TabIndex = 29;
-            this.label45.Text = "Sélectionner le jeu";
+            this.label45i.AutoSize = true;
+            this.label45i.Location = new System.Drawing.Point(12, 23);
+            this.label45i.Name = "label45i";
+            this.label45i.Size = new System.Drawing.Size(125, 17);
+            this.label45i.TabIndex = 29;
+            this.label45i.Text = "Sélectionner le jeu";
             // 
             // cmbModifierJeuAfficherJeux
             // 
@@ -1420,8 +1417,6 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "nom d\'équipe";
             // 
-<<<<<<< HEAD
-=======
             // label45
             // 
             this.label45.AutoSize = true;
@@ -1438,7 +1433,6 @@
             this.txtSysteme.Size = new System.Drawing.Size(142, 22);
             this.txtSysteme.TabIndex = 48;
             // 
->>>>>>> 9f5e7712b96e3e9688f15d009b1ae0d69562f97e
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1614,13 +1608,10 @@
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox txtConfiguration;
         private System.Windows.Forms.Label label43;
-<<<<<<< HEAD
-        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label45i;
         private System.Windows.Forms.ComboBox cmbModifierJeuAfficherJeux;
-=======
         private System.Windows.Forms.TextBox txtSysteme;
         private System.Windows.Forms.Label label45;
->>>>>>> 9f5e7712b96e3e9688f15d009b1ae0d69562f97e
     }
 }
 

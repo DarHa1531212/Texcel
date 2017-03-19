@@ -16,13 +16,12 @@ namespace projetTexcel
         public dbProvider()
         {
             ctn = new SqlConnection();
-<<<<<<< HEAD
-            ctn = new SqlConnection("Data Source = INFO-324-1A-124\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
+
+         //   ctn = new SqlConnection("Data Source = INFO-324-1A-124\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
 // ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-=======
             ctn = new SqlConnection("Data Source = INFO-324-1A-123\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
            // ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
->>>>>>> 9f5e7712b96e3e9688f15d009b1ae0d69562f97e
+
 
         }
         public List<List<object>>[] contenBD()
@@ -79,20 +78,6 @@ namespace projetTexcel
         {
 
         }
-<<<<<<< HEAD
-
-        public void ajouterOS(string os, string Edition, string version, int idEmploye)
-        {
-            ctn.Open();
-            cmd = ctn.CreateCommand();
-            cmd.CommandText = "insert into VueSystemeExploitation(nom,[edition], [versionSysteme],[tag],[idEmploye]) Values( '" + os + "','" + version + "','" + Edition + "'," + idEmploye +");" ;
-            cmd.ExecuteReader();
-            ctn.Close();
-
-        }
-=======
-        
->>>>>>> 9f5e7712b96e3e9688f15d009b1ae0d69562f97e
         public List<List<object>> VueEquipe()
         {
             List<object> liste = new List<object>();
