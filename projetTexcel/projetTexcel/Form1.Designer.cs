@@ -147,8 +147,15 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.lblCode = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
+=======
+            this.txtConfiguration = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtTypePlateforme = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+>>>>>>> dfcf0a2a19d751ae9eeda6e6f6dbec3dbca8c1c9
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -781,12 +788,16 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.txtTypePlateforme);
+            this.groupBox6.Controls.Add(this.label44);
+            this.groupBox6.Controls.Add(this.txtConfiguration);
+            this.groupBox6.Controls.Add(this.label43);
             this.groupBox6.Controls.Add(this.btnConfirmerAjoutPlateforme);
             this.groupBox6.Controls.Add(this.txtPlateforme);
             this.groupBox6.Controls.Add(this.label29);
-            this.groupBox6.Location = new System.Drawing.Point(698, 486);
+            this.groupBox6.Location = new System.Drawing.Point(24, 623);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(365, 103);
+            this.groupBox6.Size = new System.Drawing.Size(365, 166);
             this.groupBox6.TabIndex = 21;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "ajouter une plateforme";
@@ -794,7 +805,7 @@
             // 
             // btnConfirmerAjoutPlateforme
             // 
-            this.btnConfirmerAjoutPlateforme.Location = new System.Drawing.Point(10, 61);
+            this.btnConfirmerAjoutPlateforme.Location = new System.Drawing.Point(7, 105);
             this.btnConfirmerAjoutPlateforme.Name = "btnConfirmerAjoutPlateforme";
             this.btnConfirmerAjoutPlateforme.Size = new System.Drawing.Size(81, 23);
             this.btnConfirmerAjoutPlateforme.TabIndex = 42;
@@ -976,7 +987,7 @@
             this.groupBox1.Controls.Add(this.btnConfirmerAjoutOS);
             this.groupBox1.Controls.Add(this.txtOSNom);
             this.groupBox1.Controls.Add(this.label33);
-            this.groupBox1.Location = new System.Drawing.Point(698, 595);
+            this.groupBox1.Location = new System.Drawing.Point(698, 479);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(365, 180);
             this.groupBox1.TabIndex = 43;
@@ -1095,7 +1106,6 @@
             // 
             // ajouterUnePlateformeToolStripMenuItem
             // 
-            this.ajouterUnePlateformeToolStripMenuItem.Enabled = false;
             this.ajouterUnePlateformeToolStripMenuItem.Name = "ajouterUnePlateformeToolStripMenuItem";
             this.ajouterUnePlateformeToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
             this.ajouterUnePlateformeToolStripMenuItem.Text = "ajouter une plateforme";
@@ -1337,6 +1347,7 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "nom d\'équipe";
             // 
+<<<<<<< HEAD
             // lblCode
             // 
             this.lblCode.AutoSize = true;
@@ -1352,6 +1363,39 @@
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(142, 22);
             this.txtCode.TabIndex = 48;
+=======
+            // txtConfiguration
+            // 
+            this.txtConfiguration.Location = new System.Drawing.Point(161, 55);
+            this.txtConfiguration.Name = "txtConfiguration";
+            this.txtConfiguration.Size = new System.Drawing.Size(142, 22);
+            this.txtConfiguration.TabIndex = 44;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(6, 58);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(92, 17);
+            this.label43.TabIndex = 43;
+            this.label43.Text = "Configuration";
+            // 
+            // txtTypePlateforme
+            // 
+            this.txtTypePlateforme.Location = new System.Drawing.Point(161, 82);
+            this.txtTypePlateforme.Name = "txtTypePlateforme";
+            this.txtTypePlateforme.Size = new System.Drawing.Size(142, 22);
+            this.txtTypePlateforme.TabIndex = 46;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(6, 85);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(141, 17);
+            this.label44.TabIndex = 45;
+            this.label44.Text = "type de la plateforme";
+>>>>>>> dfcf0a2a19d751ae9eeda6e6f6dbec3dbca8c1c9
             // 
             // Form1
             // 
@@ -1522,8 +1566,15 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtAjouterOSVersion;
         private System.Windows.Forms.Label label27;
+<<<<<<< HEAD
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label lblCode;
+=======
+        private System.Windows.Forms.TextBox txtTypePlateforme;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox txtConfiguration;
+        private System.Windows.Forms.Label label43;
+>>>>>>> dfcf0a2a19d751ae9eeda6e6f6dbec3dbca8c1c9
     }
 }
 

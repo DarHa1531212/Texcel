@@ -39,9 +39,9 @@ namespace projetTexcel
         {
 
         }
-        public void ajouterPlateforme(string plateforme)
+        public void ajouterPlateforme(string plateforme, string configuration, string typePlateforme)
         {
-            Données1.ajouterPlateforme(plateforme);
+            Données1.ajouterPlateforme(plateforme,  configuration,  typePlateforme);
         }
         public void ajouterOS(string os, string Edition, string version, string code)
         {

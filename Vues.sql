@@ -13,11 +13,7 @@ GO
 	FROM Employe
 	GO
 	use Texcel_Hans_MA
-	insert into VueEmploye(nom,prenom,DDN,adresse,telephone,posteTelephonique,matricule,identifiant,motDePasse,
-typeEmploi) VALUES('nom12','prenom','29-01-2017','3505','418','444','321312','identifiant2','mot',2)
 
-SELECT * FROM Employe
-	SELECT * from VueJeu
 -- vue pour la table os
 GO
 
@@ -147,7 +143,3 @@ CREATE VIEW VueTypeEmploi AS
 SELECT idTypeEmploi,nomEmploi,descriptionTypeEmploi,CONCAT(idTypeEmploi,nomEmploi,descriptionTypeEmploi) AS 'tag' FROM TypeEmploi
 
 
-
-INSERT INTO VuePlateforme(nom,configuration,typePlateforme,idEmploye,idSystemeExploitation) VALUES('plateforme3','','',0,0)
-INSERT INTO VueSystemeExploitation(nom,code,edition,versionSysteme,idEmploye) VALUES('os','','','',0)
-SELECT  * FROM VueEmploye WHERE tag like '%identifiant%'
