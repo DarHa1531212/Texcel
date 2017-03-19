@@ -123,8 +123,9 @@ namespace projetTexcel
            frmAfficherBD.Controls.Add(this.label39);
            frmAfficherBD.Controls.Add(this.label38);
            frmAfficherBD.Controls.Add(this.label37);
-           frmAfficherBD.Location = new System.Drawing.Point(1094, 178);
-           frmAfficherBD.Size = new System.Drawing.Size(370, 125);
+            frmAfficherBD.Location = new System.Drawing.Point(1094, 178);
+         //   frmAfficherBD.StartPosition = (1094, 178);
+            frmAfficherBD.Size = new System.Drawing.Size(370, 125);
            frmAfficherBD.TabIndex = 50;
            frmAfficherBD.TabStop = false;
            frmAfficherBD.Text = "Afficher le contenu de la BD";
@@ -133,6 +134,7 @@ namespace projetTexcel
             tableau = traitements1.afficherBD();
             afficherLesOS(tableau);
             afficherLesPlateformes(tableau);
+            afficherLesJeux(tableau);
             //MessageBox.Show("" + tableau[0])
 
             //  
@@ -146,6 +148,7 @@ namespace projetTexcel
 
                 if (!dejaRun)
             {
+                cmbAfficherOS.Items.Clear();
                 foreach (var item in tableau[0])
                 {
                     foreach (var item2 in item)
@@ -164,11 +167,34 @@ namespace projetTexcel
 
             if (!dejaRun)
             {
+                cmbAfficherPlateformes.Items.Clear();
+
                 foreach (var item in tableau[1])
                 {
                     foreach (var item2 in item)
                     {
                         cmbAfficherPlateformes.Items.Add(item2);
+                    }
+                }
+                dejaRun = true;
+            }
+
+        }
+
+        private void afficherLesJeux (List<List<object>>[] tableau)
+        {
+            bool dejaRun;
+            dejaRun = false;
+
+            if (!dejaRun)
+            {
+                cmbAfficherJeux.Items.Clear();
+
+                foreach (var item in tableau[2])
+                {
+                    foreach (var item2 in item)
+                    {
+                        cmbAfficherJeux.Items.Add(item2);
                     }
                 }
                 dejaRun = true;
@@ -189,7 +215,7 @@ namespace projetTexcel
            frmCreerEquie.Controls.Add(this.label41);
            frmCreerEquie.Controls.Add(this.label40);
            frmCreerEquie.Location = new System.Drawing.Point(1094, 309);
-           frmCreerEquie.Size = new System.Drawing.Size(370, 203);
+           frmCreerEquie.Size = new System.Drawing.Size(400, 253);
            frmCreerEquie.TabIndex = 3;
            frmCreerEquie.TabStop = false;
            frmCreerEquie.Text = "Créer une équipe";
@@ -211,7 +237,7 @@ namespace projetTexcel
             frmCreerJeu.Controls.Add(this.txtConfigMin);
             frmCreerJeu.Controls.Add(this.txtDescription);
             frmCreerJeu.Controls.Add(this.txtCreerDev);
-            frmCreerJeu.Controls.Add(this.txtNomEmpl);
+            frmCreerJeu.Controls.Add(this.txtNomCreerJeu);
             frmCreerJeu.Controls.Add(this.label5);
             frmCreerJeu.Controls.Add(this.label4);
             frmCreerJeu.Controls.Add(this.label3);
@@ -220,7 +246,7 @@ namespace projetTexcel
             frmCreerJeu.Controls.Add(this.combGenre);
             frmCreerJeu.Location = new System.Drawing.Point(12, 12);
             frmCreerJeu.Name = "frmCreerJeu";
-            frmCreerJeu.Size = new System.Drawing.Size(327, 286);
+            frmCreerJeu.Size = new System.Drawing.Size(327, 293);
             frmCreerJeu.TabIndex = 0;
             frmCreerJeu.TabStop = false;
             frmCreerJeu.Text = "créer un jeu";
@@ -284,7 +310,7 @@ namespace projetTexcel
             frmGererEmployes.Controls.Add(this.lblSelecctionnerEmploye);
             frmGererEmployes.Controls.Add(this.cmbSelectionEmploye);
             frmGererEmployes.Location = new System.Drawing.Point(698, 12);
-            frmGererEmployes.Size = new System.Drawing.Size(375, 395);
+            frmGererEmployes.Size = new System.Drawing.Size(375, 425);
             frmGererEmployes.TabIndex = 20;
             frmGererEmployes.TabStop = false;
             frmGererEmployes.Text = "Gérer des employés";
@@ -462,6 +488,8 @@ namespace projetTexcel
         private void afficherDesInformationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             afficherBd();
+            afficherBd();
+
 
         }
 
@@ -478,8 +506,7 @@ namespace projetTexcel
             if (validationCreerJeuNonVide())
             {
                 //appel de la bd
-                MessageBox.Show("tout ok");
-
+                traitements1.CreerJeu(txtNomCreerJeu.Text, txtCreerDev.Text, txtDescription.Text, txtConfigMin.Text, combGenre.Text, txtClassification.Text, txtTheme.Text, cmbEmployeCreationJeu.Text);
             }
             else
              MessageBox.Show("un ou plusieurs champs sont vides. veuillez réessayer");
@@ -491,22 +518,11 @@ namespace projetTexcel
         {
             bool correct = true;
             correct = true;
-            if (txtNomEmpl.Text == "")
+            if (txtNomCreerJeu.Text == "" || txtCreerDev.Text == "" || txtDescription.Text == "" || txtConfigMin.Text == "" || txtClassification.Text == "" || txtTheme.Text == "" || combGenre.SelectedIndex == -1 || cmbSelectionEmploye.SelectedIndex== -1)
                 correct = false;
-            if (txtCreerDev.Text == "")
-                correct = false;
-            if (txtDescription.Text == "")
-                correct = false;
-            if (txtConfigMin.Text == "")
-                correct = false;
-            if (txtClassification.Text == "")
-                correct = false;
-            if (txtTheme.Text == "")
-                correct = false;
-            if (combGenre.SelectedIndex == -1)
-                correct = false;
-
-            return correct;
+          
+               
+                return correct;
         }
 
         private void btnConfirmerModifierJeu_Click(object sender, EventArgs e)

@@ -9,7 +9,7 @@ namespace projetTexcel
     class CTraitements
     {
         dbProvider Données1 = new dbProvider();
-        public void CreerJeu(string Nom, string dev, string desc, string configMini, int codeGenre, int classification, int Employe)
+        public void CreerJeu(string Nom, string dev, string desc, string configMini, string codeGenre, string classification, string theme, string Employe)
         {
 
         }
@@ -37,9 +37,12 @@ namespace projetTexcel
 
         }
         public void ajouterPlateforme(string plateforme)
-        { }
+        {
+            Données1.ajouterPlateforme(plateforme);
+        }
         public void ajouterOS(string os)
         {
+            Données1.ajouterOS(os);
         }
 
         public int connexion(string id, string mdp)
