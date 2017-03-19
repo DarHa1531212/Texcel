@@ -243,7 +243,7 @@ namespace projetTexcel
             frmCreerJeu.Controls.Add(this.label3);
             frmCreerJeu.Controls.Add(this.label2);
             frmCreerJeu.Controls.Add(this.label1);
-            frmCreerJeu.Controls.Add(this.combGenre);
+            frmCreerJeu.Controls.Add(this.txtGenre);
             frmCreerJeu.Location = new System.Drawing.Point(12, 12);
             frmCreerJeu.Name = "frmCreerJeu";
             frmCreerJeu.Size = new System.Drawing.Size(327, 293);
@@ -431,22 +431,17 @@ namespace projetTexcel
             int verif = traitements1.connexion(identifiant, mdp);
 
 
-            //if (txtConnexionIdentifiant.Text == "")
-            //    MessageBox.Show("id vide. vuillez le remplire");
-            //else if (txtConnexionMotDePasse.Text == "")
-            //    MessageBox.Show("mdp vide. vuillez le remplire");
-            //else
-
-            //    if (traitements1.connexion(txtConnexionIdentifiant.Text, txtConnexionMotDePasse.Text) == -1)
-            //{
-            //    MessageBox.Show("login failed");
-            //}
-            //else
-            //{ 
-            //    niveauPermissions = traitements1.connexion(txtConnexionIdentifiant.Text, txtConnexionMotDePasse.Text);
-            //    frmConnexion.Visible = false;
-            //    atribuerDroits();
-            //}
+            if (txtConnexionIdentifiant.Text == "")
+                MessageBox.Show("id vide. vuillez le remplire");
+            else if (txtConnexionMotDePasse.Text == "")
+                MessageBox.Show("mdp vide. vuillez le remplire");
+            else
+            
+            {
+                
+                frmConnexion.Visible = false;
+                atribuerDroits(verif);
+            }
 
 
 
@@ -458,12 +453,16 @@ namespace projetTexcel
 
         }
 
-        private void atribuerDroits()
+        private void atribuerDroits(int niveau)
         {
-            if (niveauPermissions == 2)
+            if (niveau == 2)
                 autorisatonsAdministrateur();
-            else
+            else if(niveau == 1)
                 autorisationsDirecteur();
+            else if (niveau == -1)
+            {
+                MessageBox.Show("identifiant ou mot de passe incorrecte");
+            }
         }
         private void autorisatonsAdministrateur()
         {
@@ -506,7 +505,7 @@ namespace projetTexcel
             if (validationCreerJeuNonVide())
             {
                 //appel de la bd
-                traitements1.CreerJeu(txtNomCreerJeu.Text, txtCreerDev.Text, txtDescription.Text, txtConfigMin.Text, combGenre.Text, txtClassification.Text, txtTheme.Text, cmbEmployeCreationJeu.Text);
+                traitements1.CreerJeu(txtNomCreerJeu.Text, txtCreerDev.Text, txtDescription.Text, txtConfigMin.Text, txtGenre.Text, txtClassification.Text, txtTheme.Text, cmbEmployeCreationJeu.Text);
             }
             else
              MessageBox.Show("un ou plusieurs champs sont vides. veuillez réessayer");
@@ -518,7 +517,7 @@ namespace projetTexcel
         {
             bool correct = true;
             correct = true;
-            if (txtNomCreerJeu.Text == "" || txtCreerDev.Text == "" || txtDescription.Text == "" || txtConfigMin.Text == "" || txtClassification.Text == "" || txtTheme.Text == "" || combGenre.SelectedIndex == -1 || cmbSelectionEmploye.SelectedIndex== -1)
+            if (txtNomCreerJeu.Text == "" || txtCreerDev.Text == "" || txtDescription.Text == "" || txtConfigMin.Text == "" || txtClassification.Text == "" || txtTheme.Text == "" || txtGenre.Text == "-1" || cmbSelectionEmploye.SelectedIndex== -1)
                 correct = false;
           
                
@@ -668,6 +667,15 @@ namespace projetTexcel
                 MessageBox.Show("Vous devez spécifier un nom de plateforme avant de pouvior l'ajouter");
             else
                 traitements1.ajouterOS(txtOSNom.Text);
+        }
+
+        private void txtGenre_Click(object sender, EventArgs e)
+        {
+            traitements1.listviewGenre();
+        }
+        public void changerGenre(int valeur)
+        {
+            txtGenre.Text = valeur.ToString();
         }
     }
 }

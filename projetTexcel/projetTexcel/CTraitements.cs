@@ -9,6 +9,8 @@ namespace projetTexcel
     class CTraitements
     {
         dbProvider Données1 = new dbProvider();
+        ControleurRecherche cRecherche = new ControleurRecherche();
+        
         public void CreerJeu(string Nom, string dev, string desc, string configMini, string codeGenre, string classification, string theme, string Employe)
         {
 
@@ -60,20 +62,26 @@ namespace projetTexcel
                     i++;
                 }
             }
-            return 0;
-            //if (id == "patate" && mdp == "123")
-            //    return 1;
-            //else if (id == "potato" && mdp == "123")
-            //    return 2;
-
-            //else
-            //    return -1;
+            if (mdp == tableau[0])
+            {
+                return Convert.ToInt32(tableau[1]);
+            }
+            return -1;
         }
 
         public List<List<object>>[] afficherBD()
         {
             
             return Données1.contenBD();
+        }
+        public void listviewGenre()
+        {
+            cRecherche.rechercheGenre();
+        }
+        public void listRetour(int valeur)
+        {
+            //form.changerGenre(valeur);
+            
         }
 
 

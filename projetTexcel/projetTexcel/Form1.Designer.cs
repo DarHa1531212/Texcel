@@ -105,7 +105,9 @@
             this.txtClassification = new System.Windows.Forms.TextBox();
             this.txtTheme = new System.Windows.Forms.TextBox();
             this.grbCreerJeu = new System.Windows.Forms.GroupBox();
-            this.combGenre = new System.Windows.Forms.ComboBox();
+            this.txtGenre = new System.Windows.Forms.TextBox();
+            this.cmbEmployeCreationJeu = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.btnConfirmerCreationJeu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnConfirmerAjoutOS = new System.Windows.Forms.Button();
@@ -143,8 +145,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.cmbEmployeCreationJeu = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -921,9 +921,9 @@
             // 
             // grbCreerJeu
             // 
+            this.grbCreerJeu.Controls.Add(this.txtGenre);
             this.grbCreerJeu.Controls.Add(this.cmbEmployeCreationJeu);
             this.grbCreerJeu.Controls.Add(this.label27);
-            this.grbCreerJeu.Controls.Add(this.combGenre);
             this.grbCreerJeu.Controls.Add(this.btnConfirmerCreationJeu);
             this.grbCreerJeu.Controls.Add(this.txtTheme);
             this.grbCreerJeu.Controls.Add(this.txtClassification);
@@ -946,18 +946,35 @@
             this.grbCreerJeu.Text = "créer un jeu";
             this.grbCreerJeu.Visible = false;
             // 
-            // combGenre
+            // txtGenre
             // 
-            this.combGenre.FormattingEnabled = true;
-            this.combGenre.Items.AddRange(new object[] {
+            this.txtGenre.Location = new System.Drawing.Point(187, 134);
+            this.txtGenre.Name = "txtGenre";
+            this.txtGenre.Size = new System.Drawing.Size(100, 22);
+            this.txtGenre.TabIndex = 30;
+            this.txtGenre.Click += new System.EventHandler(this.txtGenre_Click);
+            // 
+            // cmbEmployeCreationJeu
+            // 
+            this.cmbEmployeCreationJeu.FormattingEnabled = true;
+            this.cmbEmployeCreationJeu.Items.AddRange(new object[] {
             "Tous les chapms",
             "employés",
             "jeux",
             "employés"});
-            this.combGenre.Location = new System.Drawing.Point(185, 131);
-            this.combGenre.Name = "combGenre";
-            this.combGenre.Size = new System.Drawing.Size(121, 24);
-            this.combGenre.TabIndex = 26;
+            this.cmbEmployeCreationJeu.Location = new System.Drawing.Point(185, 215);
+            this.cmbEmployeCreationJeu.Name = "cmbEmployeCreationJeu";
+            this.cmbEmployeCreationJeu.Size = new System.Drawing.Size(121, 24);
+            this.cmbEmployeCreationJeu.TabIndex = 29;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(3, 215);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(152, 17);
+            this.label27.TabIndex = 28;
+            this.label27.Text = "Sélectionnez l\'employé";
             // 
             // btnConfirmerCreationJeu
             // 
@@ -1304,28 +1321,6 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "nom d\'équipe";
             // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(3, 215);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(152, 17);
-            this.label27.TabIndex = 28;
-            this.label27.Text = "Sélectionnez l\'employé";
-            // 
-            // cmbEmployeCreationJeu
-            // 
-            this.cmbEmployeCreationJeu.FormattingEnabled = true;
-            this.cmbEmployeCreationJeu.Items.AddRange(new object[] {
-            "Tous les chapms",
-            "employés",
-            "jeux",
-            "employés"});
-            this.cmbEmployeCreationJeu.Location = new System.Drawing.Point(185, 215);
-            this.cmbEmployeCreationJeu.Name = "cmbEmployeCreationJeu";
-            this.cmbEmployeCreationJeu.Size = new System.Drawing.Size(121, 24);
-            this.cmbEmployeCreationJeu.TabIndex = 29;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1465,7 +1460,6 @@
         private System.Windows.Forms.TextBox txtConnexionIdentifiant;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox combGenre;
         private System.Windows.Forms.ComboBox cmbModifierGenre;
         private System.Windows.Forms.TextBox txtGererEmployeAdresse;
         private System.Windows.Forms.Label label36;
@@ -1493,6 +1487,7 @@
         private System.Windows.Forms.CheckBox chkNouvelEmploye;
         private System.Windows.Forms.ComboBox cmbEmployeCreationJeu;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txtGenre;
     }
 }
 
