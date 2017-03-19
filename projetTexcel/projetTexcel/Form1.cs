@@ -399,22 +399,28 @@ namespace projetTexcel
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
-            if (txtConnexionIdentifiant.Text == "")
-                MessageBox.Show("id vide. vuillez le remplire");
-            else if (txtConnexionMotDePasse.Text == "")
-                MessageBox.Show("mdp vide. vuillez le remplire");
-            else
+            string identifiant = "", mdp = "";
+            identifiant = txtConnexionIdentifiant.Text;
+            mdp = txtConnexionMotDePasse.Text;
+            int verif = traitements1.connexion(identifiant, mdp);
 
-                if (traitements1.connexion(txtConnexionIdentifiant.Text, txtConnexionMotDePasse.Text) == -1)
-            {
-                MessageBox.Show("login failed");
-            }
-            else
-            { 
-                niveauPermissions = traitements1.connexion(txtConnexionIdentifiant.Text, txtConnexionMotDePasse.Text);
-                frmConnexion.Visible = false;
-                atribuerDroits();
-            }
+
+            //if (txtConnexionIdentifiant.Text == "")
+            //    MessageBox.Show("id vide. vuillez le remplire");
+            //else if (txtConnexionMotDePasse.Text == "")
+            //    MessageBox.Show("mdp vide. vuillez le remplire");
+            //else
+
+            //    if (traitements1.connexion(txtConnexionIdentifiant.Text, txtConnexionMotDePasse.Text) == -1)
+            //{
+            //    MessageBox.Show("login failed");
+            //}
+            //else
+            //{ 
+            //    niveauPermissions = traitements1.connexion(txtConnexionIdentifiant.Text, txtConnexionMotDePasse.Text);
+            //    frmConnexion.Visible = false;
+            //    atribuerDroits();
+            //}
 
 
 

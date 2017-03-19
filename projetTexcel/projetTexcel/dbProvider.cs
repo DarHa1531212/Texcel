@@ -110,7 +110,7 @@ namespace projetTexcel
             int i = 0;
             ctn.Open();
             cmd = ctn.CreateCommand();
-            cmd.CommandText = "SELECT " + champs + " FROM " + determineTable(table) +"WHERE tag LIKE %" +recherche+"%";
+            cmd.CommandText = "SELECT " + champs + " FROM " + determineTable(table) +" WHERE tag LIKE '%" +recherche+"%'";
             lecteur = cmd.ExecuteReader();
             while (lecteur.Read())
             {
@@ -151,6 +151,8 @@ namespace projetTexcel
                     break;
                 case 4:
                     valeur = "VueEquipe";
+                    break;
+                case 5:valeur = "VueEmploye";
                     break;
             }
             return valeur;
