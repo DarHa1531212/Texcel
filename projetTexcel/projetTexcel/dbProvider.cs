@@ -151,30 +151,24 @@ namespace projetTexcel
             ctn.Open();
             cmd = ctn.CreateCommand();
             cmd.CommandText = "INSERT INTO " + determineTable(table) + " ("+champs+")  VALUES("+ajout+")";
-            lecteur = cmd.ExecuteReader();
-            //while (lecteur.Read())
-            //{
-            //    try
-            //    {
-            //        while (true)
-            //        {
-            //            liste.Add(lecteur.GetValue(i));
-            //            i++;
-            //        }
-            //    }
-            //    catch (Exception)
-            //    {
-            //        liste2.Add(liste);
+            
+            
+                try
+                {
+                lecteur = cmd.ExecuteReader();
+              }
+                catch (Exception)
+                {
+                    
+                
+                }
 
-            //        break;
-            //    }
-
-
-            //}
-            //ctn.Close();
-            //lecteur.Close();
-            //return liste2;
+            ctn.Close();
         }
+
+        //lecteur.Close();
+        //return liste2;
+
         public string determineTable(int choix)
         {
             string valeur = "";

@@ -163,7 +163,7 @@ SELECT @nom=nom,@idEmploye=idEmploye,@idSystemeExploitation = idSystemeExploitat
   idSystemeExploitation)VALUES( 'nom',
   'configuration',
   'typePlateforme',
-  0,1)
+  0,0)
   ----test-----------------------
 	 SELECT * FROM Plateforme
 	 SELECT * FROM VuePlateforme
@@ -288,7 +288,7 @@ SELECT @nom=nom,@idEmploye=idEmploye,@developpeur = developpeur,@descriptionJeu 
   --test-----------------------
   GO
 
-
+  use Texcel_Hans_MA
   insert into VueJeu(nom,
   developpeur,
   descriptionJeu,
