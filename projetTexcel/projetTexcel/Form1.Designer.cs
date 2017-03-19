@@ -147,6 +147,8 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
+            this.lblCode = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -965,6 +967,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCode);
+            this.groupBox1.Controls.Add(this.lblCode);
             this.groupBox1.Controls.Add(this.txtAjouterOSVersion);
             this.groupBox1.Controls.Add(this.label27);
             this.groupBox1.Controls.Add(this.txtAjouterOSEdition);
@@ -1333,6 +1337,22 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "nom d\'équipe";
             // 
+            // lblCode
+            // 
+            this.lblCode.AutoSize = true;
+            this.lblCode.Location = new System.Drawing.Point(9, 111);
+            this.lblCode.Name = "lblCode";
+            this.lblCode.Size = new System.Drawing.Size(41, 17);
+            this.lblCode.TabIndex = 47;
+            this.lblCode.Text = "Code";
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(162, 106);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(142, 22);
+            this.txtCode.TabIndex = 48;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1502,6 +1522,8 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtAjouterOSVersion;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Label lblCode;
     }
 }
 

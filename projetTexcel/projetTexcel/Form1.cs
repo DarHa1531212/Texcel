@@ -690,7 +690,7 @@ if (! chkNouvelEmploye.Checked)
         private void btnConfirmerAjoutOS_Click(object sender, EventArgs e)
         {
             if (ValidationAjouterOS())
-                traitements1.ajouterOS(txtOSNom.Text, txtAjouterOSEdition.Text, txtAjouterOSVersion.Text, idEmploye);
+                traitements1.ajouterOS(txtOSNom.Text, txtAjouterOSEdition.Text, txtAjouterOSVersion.Text,txtCode.Text);
             else
                 MessageBox.Show("Vous devez spécifier un nom de plateforme avant de pouvior l'ajouter");
 
