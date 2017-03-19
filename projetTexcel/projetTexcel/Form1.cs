@@ -61,6 +61,21 @@ namespace projetTexcel
         {
             modifierJeu();
             modifierJeu();
+            ajouterJeuxDansComboBox(traitements1.requeteInformations(2, "CONCAT(idJeu ,'-',nom)"));
+
+        }
+
+        public void ajouterJeuxDansComboBox(List<List<object>> liste2)
+        {
+           
+            foreach (var item in liste2)
+            {
+                ///*cmbModifierJeuAfficherJeux*/.Items.Add(liste2.item[1]);
+                foreach (var item2 in item)
+                {
+                    cmbModifierJeuAfficherJeux.Items.Add(item2);
+                }
+            }
         }
 
         private void gérerUnEmployéToolStripMenuItem_Click(object sender, EventArgs e)
@@ -258,6 +273,10 @@ namespace projetTexcel
         {
             frmModifierJeu.MdiParent = this;
 
+
+            frmModifierJeu.Controls.Add(this.label45);
+            frmModifierJeu.Controls.Add(this.cmbModifierJeuAfficherJeux);
+            frmModifierJeu.Controls.Add(this.cmbModifierGenre);
             frmModifierJeu.Controls.Add(this.btnConfirmerModifierJeu);
             frmModifierJeu.Controls.Add(this.label28);
             frmModifierJeu.Controls.Add(this.comboBox4);
@@ -274,8 +293,8 @@ namespace projetTexcel
             frmModifierJeu.Controls.Add(this.label12);
             frmModifierJeu.Controls.Add(this.label13);
             frmModifierJeu.Controls.Add(this.label14);
-            frmModifierJeu.Location = new System.Drawing.Point(365, 12);
-            frmModifierJeu.Size = new System.Drawing.Size(327, 286);
+            frmModifierJeu.Location = new System.Drawing.Point(365, 39);
+            frmModifierJeu.Size = new System.Drawing.Size(327, 317);
             frmModifierJeu.TabIndex = 17;
             frmModifierJeu.TabStop = false;
             frmModifierJeu.Text = "modifier un jeu";
@@ -717,6 +736,34 @@ namespace projetTexcel
             txtGenre.Text = valeur.ToString();
         }
 
+        private void cmbModifierJeuAfficherJeux_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+            string[] id = cmbModifierJeuAfficherJeux.Text.Split('-');
+            afficherPropritesJeu(txtNomJeu, "nom", id[0]);
+            afficherPropritesJeu(txtModifDev, "developpeur", id[0]);
+            afficherPropritesJeu(txtModifDesc, "descriptionJeu", id[0]);
+            afficherPropritesJeu(txtModifConfigMin, "[configurationMinimale]", id[0]);
+            afficherPropritesJeu(txtModClassification, "classification", id[0]);
+
+
+
+
+
+
+        }
+
+        private void afficherPropritesJeu(TextBox txtBox, string champRecherche, string id)
+        {
+            List<List<object>> liste2 = traitements1.requeteInformations(2, champRecherche, id);
+            foreach (var item in liste2)
+            {
+                ///*cmbModifierJeuAfficherJeux*/.Items.Add(liste2.item[1]);
+                foreach (var item2 in item)
+                {
+                    txtBox.Text = (item2.ToString());
+                }
+            }
+        }
     }
 }

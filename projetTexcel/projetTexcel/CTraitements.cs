@@ -16,6 +16,16 @@ namespace projetTexcel
         {
             Données1.VueAjout(2,"nom,developpeur,descriptionJeu,configurationMinimale,classification,idEmploye,idTheme,idGenre",("'"+Nom+"','"+dev+"'" + ",'" +desc + "'"+",'" +configMini + "'"+",'" +classification + "'"+",'" +idEmploye+"','" + theme + "'" +",'" + codeGenre + "'" ));
         }
+        public List<List<object>> requeteInformations(int table, string champ)
+        {
+            return Données1.VueRecherche(table, champ);
+        }
+
+        public List<List<object>> requeteInformations(int table, string champ, string condition)
+        {
+            return Données1.VueRecherche(table, champ, condition);
+        }
+
 
         public void modifierJeu(string Nom, string dev, string desc, string configMini, int codeGenre, int classification, int Employe)
         {

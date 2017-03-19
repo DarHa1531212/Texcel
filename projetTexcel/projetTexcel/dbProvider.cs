@@ -16,8 +16,8 @@ namespace projetTexcel
         public dbProvider()
         {
             ctn = new SqlConnection();
-           // ctn = new SqlConnection("Data Source = INFO-324-1A-123\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
-            ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            ctn = new SqlConnection("Data Source = INFO-324-1A-124\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
+// ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
         }
         public List<List<object>>[] contenBD()
@@ -79,7 +79,7 @@ namespace projetTexcel
         {
             ctn.Open();
             cmd = ctn.CreateCommand();
-            cmd.CommandText = "insert into vueSytemeExploitation(nom,[edition], [versionSysteme],[tag],[idEmploye]) Values( '" + os + "','" + version + "','" + Edition + "'," + idEmploye +");" ;
+            cmd.CommandText = "insert into VueSystemeExploitation(nom,[edition], [versionSysteme],[tag],[idEmploye]) Values( '" + os + "','" + version + "','" + Edition + "'," + idEmploye +");" ;
             cmd.ExecuteReader();
             ctn.Close();
 

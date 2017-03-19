@@ -39,6 +39,8 @@
             this.txtNomTest = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.grbModiffierJeu = new System.Windows.Forms.GroupBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.cmbModifierJeuAfficherJeux = new System.Windows.Forms.ComboBox();
             this.cmbModifierGenre = new System.Windows.Forms.ComboBox();
             this.btnConfirmerModifierJeu = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
@@ -88,6 +90,10 @@
             this.lblSelecctionnerEmploye = new System.Windows.Forms.Label();
             this.cmbSelectionEmploye = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtTypePlateforme = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.txtConfiguration = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.btnConfirmerAjoutPlateforme = new System.Windows.Forms.Button();
             this.txtPlateforme = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
@@ -147,10 +153,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.txtConfiguration = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.txtTypePlateforme = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -175,7 +177,7 @@
             this.groupBox2.Controls.Add(this.cmbOS);
             this.groupBox2.Controls.Add(this.txtNomTest);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Location = new System.Drawing.Point(32, 390);
+            this.groupBox2.Location = new System.Drawing.Point(12, 342);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(320, 180);
             this.groupBox2.TabIndex = 1;
@@ -283,6 +285,8 @@
             // 
             // grbModiffierJeu
             // 
+            this.grbModiffierJeu.Controls.Add(this.label45);
+            this.grbModiffierJeu.Controls.Add(this.cmbModifierJeuAfficherJeux);
             this.grbModiffierJeu.Controls.Add(this.cmbModifierGenre);
             this.grbModiffierJeu.Controls.Add(this.btnConfirmerModifierJeu);
             this.grbModiffierJeu.Controls.Add(this.label28);
@@ -302,11 +306,29 @@
             this.grbModiffierJeu.Controls.Add(this.label14);
             this.grbModiffierJeu.Location = new System.Drawing.Point(365, 39);
             this.grbModiffierJeu.Name = "grbModiffierJeu";
-            this.grbModiffierJeu.Size = new System.Drawing.Size(327, 286);
+            this.grbModiffierJeu.Size = new System.Drawing.Size(327, 317);
             this.grbModiffierJeu.TabIndex = 17;
             this.grbModiffierJeu.TabStop = false;
             this.grbModiffierJeu.Text = "modifier un jeu";
             this.grbModiffierJeu.Visible = false;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(12, 23);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(125, 17);
+            this.label45.TabIndex = 29;
+            this.label45.Text = "Sélectionner le jeu";
+            // 
+            // cmbModifierJeuAfficherJeux
+            // 
+            this.cmbModifierJeuAfficherJeux.FormattingEnabled = true;
+            this.cmbModifierJeuAfficherJeux.Location = new System.Drawing.Point(189, 20);
+            this.cmbModifierJeuAfficherJeux.Name = "cmbModifierJeuAfficherJeux";
+            this.cmbModifierJeuAfficherJeux.Size = new System.Drawing.Size(121, 24);
+            this.cmbModifierJeuAfficherJeux.TabIndex = 28;
+            this.cmbModifierJeuAfficherJeux.SelectedIndexChanged += new System.EventHandler(this.cmbModifierJeuAfficherJeux_SelectedIndexChanged);
             // 
             // cmbModifierGenre
             // 
@@ -316,14 +338,14 @@
             "employés",
             "jeux",
             "employés"});
-            this.cmbModifierGenre.Location = new System.Drawing.Point(187, 122);
+            this.cmbModifierGenre.Location = new System.Drawing.Point(187, 149);
             this.cmbModifierGenre.Name = "cmbModifierGenre";
             this.cmbModifierGenre.Size = new System.Drawing.Size(121, 24);
             this.cmbModifierGenre.TabIndex = 27;
             // 
             // btnConfirmerModifierJeu
             // 
-            this.btnConfirmerModifierJeu.Location = new System.Drawing.Point(6, 257);
+            this.btnConfirmerModifierJeu.Location = new System.Drawing.Point(6, 274);
             this.btnConfirmerModifierJeu.Name = "btnConfirmerModifierJeu";
             this.btnConfirmerModifierJeu.Size = new System.Drawing.Size(81, 23);
             this.btnConfirmerModifierJeu.TabIndex = 26;
@@ -334,7 +356,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(6, 216);
+            this.label28.Location = new System.Drawing.Point(6, 243);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(150, 17);
             this.label28.TabIndex = 26;
@@ -348,21 +370,21 @@
             "employés",
             "jeux",
             "employés"});
-            this.comboBox4.Location = new System.Drawing.Point(187, 209);
+            this.comboBox4.Location = new System.Drawing.Point(187, 236);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 24);
             this.comboBox4.TabIndex = 25;
             // 
             // txtModifTheme
             // 
-            this.txtModifTheme.Location = new System.Drawing.Point(187, 183);
+            this.txtModifTheme.Location = new System.Drawing.Point(187, 210);
             this.txtModifTheme.Name = "txtModifTheme";
             this.txtModifTheme.Size = new System.Drawing.Size(100, 22);
             this.txtModifTheme.TabIndex = 16;
             // 
             // txtModClassification
             // 
-            this.txtModClassification.Location = new System.Drawing.Point(187, 156);
+            this.txtModClassification.Location = new System.Drawing.Point(187, 183);
             this.txtModClassification.Name = "txtModClassification";
             this.txtModClassification.Size = new System.Drawing.Size(100, 22);
             this.txtModClassification.TabIndex = 15;
@@ -370,7 +392,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 166);
+            this.label8.Location = new System.Drawing.Point(6, 193);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 17);
             this.label8.TabIndex = 14;
@@ -379,7 +401,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 194);
+            this.label9.Location = new System.Drawing.Point(6, 221);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 17);
             this.label9.TabIndex = 13;
@@ -387,28 +409,28 @@
             // 
             // txtModifConfigMin
             // 
-            this.txtModifConfigMin.Location = new System.Drawing.Point(187, 102);
+            this.txtModifConfigMin.Location = new System.Drawing.Point(187, 129);
             this.txtModifConfigMin.Name = "txtModifConfigMin";
             this.txtModifConfigMin.Size = new System.Drawing.Size(100, 22);
             this.txtModifConfigMin.TabIndex = 11;
             // 
             // txtModifDesc
             // 
-            this.txtModifDesc.Location = new System.Drawing.Point(187, 75);
+            this.txtModifDesc.Location = new System.Drawing.Point(187, 102);
             this.txtModifDesc.Name = "txtModifDesc";
             this.txtModifDesc.Size = new System.Drawing.Size(100, 22);
             this.txtModifDesc.TabIndex = 10;
             // 
             // txtModifDev
             // 
-            this.txtModifDev.Location = new System.Drawing.Point(187, 48);
+            this.txtModifDev.Location = new System.Drawing.Point(187, 75);
             this.txtModifDev.Name = "txtModifDev";
             this.txtModifDev.Size = new System.Drawing.Size(100, 22);
             this.txtModifDev.TabIndex = 9;
             // 
             // txtNomJeu
             // 
-            this.txtNomJeu.Location = new System.Drawing.Point(187, 21);
+            this.txtNomJeu.Location = new System.Drawing.Point(187, 48);
             this.txtNomJeu.Name = "txtNomJeu";
             this.txtNomJeu.Size = new System.Drawing.Size(100, 22);
             this.txtNomJeu.TabIndex = 8;
@@ -416,7 +438,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 138);
+            this.label10.Location = new System.Drawing.Point(6, 165);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(45, 17);
             this.label10.TabIndex = 4;
@@ -425,7 +447,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 110);
+            this.label11.Location = new System.Drawing.Point(6, 137);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(149, 17);
             this.label11.TabIndex = 3;
@@ -434,7 +456,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 82);
+            this.label12.Location = new System.Drawing.Point(6, 109);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 17);
             this.label12.TabIndex = 2;
@@ -443,7 +465,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 54);
+            this.label13.Location = new System.Drawing.Point(6, 81);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(87, 17);
             this.label13.TabIndex = 1;
@@ -452,7 +474,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 26);
+            this.label14.Location = new System.Drawing.Point(6, 53);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(35, 17);
             this.label14.TabIndex = 0;
@@ -466,7 +488,7 @@
             this.groupBox4.Controls.Add(this.cmbRecherche);
             this.groupBox4.Controls.Add(this.txtRechercheInformation);
             this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Location = new System.Drawing.Point(365, 331);
+            this.groupBox4.Location = new System.Drawing.Point(414, 543);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(327, 268);
             this.groupBox4.TabIndex = 19;
@@ -790,13 +812,45 @@
             this.groupBox6.Controls.Add(this.btnConfirmerAjoutPlateforme);
             this.groupBox6.Controls.Add(this.txtPlateforme);
             this.groupBox6.Controls.Add(this.label29);
-            this.groupBox6.Location = new System.Drawing.Point(24, 623);
+            this.groupBox6.Location = new System.Drawing.Point(12, 580);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(365, 166);
             this.groupBox6.TabIndex = 21;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "ajouter une plateforme";
             this.groupBox6.Visible = false;
+            // 
+            // txtTypePlateforme
+            // 
+            this.txtTypePlateforme.Location = new System.Drawing.Point(161, 82);
+            this.txtTypePlateforme.Name = "txtTypePlateforme";
+            this.txtTypePlateforme.Size = new System.Drawing.Size(142, 22);
+            this.txtTypePlateforme.TabIndex = 46;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(6, 85);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(141, 17);
+            this.label44.TabIndex = 45;
+            this.label44.Text = "type de la plateforme";
+            // 
+            // txtConfiguration
+            // 
+            this.txtConfiguration.Location = new System.Drawing.Point(161, 55);
+            this.txtConfiguration.Name = "txtConfiguration";
+            this.txtConfiguration.Size = new System.Drawing.Size(142, 22);
+            this.txtConfiguration.TabIndex = 44;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(6, 58);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(92, 17);
+            this.label43.TabIndex = 43;
+            this.label43.Text = "Configuration";
             // 
             // btnConfirmerAjoutPlateforme
             // 
@@ -946,7 +1000,7 @@
             this.grbCreerJeu.Controls.Add(this.label3);
             this.grbCreerJeu.Controls.Add(this.label2);
             this.grbCreerJeu.Controls.Add(this.label1);
-            this.grbCreerJeu.Location = new System.Drawing.Point(24, 71);
+            this.grbCreerJeu.Location = new System.Drawing.Point(12, 43);
             this.grbCreerJeu.Name = "grbCreerJeu";
             this.grbCreerJeu.Size = new System.Drawing.Size(327, 293);
             this.grbCreerJeu.TabIndex = 0;
@@ -980,7 +1034,7 @@
             this.groupBox1.Controls.Add(this.btnConfirmerAjoutOS);
             this.groupBox1.Controls.Add(this.txtOSNom);
             this.groupBox1.Controls.Add(this.label33);
-            this.groupBox1.Location = new System.Drawing.Point(698, 479);
+            this.groupBox1.Location = new System.Drawing.Point(728, 609);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(365, 180);
             this.groupBox1.TabIndex = 43;
@@ -1109,7 +1163,6 @@
             this.modifierUnJeuToolStripMenuItem.Name = "modifierUnJeuToolStripMenuItem";
             this.modifierUnJeuToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.modifierUnJeuToolStripMenuItem.Text = "Modifier un jeu";
-            this.modifierUnJeuToolStripMenuItem.Visible = false;
             this.modifierUnJeuToolStripMenuItem.Click += new System.EventHandler(this.modifierUnJeuToolStripMenuItem_Click);
             // 
             // ajouterUnOSToolStripMenuItem
@@ -1340,38 +1393,6 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "nom d\'équipe";
             // 
-            // txtConfiguration
-            // 
-            this.txtConfiguration.Location = new System.Drawing.Point(161, 55);
-            this.txtConfiguration.Name = "txtConfiguration";
-            this.txtConfiguration.Size = new System.Drawing.Size(142, 22);
-            this.txtConfiguration.TabIndex = 44;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(6, 58);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(92, 17);
-            this.label43.TabIndex = 43;
-            this.label43.Text = "Configuration";
-            // 
-            // txtTypePlateforme
-            // 
-            this.txtTypePlateforme.Location = new System.Drawing.Point(161, 82);
-            this.txtTypePlateforme.Name = "txtTypePlateforme";
-            this.txtTypePlateforme.Size = new System.Drawing.Size(142, 22);
-            this.txtTypePlateforme.TabIndex = 46;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(6, 85);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(141, 17);
-            this.label44.TabIndex = 45;
-            this.label44.Text = "type de la plateforme";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1545,6 +1566,8 @@
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox txtConfiguration;
         private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.ComboBox cmbModifierJeuAfficherJeux;
     }
 }
 
