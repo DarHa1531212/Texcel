@@ -14,7 +14,7 @@ namespace projetTexcel
         
         public void CreerJeu(string Nom, string dev, string desc, string configMini, string codeGenre, string classification, string theme)
         {
-            Données1.VueAjout(2,"developpeur,description,configurationMinimale,classification,idEmploye,idTheme,idGenre",("'"+dev+"'" + ",'" +desc + "'"+",'" +configMini + "'"+",'" +classification + "'"+",'" +idEmploye+"','" + theme + "'" +",'" + codeGenre + "'" ));
+            Données1.VueAjout(2,"nom,developpeur,descriptionJeu,configurationMinimale,classification,idEmploye,idTheme,idGenre",("'"+Nom+"','"+dev+"'" + ",'" +desc + "'"+",'" +configMini + "'"+",'" +classification + "'"+",'" +idEmploye+"','" + theme + "'" +",'" + codeGenre + "'" ));
         }
 
         public void modifierJeu(string Nom, string dev, string desc, string configMini, int codeGenre, int classification, int Employe)
