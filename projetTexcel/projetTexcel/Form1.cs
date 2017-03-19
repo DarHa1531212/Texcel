@@ -345,6 +345,12 @@ namespace projetTexcel
             frmAjouterPlateforme.Controls.Add(this.btnConfirmerAjoutPlateforme);
             frmAjouterPlateforme.Controls.Add(this.txtPlateforme);
             frmAjouterPlateforme.Controls.Add(this.label29);
+            frmAjouterPlateforme.Controls.Add(this.label43);
+            frmAjouterPlateforme.Controls.Add(this.label44);
+            frmAjouterPlateforme.Controls.Add(this.txtConfiguration);
+            frmAjouterPlateforme.Controls.Add(this.txtTypePlateforme);
+            frmAjouterPlateforme.Controls.Add(this.label45);
+            frmAjouterPlateforme.Controls.Add(this.txtSysteme);
             frmAjouterPlateforme.Location = new System.Drawing.Point(698, 413);
 
             frmAjouterPlateforme.Size = new System.Drawing.Size(365, 103);
@@ -372,6 +378,8 @@ namespace projetTexcel
             frmAjoutOS.Controls.Add(this.txtAjouterOSVersion);
             frmAjoutOS.Controls.Add(this.label27);
             frmAjoutOS.Controls.Add(this.txtAjouterOSEdition);
+            frmAjoutOS.Controls.Add(this.txtCode);
+            frmAjoutOS.Controls.Add(this.lblCode);
             frmAjoutOS.Controls.Add(this.label18);
             frmAjoutOS.Controls.Add(this.btnConfirmerAjoutOS);
             frmAjoutOS.Controls.Add(this.txtOSNom);
@@ -390,7 +398,7 @@ namespace projetTexcel
         {
             bool correct;
             correct = true;
-            if (txtOSNom.Text == "" || txtAjouterOSEdition.Text == "" || txtAjouterOSVersion.Text == "")
+            if (txtOSNom.Text == "" || txtAjouterOSEdition.Text == "" || txtAjouterOSVersion.Text == ""||txtCode.Text == "")
                 correct = false;
 
             return correct;
@@ -682,7 +690,7 @@ namespace projetTexcel
         private void btnConfirmerAjoutPlateforme_Click(object sender, EventArgs e)
         {
             if (validationAjoutPlateforme())
-                traitements1.ajouterPlateforme(txtPlateforme.Text, txtConfiguration.Text, txtTypePlateforme.Text);
+                traitements1.ajouterPlateforme(txtPlateforme.Text, txtConfiguration.Text, txtTypePlateforme.Text,txtSysteme.Text);
            
             else
              MessageBox.Show("un ou plusieurs champs sont invalides. veuillez réessayer");
@@ -692,7 +700,7 @@ namespace projetTexcel
         private bool validationAjoutPlateforme()
         {
             bool correct = true;
-            if (txtPlateforme.Text == "" || txtConfiguration.Text == "" || txtTypePlateforme.Text == "")
+            if (txtPlateforme.Text == "" || txtConfiguration.Text == "" || txtTypePlateforme.Text == ""|| txtSysteme.Text == "")
                 correct = false;
             return correct;
 

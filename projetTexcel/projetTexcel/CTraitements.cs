@@ -39,13 +39,13 @@ namespace projetTexcel
         {
 
         }
-        public void ajouterPlateforme(string plateforme, string configuration, string typePlateforme)
+        public void ajouterPlateforme(string plateforme, string configuration, string typePlateforme,string idsysteme)
         {
-            Données1.ajouterPlateforme(plateforme,  configuration,  typePlateforme);
+            Données1.VueAjout(1, "nom,configuration,typePlateforme,idEmploye,idSystemeExploitation", ("'" + plateforme + "','" + configuration + "','" + typePlateforme + "','" + idEmploye + "','" + idsysteme+"'"));
         }
         public void ajouterOS(string os, string Edition, string version, string code)
         {
-            Données1.VueAjout(3,"nom,code,edition,versionSysteme,idemploye",("'"+os+"','"+code + "','" +Edition + "','" +version+idEmploye));
+            Données1.VueAjout(3,"nom,code,edition,versionSysteme,idemploye",("'"+os+"','"+code + "','" +Edition + "','" +version+"',"+idEmploye));
         }
 
         public int connexion(string id, string mdp)

@@ -88,6 +88,10 @@
             this.lblSelecctionnerEmploye = new System.Windows.Forms.Label();
             this.cmbSelectionEmploye = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtTypePlateforme = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.txtConfiguration = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.btnConfirmerAjoutPlateforme = new System.Windows.Forms.Button();
             this.txtPlateforme = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
@@ -108,6 +112,8 @@
             this.txtGenre = new System.Windows.Forms.TextBox();
             this.btnConfirmerCreationJeu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.lblCode = new System.Windows.Forms.Label();
             this.txtAjouterOSVersion = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.txtAjouterOSEdition = new System.Windows.Forms.TextBox();
@@ -147,15 +153,8 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-            this.lblCode = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
-=======
-            this.txtConfiguration = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.txtTypePlateforme = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
->>>>>>> dfcf0a2a19d751ae9eeda6e6f6dbec3dbca8c1c9
+            this.label45 = new System.Windows.Forms.Label();
+            this.txtSysteme = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -788,6 +787,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.txtSysteme);
+            this.groupBox6.Controls.Add(this.label45);
             this.groupBox6.Controls.Add(this.txtTypePlateforme);
             this.groupBox6.Controls.Add(this.label44);
             this.groupBox6.Controls.Add(this.txtConfiguration);
@@ -803,9 +804,41 @@
             this.groupBox6.Text = "ajouter une plateforme";
             this.groupBox6.Visible = false;
             // 
+            // txtTypePlateforme
+            // 
+            this.txtTypePlateforme.Location = new System.Drawing.Point(161, 82);
+            this.txtTypePlateforme.Name = "txtTypePlateforme";
+            this.txtTypePlateforme.Size = new System.Drawing.Size(142, 22);
+            this.txtTypePlateforme.TabIndex = 46;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(6, 85);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(141, 17);
+            this.label44.TabIndex = 45;
+            this.label44.Text = "type de la plateforme";
+            // 
+            // txtConfiguration
+            // 
+            this.txtConfiguration.Location = new System.Drawing.Point(161, 55);
+            this.txtConfiguration.Name = "txtConfiguration";
+            this.txtConfiguration.Size = new System.Drawing.Size(142, 22);
+            this.txtConfiguration.TabIndex = 44;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(6, 58);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(92, 17);
+            this.label43.TabIndex = 43;
+            this.label43.Text = "Configuration";
+            // 
             // btnConfirmerAjoutPlateforme
             // 
-            this.btnConfirmerAjoutPlateforme.Location = new System.Drawing.Point(7, 105);
+            this.btnConfirmerAjoutPlateforme.Location = new System.Drawing.Point(9, 137);
             this.btnConfirmerAjoutPlateforme.Name = "btnConfirmerAjoutPlateforme";
             this.btnConfirmerAjoutPlateforme.Size = new System.Drawing.Size(81, 23);
             this.btnConfirmerAjoutPlateforme.TabIndex = 42;
@@ -994,6 +1027,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ajouter un OS";
             this.groupBox1.Visible = false;
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(162, 106);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(142, 22);
+            this.txtCode.TabIndex = 48;
+            // 
+            // lblCode
+            // 
+            this.lblCode.AutoSize = true;
+            this.lblCode.Location = new System.Drawing.Point(9, 111);
+            this.lblCode.Name = "lblCode";
+            this.lblCode.Size = new System.Drawing.Size(41, 17);
+            this.lblCode.TabIndex = 47;
+            this.lblCode.Text = "Code";
             // 
             // txtAjouterOSVersion
             // 
@@ -1347,55 +1396,21 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "nom d\'équipe";
             // 
-<<<<<<< HEAD
-            // lblCode
+            // label45
             // 
-            this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(9, 111);
-            this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(41, 17);
-            this.lblCode.TabIndex = 47;
-            this.lblCode.Text = "Code";
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(6, 117);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(137, 17);
+            this.label45.TabIndex = 47;
+            this.label45.Text = "Systeme exploitation";
             // 
-            // txtCode
+            // txtSysteme
             // 
-            this.txtCode.Location = new System.Drawing.Point(162, 106);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(142, 22);
-            this.txtCode.TabIndex = 48;
-=======
-            // txtConfiguration
-            // 
-            this.txtConfiguration.Location = new System.Drawing.Point(161, 55);
-            this.txtConfiguration.Name = "txtConfiguration";
-            this.txtConfiguration.Size = new System.Drawing.Size(142, 22);
-            this.txtConfiguration.TabIndex = 44;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(6, 58);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(92, 17);
-            this.label43.TabIndex = 43;
-            this.label43.Text = "Configuration";
-            // 
-            // txtTypePlateforme
-            // 
-            this.txtTypePlateforme.Location = new System.Drawing.Point(161, 82);
-            this.txtTypePlateforme.Name = "txtTypePlateforme";
-            this.txtTypePlateforme.Size = new System.Drawing.Size(142, 22);
-            this.txtTypePlateforme.TabIndex = 46;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(6, 85);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(141, 17);
-            this.label44.TabIndex = 45;
-            this.label44.Text = "type de la plateforme";
->>>>>>> dfcf0a2a19d751ae9eeda6e6f6dbec3dbca8c1c9
+            this.txtSysteme.Location = new System.Drawing.Point(161, 110);
+            this.txtSysteme.Name = "txtSysteme";
+            this.txtSysteme.Size = new System.Drawing.Size(142, 22);
+            this.txtSysteme.TabIndex = 48;
             // 
             // Form1
             // 
@@ -1566,15 +1581,14 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtAjouterOSVersion;
         private System.Windows.Forms.Label label27;
-<<<<<<< HEAD
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label lblCode;
-=======
         private System.Windows.Forms.TextBox txtTypePlateforme;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox txtConfiguration;
         private System.Windows.Forms.Label label43;
->>>>>>> dfcf0a2a19d751ae9eeda6e6f6dbec3dbca8c1c9
+        private System.Windows.Forms.TextBox txtSysteme;
+        private System.Windows.Forms.Label label45;
     }
 }
 
