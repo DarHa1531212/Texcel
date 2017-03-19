@@ -505,7 +505,7 @@ namespace projetTexcel
             if (validationCreerJeuNonVide())
             {
                 //appel de la bd
-                traitements1.CreerJeu(txtNomCreerJeu.Text, txtCreerDev.Text, txtDescription.Text, txtConfigMin.Text, txtGenre.Text, txtClassification.Text, txtTheme.Text, cmbEmployeCreationJeu.Text);
+                traitements1.CreerJeu(txtNomCreerJeu.Text, txtCreerDev.Text, txtDescription.Text, txtConfigMin.Text, txtGenre.Text, txtClassification.Text, txtTheme.Text);
             }
             else
              MessageBox.Show("un ou plusieurs champs sont vides. veuillez réessayer");
@@ -517,7 +517,7 @@ namespace projetTexcel
         {
             bool correct = true;
             correct = true;
-            if (txtNomCreerJeu.Text == "" || txtCreerDev.Text == "" || txtDescription.Text == "" || txtConfigMin.Text == "" || txtClassification.Text == "" || txtTheme.Text == "" || txtGenre.Text == "-1" || cmbSelectionEmploye.SelectedIndex== -1)
+            if (txtNomCreerJeu.Text == "" || txtCreerDev.Text == "" || txtDescription.Text == "" || txtConfigMin.Text == "" || txtClassification.Text == "" || txtTheme.Text == "" || txtGenre.Text == "" )
                 correct = false;
           
                
@@ -669,10 +669,10 @@ namespace projetTexcel
                 traitements1.ajouterOS(txtOSNom.Text);
         }
 
-        private void txtGenre_Click(object sender, EventArgs e)
-        {
-            traitements1.listviewGenre();
-        }
+        //private void txtGenre_Click(object sender, EventArgs e)
+        //{
+        //    traitements1.listviewGenre();
+        //}
         public void changerGenre(int valeur)
         {
             txtGenre.Text = valeur.ToString();

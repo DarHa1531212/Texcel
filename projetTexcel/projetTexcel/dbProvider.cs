@@ -143,6 +143,38 @@ namespace projetTexcel
             lecteur.Close();
             return liste2;
         }
+        public void VueAjout(int table, string champs, string ajout)
+        {
+            List<object> liste = new List<object>();
+            List<List<object>> liste2 = new List<List<object>>();
+            int i = 0;
+            ctn.Open();
+            cmd = ctn.CreateCommand();
+            cmd.CommandText = "INSERT INTO " + determineTable(table) + " ("+champs+")  VALUES("+ajout+")";
+            lecteur = cmd.ExecuteReader();
+            //while (lecteur.Read())
+            //{
+            //    try
+            //    {
+            //        while (true)
+            //        {
+            //            liste.Add(lecteur.GetValue(i));
+            //            i++;
+            //        }
+            //    }
+            //    catch (Exception)
+            //    {
+            //        liste2.Add(liste);
+
+            //        break;
+            //    }
+
+
+            //}
+            //ctn.Close();
+            //lecteur.Close();
+            //return liste2;
+        }
         public string determineTable(int choix)
         {
             string valeur = "";

@@ -10,10 +10,11 @@ namespace projetTexcel
     {
         dbProvider Données1 = new dbProvider();
         ControleurRecherche cRecherche = new ControleurRecherche();
+        int idEmploye;
         
-        public void CreerJeu(string Nom, string dev, string desc, string configMini, string codeGenre, string classification, string theme, string Employe)
+        public void CreerJeu(string Nom, string dev, string desc, string configMini, string codeGenre, string classification, string theme)
         {
-
+            Données1.VueAjout(2,"developpeur,description,configurationMinimale,classification,idEmploye,idTheme,idGenre",("'"+dev+"'" + ",'" +desc + "'"+",'" +configMini + "'"+",'" +classification + "'"+",'" +idEmploye+"','" + theme + "'" +",'" + codeGenre + "'" ));
         }
 
         public void modifierJeu(string Nom, string dev, string desc, string configMini, int codeGenre, int classification, int Employe)
@@ -50,10 +51,10 @@ namespace projetTexcel
         public int connexion(string id, string mdp)
         {
             List<List<object>> liste = new List<List<object>>();
-            string mot, type;
+            string mot, type,id2;
             int i = 0;
-            string[] tableau = new string[2];
-            liste = Données1.VueRecherche(5,"motDePasse,typeEmploi",id);
+            string[] tableau = new string[3];
+            liste = Données1.VueRecherche(5,"motDePasse,typeEmploi,idEmploye",id);
             foreach (var item  in liste)
             {
                 foreach (var item2 in item)
@@ -64,6 +65,7 @@ namespace projetTexcel
             }
             if (mdp == tableau[0])
             {
+                idEmploye = Convert.ToInt32(tableau[2]);
                 return Convert.ToInt32(tableau[1]);
             }
             return -1;
