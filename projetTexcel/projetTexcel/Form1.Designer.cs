@@ -114,6 +114,8 @@
             this.txtGenre = new System.Windows.Forms.TextBox();
             this.btnConfirmerCreationJeu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.lblCode = new System.Windows.Forms.Label();
             this.txtAjouterOSVersion = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.txtAjouterOSEdition = new System.Windows.Forms.TextBox();
@@ -153,6 +155,11 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+=======
+            this.label45 = new System.Windows.Forms.Label();
+            this.txtSysteme = new System.Windows.Forms.TextBox();
+>>>>>>> 9f5e7712b96e3e9688f15d009b1ae0d69562f97e
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -805,6 +812,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.txtSysteme);
+            this.groupBox6.Controls.Add(this.label45);
             this.groupBox6.Controls.Add(this.txtTypePlateforme);
             this.groupBox6.Controls.Add(this.label44);
             this.groupBox6.Controls.Add(this.txtConfiguration);
@@ -854,7 +863,7 @@
             // 
             // btnConfirmerAjoutPlateforme
             // 
-            this.btnConfirmerAjoutPlateforme.Location = new System.Drawing.Point(7, 105);
+            this.btnConfirmerAjoutPlateforme.Location = new System.Drawing.Point(9, 137);
             this.btnConfirmerAjoutPlateforme.Name = "btnConfirmerAjoutPlateforme";
             this.btnConfirmerAjoutPlateforme.Size = new System.Drawing.Size(81, 23);
             this.btnConfirmerAjoutPlateforme.TabIndex = 42;
@@ -1027,6 +1036,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCode);
+            this.groupBox1.Controls.Add(this.lblCode);
             this.groupBox1.Controls.Add(this.txtAjouterOSVersion);
             this.groupBox1.Controls.Add(this.label27);
             this.groupBox1.Controls.Add(this.txtAjouterOSEdition);
@@ -1041,6 +1052,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ajouter un OS";
             this.groupBox1.Visible = false;
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(162, 106);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(142, 22);
+            this.txtCode.TabIndex = 48;
+            // 
+            // lblCode
+            // 
+            this.lblCode.AutoSize = true;
+            this.lblCode.Location = new System.Drawing.Point(9, 111);
+            this.lblCode.Name = "lblCode";
+            this.lblCode.Size = new System.Drawing.Size(41, 17);
+            this.lblCode.TabIndex = 47;
+            this.lblCode.Text = "Code";
             // 
             // txtAjouterOSVersion
             // 
@@ -1393,6 +1420,25 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "nom d\'équipe";
             // 
+<<<<<<< HEAD
+=======
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(6, 117);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(137, 17);
+            this.label45.TabIndex = 47;
+            this.label45.Text = "Systeme exploitation";
+            // 
+            // txtSysteme
+            // 
+            this.txtSysteme.Location = new System.Drawing.Point(161, 110);
+            this.txtSysteme.Name = "txtSysteme";
+            this.txtSysteme.Size = new System.Drawing.Size(142, 22);
+            this.txtSysteme.TabIndex = 48;
+            // 
+>>>>>>> 9f5e7712b96e3e9688f15d009b1ae0d69562f97e
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1562,12 +1608,19 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtAjouterOSVersion;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Label lblCode;
         private System.Windows.Forms.TextBox txtTypePlateforme;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox txtConfiguration;
         private System.Windows.Forms.Label label43;
+<<<<<<< HEAD
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.ComboBox cmbModifierJeuAfficherJeux;
+=======
+        private System.Windows.Forms.TextBox txtSysteme;
+        private System.Windows.Forms.Label label45;
+>>>>>>> 9f5e7712b96e3e9688f15d009b1ae0d69562f97e
     }
 }
 

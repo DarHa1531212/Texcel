@@ -16,8 +16,13 @@ namespace projetTexcel
         public dbProvider()
         {
             ctn = new SqlConnection();
+<<<<<<< HEAD
             ctn = new SqlConnection("Data Source = INFO-324-1A-124\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
 // ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+=======
+            ctn = new SqlConnection("Data Source = INFO-324-1A-123\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
+           // ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+>>>>>>> 9f5e7712b96e3e9688f15d009b1ae0d69562f97e
 
         }
         public List<List<object>>[] contenBD()
@@ -74,6 +79,7 @@ namespace projetTexcel
         {
 
         }
+<<<<<<< HEAD
 
         public void ajouterOS(string os, string Edition, string version, int idEmploye)
         {
@@ -84,6 +90,9 @@ namespace projetTexcel
             ctn.Close();
 
         }
+=======
+        
+>>>>>>> 9f5e7712b96e3e9688f15d009b1ae0d69562f97e
         public List<List<object>> VueEquipe()
         {
             List<object> liste = new List<object>();
@@ -171,9 +180,28 @@ namespace projetTexcel
             ctn.Close();
         }
 
-        //lecteur.Close();
-        //return liste2;
+        public void VueModificaton(int table, string champs, string modif)
+        {
+            List<object> liste = new List<object>();
+            List<List<object>> liste2 = new List<List<object>>();
+            int i = 0;
+            ctn.Open();
+            cmd = ctn.CreateCommand();
+            cmd.CommandText = "UPDATE " + determineTable(table) + " SET " + champs +" WHERE " + modif;
 
+
+            try
+            {
+                lecteur = cmd.ExecuteReader();
+            }
+            catch (Exception)
+            {
+
+
+            }
+
+            ctn.Close();
+        }
         public string determineTable(int choix)
         {
             string valeur = "";
