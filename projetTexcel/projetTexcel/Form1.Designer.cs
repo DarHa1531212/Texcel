@@ -59,12 +59,17 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lVRecheche = new System.Windows.Forms.ListView();
             this.btnConfirmer = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.cmbRecherche = new System.Windows.Forms.ComboBox();
             this.txtRechercheInformation = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtIdentifiant = new System.Windows.Forms.TextBox();
+            this.txtMotDePasse = new System.Windows.Forms.TextBox();
+            this.lblmdp = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
             this.chkNouvelEmploye = new System.Windows.Forms.CheckBox();
             this.radAucunDroit = new System.Windows.Forms.RadioButton();
             this.radAdmin = new System.Windows.Forms.RadioButton();
@@ -126,16 +131,16 @@
             this.label33 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.créerUnJeuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.créerUnTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gérerUnEmployéToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.effetuerUneRechercheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajouterUnePlateformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifierUnJeuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajouterUnePlateformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterUnOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.effetuerUneRechercheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gérerUnEmployéToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creerEquipeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.créerUnTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creerUnProjetTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.afficherDesInformationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONNEXIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.creerUnProjetTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grbConnexion = new System.Windows.Forms.GroupBox();
             this.btnConnexion = new System.Windows.Forms.Button();
             this.txtConnexionMotDePasse = new System.Windows.Forms.TextBox();
@@ -157,9 +162,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-            this.lVRecheche = new System.Windows.Forms.ListView();
-=======
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.btnCreerProjetTest = new System.Windows.Forms.Button();
             this.cmbProjetTestChoixEmplloye = new System.Windows.Forms.ComboBox();
@@ -170,7 +172,8 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
->>>>>>> 442e202a9f9c3042532659d55062c2888aaee4ec
+            this.btnSupprimer = new System.Windows.Forms.Button();
+            this.label52 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -349,8 +352,6 @@
             this.grbModiffierJeu.Text = "modifier un jeu";
             this.grbModiffierJeu.Visible = false;
             // 
-<<<<<<< HEAD
-=======
             // cmbModJeuTheme
             // 
             this.cmbModJeuTheme.FormattingEnabled = true;
@@ -359,7 +360,6 @@
             this.cmbModJeuTheme.Size = new System.Drawing.Size(121, 24);
             this.cmbModJeuTheme.TabIndex = 30;
             // 
->>>>>>> 442e202a9f9c3042532659d55062c2888aaee4ec
             // label45i
             // 
             this.label45i.AutoSize = true;
@@ -496,23 +496,31 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label52);
+            this.groupBox4.Controls.Add(this.btnSupprimer);
             this.groupBox4.Controls.Add(this.lVRecheche);
             this.groupBox4.Controls.Add(this.btnConfirmer);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.cmbRecherche);
             this.groupBox4.Controls.Add(this.txtRechercheInformation);
             this.groupBox4.Controls.Add(this.label16);
-<<<<<<< HEAD
-            this.groupBox4.Location = new System.Drawing.Point(414, 479);
-=======
-            this.groupBox4.Location = new System.Drawing.Point(365, 362);
->>>>>>> 442e202a9f9c3042532659d55062c2888aaee4ec
+            this.groupBox4.Location = new System.Drawing.Point(338, 371);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(621, 332);
+            this.groupBox4.Size = new System.Drawing.Size(355, 405);
             this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "effectuer une recherche";
             this.groupBox4.Visible = false;
+            // 
+            // lVRecheche
+            // 
+            this.lVRecheche.GridLines = true;
+            this.lVRecheche.Location = new System.Drawing.Point(9, 89);
+            this.lVRecheche.Name = "lVRecheche";
+            this.lVRecheche.Size = new System.Drawing.Size(800, 195);
+            this.lVRecheche.TabIndex = 43;
+            this.lVRecheche.UseCompatibleStateImageBehavior = false;
+            this.lVRecheche.View = System.Windows.Forms.View.Details;
             // 
             // btnConfirmer
             // 
@@ -540,7 +548,8 @@
             "Plateforme",
             "Jeu",
             "Système d\'exploitation",
-            "Équipe"});
+            "Équipe",
+            "Employe"});
             this.cmbRecherche.Location = new System.Drawing.Point(169, 59);
             this.cmbRecherche.Name = "cmbRecherche";
             this.cmbRecherche.Size = new System.Drawing.Size(121, 24);
@@ -564,6 +573,10 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.txtIdentifiant);
+            this.groupBox5.Controls.Add(this.txtMotDePasse);
+            this.groupBox5.Controls.Add(this.lblmdp);
+            this.groupBox5.Controls.Add(this.label51);
             this.groupBox5.Controls.Add(this.chkNouvelEmploye);
             this.groupBox5.Controls.Add(this.radAucunDroit);
             this.groupBox5.Controls.Add(this.radAdmin);
@@ -589,11 +602,45 @@
             this.groupBox5.Controls.Add(this.cmbSelectionEmploye);
             this.groupBox5.Location = new System.Drawing.Point(698, 39);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(390, 434);
+            this.groupBox5.Size = new System.Drawing.Size(390, 473);
             this.groupBox5.TabIndex = 20;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = " ";
             this.groupBox5.Visible = false;
+            // 
+            // txtIdentifiant
+            // 
+            this.txtIdentifiant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdentifiant.Location = new System.Drawing.Point(185, 298);
+            this.txtIdentifiant.Name = "txtIdentifiant";
+            this.txtIdentifiant.Size = new System.Drawing.Size(100, 22);
+            this.txtIdentifiant.TabIndex = 52;
+            // 
+            // txtMotDePasse
+            // 
+            this.txtMotDePasse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMotDePasse.Location = new System.Drawing.Point(185, 325);
+            this.txtMotDePasse.Name = "txtMotDePasse";
+            this.txtMotDePasse.Size = new System.Drawing.Size(100, 22);
+            this.txtMotDePasse.TabIndex = 51;
+            // 
+            // lblmdp
+            // 
+            this.lblmdp.AutoSize = true;
+            this.lblmdp.Location = new System.Drawing.Point(11, 330);
+            this.lblmdp.Name = "lblmdp";
+            this.lblmdp.Size = new System.Drawing.Size(93, 17);
+            this.lblmdp.TabIndex = 50;
+            this.lblmdp.Text = "mot de passe";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(10, 300);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(69, 17);
+            this.label51.TabIndex = 49;
+            this.label51.Text = "identifiant";
             // 
             // chkNouvelEmploye
             // 
@@ -612,7 +659,7 @@
             // 
             this.radAucunDroit.AutoSize = true;
             this.radAucunDroit.Checked = true;
-            this.radAucunDroit.Location = new System.Drawing.Point(175, 350);
+            this.radAucunDroit.Location = new System.Drawing.Point(176, 414);
             this.radAucunDroit.Name = "radAucunDroit";
             this.radAucunDroit.Size = new System.Drawing.Size(118, 21);
             this.radAucunDroit.TabIndex = 46;
@@ -624,7 +671,7 @@
             // radAdmin
             // 
             this.radAdmin.AutoSize = true;
-            this.radAdmin.Location = new System.Drawing.Point(175, 323);
+            this.radAdmin.Location = new System.Drawing.Point(176, 387);
             this.radAdmin.Name = "radAdmin";
             this.radAdmin.Size = new System.Drawing.Size(67, 21);
             this.radAdmin.TabIndex = 45;
@@ -635,7 +682,7 @@
             // radDirecteur
             // 
             this.radDirecteur.AutoSize = true;
-            this.radDirecteur.Location = new System.Drawing.Point(175, 296);
+            this.radDirecteur.Location = new System.Drawing.Point(176, 360);
             this.radDirecteur.Name = "radDirecteur";
             this.radDirecteur.Size = new System.Drawing.Size(85, 21);
             this.radDirecteur.TabIndex = 44;
@@ -662,7 +709,7 @@
             // 
             // btnConfirmerGestionEmployes
             // 
-            this.btnConfirmerGestionEmployes.Location = new System.Drawing.Point(12, 354);
+            this.btnConfirmerGestionEmployes.Location = new System.Drawing.Point(13, 418);
             this.btnConfirmerGestionEmployes.Name = "btnConfirmerGestionEmployes";
             this.btnConfirmerGestionEmployes.Size = new System.Drawing.Size(81, 23);
             this.btnConfirmerGestionEmployes.TabIndex = 27;
@@ -673,7 +720,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(8, 298);
+            this.label26.Location = new System.Drawing.Point(9, 362);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(130, 17);
             this.label26.TabIndex = 37;
@@ -689,9 +736,10 @@
             // 
             // dateDDN
             // 
+            this.dateDDN.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateDDN.Location = new System.Drawing.Point(185, 144);
             this.dateDDN.Name = "dateDDN";
-            this.dateDDN.Size = new System.Drawing.Size(200, 22);
+            this.dateDDN.Size = new System.Drawing.Size(100, 22);
             this.dateDDN.TabIndex = 35;
             // 
             // txtPosteTel
@@ -1064,7 +1112,7 @@
             this.groupBox1.Controls.Add(this.btnConfirmerAjoutOS);
             this.groupBox1.Controls.Add(this.txtOSNom);
             this.groupBox1.Controls.Add(this.label33);
-            this.groupBox1.Location = new System.Drawing.Point(698, 479);
+            this.groupBox1.Location = new System.Drawing.Point(699, 561);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(365, 180);
             this.groupBox1.TabIndex = 43;
@@ -1151,16 +1199,16 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.créerUnJeuToolStripMenuItem,
-            this.créerUnTestToolStripMenuItem,
-            this.gérerUnEmployéToolStripMenuItem,
-            this.effetuerUneRechercheToolStripMenuItem,
-            this.ajouterUnePlateformeToolStripMenuItem,
             this.modifierUnJeuToolStripMenuItem,
+            this.ajouterUnePlateformeToolStripMenuItem,
             this.ajouterUnOSToolStripMenuItem,
+            this.effetuerUneRechercheToolStripMenuItem,
+            this.gérerUnEmployéToolStripMenuItem,
             this.creerEquipeToolStripMenuItem,
+            this.créerUnTestToolStripMenuItem,
+            this.creerUnProjetTestToolStripMenuItem,
             this.afficherDesInformationsToolStripMenuItem,
-            this.cONNEXIONToolStripMenuItem,
-            this.creerUnProjetTestToolStripMenuItem});
+            this.cONNEXIONToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1489, 28);
@@ -1175,20 +1223,29 @@
             this.créerUnJeuToolStripMenuItem.Text = "Créer un jeu";
             this.créerUnJeuToolStripMenuItem.Click += new System.EventHandler(this.créerUnJeuToolStripMenuItem_Click);
             // 
-            // créerUnTestToolStripMenuItem
+            // modifierUnJeuToolStripMenuItem
             // 
-            this.créerUnTestToolStripMenuItem.Enabled = false;
-            this.créerUnTestToolStripMenuItem.Name = "créerUnTestToolStripMenuItem";
-            this.créerUnTestToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
-            this.créerUnTestToolStripMenuItem.Text = "Créer un test";
-            this.créerUnTestToolStripMenuItem.Click += new System.EventHandler(this.créerUnTestToolStripMenuItem_Click);
+            this.modifierUnJeuToolStripMenuItem.Enabled = false;
+            this.modifierUnJeuToolStripMenuItem.Name = "modifierUnJeuToolStripMenuItem";
+            this.modifierUnJeuToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
+            this.modifierUnJeuToolStripMenuItem.Text = "Modifier un jeu";
+            this.modifierUnJeuToolStripMenuItem.Click += new System.EventHandler(this.modifierUnJeuToolStripMenuItem_Click);
             // 
-            // gérerUnEmployéToolStripMenuItem
+            // ajouterUnePlateformeToolStripMenuItem
             // 
-            this.gérerUnEmployéToolStripMenuItem.Name = "gérerUnEmployéToolStripMenuItem";
-            this.gérerUnEmployéToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
-            this.gérerUnEmployéToolStripMenuItem.Text = "Gérer un employé";
-            this.gérerUnEmployéToolStripMenuItem.Click += new System.EventHandler(this.gérerUnEmployéToolStripMenuItem_Click);
+            this.ajouterUnePlateformeToolStripMenuItem.Enabled = false;
+            this.ajouterUnePlateformeToolStripMenuItem.Name = "ajouterUnePlateformeToolStripMenuItem";
+            this.ajouterUnePlateformeToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
+            this.ajouterUnePlateformeToolStripMenuItem.Text = "ajouter une plateforme";
+            this.ajouterUnePlateformeToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnePlateformeToolStripMenuItem_Click);
+            // 
+            // ajouterUnOSToolStripMenuItem
+            // 
+            this.ajouterUnOSToolStripMenuItem.Enabled = false;
+            this.ajouterUnOSToolStripMenuItem.Name = "ajouterUnOSToolStripMenuItem";
+            this.ajouterUnOSToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
+            this.ajouterUnOSToolStripMenuItem.Text = "ajouter un OS";
+            this.ajouterUnOSToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnOSToolStripMenuItem_Click);
             // 
             // effetuerUneRechercheToolStripMenuItem
             // 
@@ -1198,36 +1255,41 @@
             this.effetuerUneRechercheToolStripMenuItem.Text = "effetuer une recherche";
             this.effetuerUneRechercheToolStripMenuItem.Click += new System.EventHandler(this.effetuerUneRechercheToolStripMenuItem_Click);
             // 
-            // ajouterUnePlateformeToolStripMenuItem
+            // gérerUnEmployéToolStripMenuItem
             // 
-            this.ajouterUnePlateformeToolStripMenuItem.Name = "ajouterUnePlateformeToolStripMenuItem";
-            this.ajouterUnePlateformeToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
-            this.ajouterUnePlateformeToolStripMenuItem.Text = "ajouter une plateforme";
-            this.ajouterUnePlateformeToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnePlateformeToolStripMenuItem_Click);
-            // 
-            // modifierUnJeuToolStripMenuItem
-            // 
-            this.modifierUnJeuToolStripMenuItem.Name = "modifierUnJeuToolStripMenuItem";
-            this.modifierUnJeuToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
-            this.modifierUnJeuToolStripMenuItem.Text = "Modifier un jeu";
-            this.modifierUnJeuToolStripMenuItem.Click += new System.EventHandler(this.modifierUnJeuToolStripMenuItem_Click);
-            // 
-            // ajouterUnOSToolStripMenuItem
-            // 
-            this.ajouterUnOSToolStripMenuItem.Name = "ajouterUnOSToolStripMenuItem";
-            this.ajouterUnOSToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
-            this.ajouterUnOSToolStripMenuItem.Text = "ajouter un OS";
-            this.ajouterUnOSToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnOSToolStripMenuItem_Click);
+            this.gérerUnEmployéToolStripMenuItem.Enabled = false;
+            this.gérerUnEmployéToolStripMenuItem.Name = "gérerUnEmployéToolStripMenuItem";
+            this.gérerUnEmployéToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
+            this.gérerUnEmployéToolStripMenuItem.Text = "Gérer un employé";
+            this.gérerUnEmployéToolStripMenuItem.Click += new System.EventHandler(this.gérerUnEmployéToolStripMenuItem_Click);
             // 
             // creerEquipeToolStripMenuItem
             // 
+            this.creerEquipeToolStripMenuItem.Enabled = false;
             this.creerEquipeToolStripMenuItem.Name = "creerEquipeToolStripMenuItem";
             this.creerEquipeToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.creerEquipeToolStripMenuItem.Text = "creer equipe";
             this.creerEquipeToolStripMenuItem.Click += new System.EventHandler(this.creerEquipeToolStripMenuItem_Click);
             // 
+            // créerUnTestToolStripMenuItem
+            // 
+            this.créerUnTestToolStripMenuItem.Enabled = false;
+            this.créerUnTestToolStripMenuItem.Name = "créerUnTestToolStripMenuItem";
+            this.créerUnTestToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.créerUnTestToolStripMenuItem.Text = "Créer un test";
+            this.créerUnTestToolStripMenuItem.Click += new System.EventHandler(this.créerUnTestToolStripMenuItem_Click);
+            // 
+            // creerUnProjetTestToolStripMenuItem
+            // 
+            this.creerUnProjetTestToolStripMenuItem.Enabled = false;
+            this.creerUnProjetTestToolStripMenuItem.Name = "creerUnProjetTestToolStripMenuItem";
+            this.creerUnProjetTestToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.creerUnProjetTestToolStripMenuItem.Text = "Creer un projet test";
+            this.creerUnProjetTestToolStripMenuItem.Click += new System.EventHandler(this.creerUnProjetTestToolStripMenuItem_Click);
+            // 
             // afficherDesInformationsToolStripMenuItem
             // 
+            this.afficherDesInformationsToolStripMenuItem.Enabled = false;
             this.afficherDesInformationsToolStripMenuItem.Name = "afficherDesInformationsToolStripMenuItem";
             this.afficherDesInformationsToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
             this.afficherDesInformationsToolStripMenuItem.Text = "Afficher des informations";
@@ -1239,13 +1301,6 @@
             this.cONNEXIONToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.cONNEXIONToolStripMenuItem.Text = "Connexion";
             this.cONNEXIONToolStripMenuItem.Click += new System.EventHandler(this.cONNEXIONToolStripMenuItem_Click);
-            // 
-            // creerUnProjetTestToolStripMenuItem
-            // 
-            this.creerUnProjetTestToolStripMenuItem.Name = "creerUnProjetTestToolStripMenuItem";
-            this.creerUnProjetTestToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
-            this.creerUnProjetTestToolStripMenuItem.Text = "Creer un projet test";
-            this.creerUnProjetTestToolStripMenuItem.Click += new System.EventHandler(this.creerUnProjetTestToolStripMenuItem_Click);
             // 
             // grbConnexion
             // 
@@ -1447,17 +1502,6 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "nom d\'équipe";
             // 
-<<<<<<< HEAD
-            // lVRecheche
-            // 
-            this.lVRecheche.GridLines = true;
-            this.lVRecheche.Location = new System.Drawing.Point(9, 89);
-            this.lVRecheche.Name = "lVRecheche";
-            this.lVRecheche.Size = new System.Drawing.Size(800, 195);
-            this.lVRecheche.TabIndex = 43;
-            this.lVRecheche.UseCompatibleStateImageBehavior = false;
-            this.lVRecheche.View = System.Windows.Forms.View.Details;
-=======
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.btnCreerProjetTest);
@@ -1553,7 +1597,26 @@
             this.label47.Size = new System.Drawing.Size(122, 17);
             this.label47.TabIndex = 0;
             this.label47.Text = "nom du projet test";
->>>>>>> 442e202a9f9c3042532659d55062c2888aaee4ec
+            // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.Enabled = false;
+            this.btnSupprimer.Location = new System.Drawing.Point(224, 303);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(81, 29);
+            this.btnSupprimer.TabIndex = 44;
+            this.btnSupprimer.Text = "supprimer";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(141, 353);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(214, 17);
+            this.label52.TabIndex = 45;
+            this.label52.Text = "Selectionnez l\'id pour supprimer.";
             // 
             // Form1
             // 
@@ -1577,6 +1640,7 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "tecxel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -1646,12 +1710,7 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtMatricule;
         private System.Windows.Forms.DateTimePicker dateDDN;
-<<<<<<< HEAD
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.ComboBox comboBox4;
-=======
-        private System.Windows.Forms.TextBox textBox23;
->>>>>>> 442e202a9f9c3042532659d55062c2888aaee4ec
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox txtPlateforme;
         private System.Windows.Forms.Label label29;
@@ -1739,12 +1798,10 @@
         private System.Windows.Forms.ComboBox cmbModifierJeuAfficherJeux;
         private System.Windows.Forms.TextBox txtSysteme;
         private System.Windows.Forms.Label label45;
-<<<<<<< HEAD
         private System.Windows.Forms.ListView lVRecheche;
-=======
         private System.Windows.Forms.ComboBox cmbModJeuTheme;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label28;
+        //private System.Windows.Forms.Label label28;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label47;
@@ -1756,7 +1813,12 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.ToolStripMenuItem creerUnProjetTestToolStripMenuItem;
->>>>>>> 442e202a9f9c3042532659d55062c2888aaee4ec
+        private System.Windows.Forms.Label lblmdp;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.TextBox txtIdentifiant;
+        private System.Windows.Forms.TextBox txtMotDePasse;
+        private System.Windows.Forms.Button btnSupprimer;
+        private System.Windows.Forms.Label label52;
     }
 }
 

@@ -14,6 +14,7 @@ namespace projetTexcel
     public partial class Form1 : Form
     {
 
+        int champReherche;
         int idEmploye = -1;
         int niveauPermissionsCreationEMploye = 0;
         int niveauPermissions;
@@ -324,6 +325,11 @@ namespace projetTexcel
             frmGererEmployes.Controls.Add(this.txtGererEmployeAdresse);
             frmGererEmployes.Controls.Add(this.label36);
             frmGererEmployes.Controls.Add(this.label25);
+            frmGererEmployes.Controls.Add(this.txtMotDePasse);
+            frmGererEmployes.Controls.Add(this.txtIdentifiant);
+            frmGererEmployes.Controls.Add(this.lblmdp);
+            
+            frmGererEmployes.Controls.Add(this.label51);
             frmGererEmployes.Controls.Add(this.label24);
             frmGererEmployes.Controls.Add(this.label23);
             frmGererEmployes.Controls.Add(this.label22);
@@ -352,6 +358,9 @@ namespace projetTexcel
             frmRecherche.Controls.Add(this.cmbRecherche);
             frmRecherche.Controls.Add(this.txtRechercheInformation);
             frmRecherche.Controls.Add(this.label16);
+            frmRecherche.Controls.Add(this.btnSupprimer);
+            frmRecherche.Controls.Add(this.label52);
+
             frmRecherche.Location = new System.Drawing.Point(365, 331);
 
             frmRecherche.Size = new System.Drawing.Size(327, 268);
@@ -531,6 +540,12 @@ namespace projetTexcel
             créerUnJeuToolStripMenuItem.Enabled = true;
             modifierUnJeuToolStripMenuItem.Enabled = true;
             gérerUnEmployéToolStripMenuItem.Enabled = true;
+            creerEquipeToolStripMenuItem.Enabled = true;
+            afficherDesInformationsToolStripMenuItem.Enabled = true;
+            cONNEXIONToolStripMenuItem.Enabled = true;
+            creerUnProjetTestToolStripMenuItem.Enabled = true;
+
+
 
         }
         private void autorisationsDirecteur()
@@ -656,14 +671,15 @@ namespace projetTexcel
         private void creerEmploye()
         {
             bool correcte;
+            string date = dateDDN.Value.ToString();
+            date = date.Substring(0, 10);
             correcte = true;
             //si  un seul des  champs est vide, l'employé ne peux pas être créé
-            if (txtGerereEmployePrenom.Text == "" || txtGererEmployeNom.Text == "" || dateDDN.Value > DateTime.Today || txtGererEmployeTelRes.Text == "" || txtGererEmployeAdresse.Text == "" || txtPosteTel.Text == "" || txtMatricule.Text == "")
+            if (txtGerereEmployePrenom.Text == "" || txtGererEmployeNom.Text == "" || dateDDN.Value > DateTime.Today || txtGererEmployeTelRes.Text == "" || txtGererEmployeAdresse.Text == "" || txtPosteTel.Text == "" || txtMatricule.Text == ""|| txtPosteTel.Text.Length != 3)
                 correcte = false;
 
-
             if (correcte)
-                traitements1.creerEmploye(txtGererEmployeNom.Text, txtGerereEmployePrenom.Text, dateDDN.Value, txtGererEmployeTelRes.Text, txtPosteTel.Text, txtMatricule.Text, niveauPermissionsCreationEMploye, txtGererEmployeAdresse.Text);
+                traitements1.creerEmploye(txtGererEmployeNom.Text, txtGerereEmployePrenom.Text, date, txtGererEmployeTelRes.Text, txtPosteTel.Text, txtMatricule.Text, niveauPermissionsCreationEMploye, txtGererEmployeAdresse.Text,txtIdentifiant.Text,txtMotDePasse.Text);
             else
                 MessageBox.Show("Un ou plusieurs champs sont invalides. veuillez réessayer.");
 
@@ -683,7 +699,11 @@ namespace projetTexcel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int champReherche;
+            remplirListView();
+        }
+        private void remplirListView()
+        {
+            btnSupprimer.Enabled = true;
             lVRecheche.Columns.Clear();
             lVRecheche.Clear();
             string recherche = txtRechercheInformation.Text;
@@ -732,6 +752,21 @@ namespace projetTexcel
                     lVRecheche.Columns.Add("nom");
                     lVRecheche.Columns.Add("edition");
                     nombre = 4;
+                    break;
+                case "Employe":
+                    champReherche = 5;
+                    lVRecheche.Columns.Add("idEmploye");
+                    lVRecheche.Columns.Add("nom");
+                    lVRecheche.Columns.Add("prenom");
+                    lVRecheche.Columns.Add("Date Naissance");
+                    lVRecheche.Columns.Add("adresse");
+                    lVRecheche.Columns.Add("telephone");
+                    lVRecheche.Columns.Add("poste");
+                    lVRecheche.Columns.Add("matricule");
+                    lVRecheche.Columns.Add("identifiant");
+                    lVRecheche.Columns.Add("motDePasse");
+                    lVRecheche.Columns.Add("typeEmploye");
+                    nombre = 12;
                     break;
 
                 default:
@@ -902,6 +937,39 @@ namespace projetTexcel
            frmCreerProjetTest.Visible = true;
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
+            
+        }
 
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+           
+           string id =lVRecheche.FocusedItem.Text;
+            string condition = "";
+            switch (champReherche)
+            {
+                case 2:
+                    condition = "idJeu = " + id;
+                    break;
+                case 1:
+                    condition = "idPlateforme = " + id;
+                    break;
+                case 3:
+                    condition = "idSystemeExploitation = " + id;
+                    break;
+                case 4:
+                    condition = "idEquipe = " + id;
+                    break;
+                case 5:
+                    condition = "idEmploye = " + id;
+                    break;
+            }
+            traitements1.vueDelete1(champReherche,condition);
+            remplirListView();
+
+
+        }
     }
 }

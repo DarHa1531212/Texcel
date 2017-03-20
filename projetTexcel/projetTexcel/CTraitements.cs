@@ -42,12 +42,12 @@ namespace projetTexcel
             return Données1.VueRecherche(tableDeRecherche,"*",InformationCherchee);
         }
 
-        public void gererEmploye(int emplAModiffier, string nom, string prenom, DateTime DDN, string telResidentiel, string posteTel, string matricule, int categorieEmploi, string adresse)
+        public void gererEmploye(int emplAModiffier, string nom, string prenom, DateTime DDN, string telResidentiel, string posteTel, string matricule, int categorieEmploi, string adresse,string identifiant,string mdp)
         {
         }
-        public void creerEmploye(string nom, string prenom, DateTime DDN, string telResidentiel, string posteTel, string matricule, int categorieEmploi, string adresse)
+        public void creerEmploye(string nom, string prenom, string DDN, string telResidentiel, string posteTel, string matricule, int categorieEmploi, string adresse, string identifiant, string mdp)
         {
-
+            Données1.VueAjout(5, "nom,prenom,DDN,adresse,telephone,posteTelephonique,matricule,identifiant,motDePasse,TypeEmploi", ("'" + nom + "','" + prenom + "','" + DDN + "','" + adresse + "','" + telResidentiel + "','" + posteTel + "','" + matricule + "','" + identifiant + "','" + mdp + "'," + categorieEmploi ));
         }
         public void ajouterPlateforme(string plateforme, string configuration, string typePlateforme,string idsysteme)
         {
@@ -61,7 +61,6 @@ namespace projetTexcel
         public int connexion(string id, string mdp)
         {
             List<List<object>> liste = new List<List<object>>();
-            string mot, type,id2;
             int i = 0;
             string[] tableau = new string[3];
             liste = Données1.VueRecherche(5,"motDePasse,typeEmploi,idEmploye",id);
@@ -69,8 +68,16 @@ namespace projetTexcel
             {
                 foreach (var item2 in item)
                 {
-                    tableau[i] = item2.ToString();
-                    i++;
+                    try
+                    {
+
+                        tableau[i] = item2.ToString();
+                        i++;
+                    }
+                    catch (Exception)
+                    {
+                        
+                    }
                 }
             }
             if (mdp == tableau[0])
@@ -85,6 +92,10 @@ namespace projetTexcel
         {
             
             return Données1.contenBD();
+        }
+        public void vueDelete1(int table, string condition)
+        {
+            Données1.VueDelete(table, condition);
         }
 
 

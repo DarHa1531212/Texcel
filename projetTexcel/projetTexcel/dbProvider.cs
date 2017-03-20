@@ -17,17 +17,15 @@ namespace projetTexcel
         {
             ctn = new SqlConnection();
 
-<<<<<<< HEAD
+
               //   ctn = new SqlConnection("Data Source = INFO-324-1A-124\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
             // ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             ctn = new SqlConnection("Data Source = INFO-324-1A-123\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
            // ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-=======
+
          //   ctn = new SqlConnection("Data Source = INFO-324-1A-124\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
 // ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
           //  ctn = new SqlConnection("Data Source = INFO-324-1A-123\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
-            ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
->>>>>>> 442e202a9f9c3042532659d55062c2888aaee4ec
 
 
         }
@@ -124,6 +122,8 @@ namespace projetTexcel
             lecteur = cmd.ExecuteReader();
             while (lecteur.Read())
             {
+                liste = new List<object>();
+                i = 0;
                 try
                 {
                     while (true)
@@ -135,8 +135,7 @@ namespace projetTexcel
                 catch (Exception)
                 {
                     liste2.Add(liste);
-
-                    break;
+                    
                 }
 
 
@@ -149,30 +148,51 @@ namespace projetTexcel
         {
             List<object> liste = new List<object>();
             List<List<object>> liste2 = new List<List<object>>();
-            int i = 0;
             ctn.Open();
             cmd = ctn.CreateCommand();
             cmd.CommandText = "INSERT INTO " + determineTable(table) + " ("+champs+")  VALUES("+ajout+")";
-            
-            
-                try
-                {
+
+            try
+            {
                 lecteur = cmd.ExecuteReader();
-                }
-                catch (Exception)
-                {
-                    
+
+        }
+            catch (Exception)
+            {
+
                 
-                }
+            }
+       
 
             ctn.Close();
         }
+        public void VueDelete(int table, string condition)
+        {
+            List<object> liste = new List<object>();
+            List<List<object>> liste2 = new List<List<object>>();
+            ctn.Open();
+            cmd = ctn.CreateCommand();
+            cmd.CommandText = "DELETE FROM "+ determineTable(table) + " WHERE " + condition;
+
+
+            try
+            {
+                lecteur = cmd.ExecuteReader();
+              }
+            catch (Exception)
+            {
+
+
+            }
+
+            ctn.Close();
+        }
+
 
         public void VueModificaton(int table, string champs, string modif)
         {
             List<object> liste = new List<object>();
             List<List<object>> liste2 = new List<List<object>>();
-            int i = 0;
             ctn.Open();
             cmd = ctn.CreateCommand();
             cmd.CommandText = "UPDATE " + determineTable(table) + " SET " + champs +" WHERE " + modif;
