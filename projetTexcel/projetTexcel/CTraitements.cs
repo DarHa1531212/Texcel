@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*********************************************
+ * Nom: Hans Darmstadt-Bélanger & Marc-Antoine Duchesne
+ * Date: 20 mars 2017
+ * But: Programme de gestion de tests pour une firme de tests de jeux vidéos
+ * **********************************************/
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
