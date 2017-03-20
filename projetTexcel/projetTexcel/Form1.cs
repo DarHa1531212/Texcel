@@ -68,6 +68,10 @@ namespace projetTexcel
         {
             CreerJeu();
             CreerJeu();
+            ajouterItemsDansComboBox(traitements1.requeteInformations(6, "CONCAT(idGenre ,'-',nom)"), cmbCreerJeuGenre);
+            ajouterItemsDansComboBox(traitements1.requeteInformations(7, "CONCAT(idTheme ,'-',nom)"), cmbCreerJeuTheme);
+
+            //insérer les themes et les 
         }
 
         private void modifierUnJeuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,6 +141,14 @@ namespace projetTexcel
         {
             creerTest();
             creerTest();
+
+            //afficher les équipes, les employes et les jeux dans les combobox
+            cmbEqiupeAssossiée.Items.Clear();
+            cmbOS.Items.Clear();
+            combJeuAssocieCreerTest.Items.Clear();
+            ajouterItemsDansComboBox(traitements1.requeteInformations(4, "CONCAT(idEquipe ,'-',nomEquipe)"), cmbEqiupeAssossiée);
+            ajouterItemsDansComboBox(traitements1.requeteInformations(2, "CONCAT(idJeu ,'-',nom)"), combJeuAssocieCreerTest);
+            ajouterItemsDansComboBox(traitements1.requeteInformations(3, "CONCAT([idSystemeExploitation] ,'-',nom)"), cmbOS);
 
 
         }
@@ -261,7 +273,7 @@ namespace projetTexcel
             frmCreerJeu.MdiParent = this;
 
             frmCreerJeu.Controls.Add(this.btnConfirmerCreationJeu);
-            frmCreerJeu.Controls.Add(this.txtTheme);
+            frmCreerJeu.Controls.Add(this.cmbCreerJeuTheme);
             frmCreerJeu.Controls.Add(this.txtClassification);
             frmCreerJeu.Controls.Add(this.label7);
             frmCreerJeu.Controls.Add(this.label6);
@@ -274,7 +286,7 @@ namespace projetTexcel
             frmCreerJeu.Controls.Add(this.label3);
             frmCreerJeu.Controls.Add(this.label2);
             frmCreerJeu.Controls.Add(this.label1);
-            frmCreerJeu.Controls.Add(this.txtGenre);
+            frmCreerJeu.Controls.Add(this.cmbCreerJeuGenre);
             frmCreerJeu.Location = new System.Drawing.Point(12, 12);
             frmCreerJeu.Name = "frmCreerJeu";
             frmCreerJeu.Size = new System.Drawing.Size(327, 293);
@@ -449,7 +461,7 @@ namespace projetTexcel
         {
 
             frmCreerTest.MdiParent = this;
-            frmCreerTest.Controls.Add(this.cmbEmployeAssossie);
+            frmCreerTest.Controls.Add(this.cmbEqiupeAssossiée);
             frmCreerTest.Controls.Add(this.btnConfirmerCreerTest);
             frmCreerTest.Controls.Add(this.label32);
             frmCreerTest.Controls.Add(this.label31);
@@ -584,10 +596,16 @@ namespace projetTexcel
 
         private void btnConfirmerCreationJeu_Click(object sender, EventArgs e)
         {
+            string[] idGenre = cmbCreerJeuGenre.Text.Split('-');
+            string[] idTheme = cmbCreerJeuTheme.Text.Split('-');
+
+
+
             if (validationCreerJeuNonVide())
             {
+
                 //appel de la bd
-                traitements1.CreerJeu(txtNomCreerJeu.Text, txtCreerDev.Text, txtDescription.Text, txtConfigMin.Text, txtGenre.Text, txtClassification.Text, txtTheme.Text);
+                traitements1.CreerJeu(txtNomCreerJeu.Text, txtCreerDev.Text, txtDescription.Text, txtConfigMin.Text, idGenre[0], txtClassification.Text, idTheme[0], idEmploye);
             }
             else
                 MessageBox.Show("un ou plusieurs champs sont vides. veuillez réessayer");
@@ -599,7 +617,7 @@ namespace projetTexcel
         {
             bool correct = true;
             correct = true;
-            if (txtNomCreerJeu.Text == "" || txtCreerDev.Text == "" || txtDescription.Text == "" || txtConfigMin.Text == "" || txtClassification.Text == "" || txtTheme.Text == "" || txtGenre.Text == "")
+            if (txtNomCreerJeu.Text == "" || txtCreerDev.Text == "" || txtDescription.Text == "" || txtConfigMin.Text == "" || txtClassification.Text == "" || cmbCreerJeuGenre.SelectedIndex == -1 || cmbCreerJeuTheme.SelectedIndex == -1)
                 correct = false;
 
 
@@ -628,11 +646,13 @@ namespace projetTexcel
 
         private void btnConfirmerCreerTest_Click(object sender, EventArgs e)
         {
+            string[] idJeuAssossie = combJeuAssocieCreerTest.Text.Split('-');
+            string[] idOS = cmbOS.Text.Split('-');
+
 
             if (validationCreerTestNonVide())
             {
-                //appel de la bd
-                MessageBox.Show("tout ok");
+               traitements1.creerTest(txtNomTest.Text,idJeuAssossie[0], idOS[0], idEmploye, )
 
             }
             else
@@ -644,18 +664,9 @@ namespace projetTexcel
         {
 
             bool correct = true;
-            correct = true;
-            if (txtNomTest.Text == "")
+            if (txtNomTest.Text == "" || combJeuAssocieCreerTest.SelectedIndex == -1 || cmbOS.SelectedIndex == -1 || cmbEqiupeAssossiée.SelectedIndex == -1 || txtDdescriptionTest.Text == "")
                 correct = false;
-            if (combJeuAssocieCreerTest.SelectedIndex == -1)
-                correct = false;
-            if (cmbOS.SelectedIndex == -1)
-                correct = false;
-            if (cmbEmployeAssossie.SelectedIndex == -1)
-                correct = false;
-
-
-
+            
             return correct;
         }
 
@@ -851,10 +862,7 @@ namespace projetTexcel
         //{
         //    traitements1.listviewGenre();
         //}
-        public void changerGenre(int valeur)
-        {
-            txtGenre.Text = valeur.ToString();
-        }
+ 
 
         private void cmbModifierJeuAfficherJeux_SelectedIndexChanged(object sender, EventArgs e)
         {
