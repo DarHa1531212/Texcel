@@ -343,7 +343,7 @@ namespace projetTexcel
             frmRecherche.MdiParent = this;
 
             frmRecherche.Controls.Add(this.btnConfirmer);
-            frmRecherche.Controls.Add(this.textBox23);
+            frmRecherche.Controls.Add(this.lVRecheche);
             frmRecherche.Controls.Add(this.label17);
             frmRecherche.Controls.Add(this.cmbRecherche);
             frmRecherche.Controls.Add(this.txtRechercheInformation);
@@ -664,20 +664,54 @@ namespace projetTexcel
         private void button1_Click(object sender, EventArgs e)
         {
             int champReherche;
-
+            lVRecheche.Columns.Clear();
+            lVRecheche.Clear();
+            string recherche = txtRechercheInformation.Text;
+            int nombre = 0;
+            List<List<object>> liste = new List<List<object>>();
             switch (cmbRecherche.Text)
             {
                 case "Plateforme":
                     champReherche = 1;
+                    lVRecheche.Columns.Add("idPlateforme");
+                    lVRecheche.Columns.Add("nom");
+                    lVRecheche.Columns.Add("configuration");
+                    lVRecheche.Columns.Add("type Plateforme");
+                    lVRecheche.Columns.Add("crée par ");
+                    lVRecheche.Columns.Add("idSysteme exploitation");
+                    nombre = 7;
+
                     break;
                 case "Jeu":
                     champReherche = 2;
+                    lVRecheche.Columns.Add("idJeu");
+                    lVRecheche.Columns.Add("nom");
+                    lVRecheche.Columns.Add("developpeur");
+                    lVRecheche.Columns.Add("descriptionJeu");
+                    lVRecheche.Columns.Add("configuration Minimale");
+                    lVRecheche.Columns.Add("classification");
+                    lVRecheche.Columns.Add("dEmploye");
+                    lVRecheche.Columns.Add("idTheme");
+                    lVRecheche.Columns.Add("idGenre");
+                    lVRecheche.Columns.Add("idSimilaire");
+                    nombre = 11;
                     break;
                 case "Système d'exploitation":
+                    lVRecheche.Columns.Add("idSysteme");
+                    lVRecheche.Columns.Add("nom");
+                    lVRecheche.Columns.Add("code");
+                    lVRecheche.Columns.Add("edition");
+                    lVRecheche.Columns.Add("Version");
+                    lVRecheche.Columns.Add("idEmploye");
                     champReherche = 3;
+                    nombre = 7;
                     break;
                 case "Équipe":
                     champReherche = 4;
+                    lVRecheche.Columns.Add("idSysteme");
+                    lVRecheche.Columns.Add("nom");
+                    lVRecheche.Columns.Add("edition");
+                    nombre = 4;
                     break;
 
                 default:
@@ -688,7 +722,21 @@ namespace projetTexcel
             if (champReherche == -1 || txtRechercheInformation.Text == null)
                 MessageBox.Show("Un ou plusieurs champs sont vides. veuillez les remplire");
             else
-                traitements1.Recherche(txtRechercheInformation.Text, champReherche);
+                liste = traitements1.Recherche(txtRechercheInformation.Text, champReherche);
+
+            foreach (var item in liste)
+            {
+                string[] tableau = new string[nombre];
+                int i = 0;
+                foreach (var item2 in item)
+                {
+                    tableau[i] = item2.ToString();
+                    i++;
+                }
+
+                ListViewItem chose = new ListViewItem(tableau);
+                lVRecheche.Items.Add(chose);
+            }
         }
 
         private void radDirecteur_CheckedChanged(object sender, EventArgs e)

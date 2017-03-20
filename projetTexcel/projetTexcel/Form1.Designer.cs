@@ -60,7 +60,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnConfirmer = new System.Windows.Forms.Button();
-            this.textBox23 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.cmbRecherche = new System.Windows.Forms.ComboBox();
             this.txtRechercheInformation = new System.Windows.Forms.TextBox();
@@ -90,6 +89,8 @@
             this.lblSelecctionnerEmploye = new System.Windows.Forms.Label();
             this.cmbSelectionEmploye = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtSysteme = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
             this.txtTypePlateforme = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.txtConfiguration = new System.Windows.Forms.TextBox();
@@ -155,8 +156,7 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.txtSysteme = new System.Windows.Forms.TextBox();
+            this.lVRecheche = new System.Windows.Forms.ListView();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -316,7 +316,7 @@
             this.grbModiffierJeu.Text = "modifier un jeu";
             this.grbModiffierJeu.Visible = false;
             // 
-            // label45
+            // label45i
             // 
             this.label45i.AutoSize = true;
             this.label45i.Location = new System.Drawing.Point(12, 23);
@@ -486,15 +486,15 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lVRecheche);
             this.groupBox4.Controls.Add(this.btnConfirmer);
-            this.groupBox4.Controls.Add(this.textBox23);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.cmbRecherche);
             this.groupBox4.Controls.Add(this.txtRechercheInformation);
             this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Location = new System.Drawing.Point(414, 543);
+            this.groupBox4.Location = new System.Drawing.Point(414, 479);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(327, 268);
+            this.groupBox4.Size = new System.Drawing.Size(621, 332);
             this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "effectuer une recherche";
@@ -502,21 +502,13 @@
             // 
             // btnConfirmer
             // 
-            this.btnConfirmer.Location = new System.Drawing.Point(9, 233);
+            this.btnConfirmer.Location = new System.Drawing.Point(7, 303);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(81, 23);
             this.btnConfirmer.TabIndex = 42;
             this.btnConfirmer.Text = "Confirmer";
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox23
-            // 
-            this.textBox23.Location = new System.Drawing.Point(6, 96);
-            this.textBox23.Multiline = true;
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(321, 131);
-            this.textBox23.TabIndex = 21;
             // 
             // label17
             // 
@@ -825,6 +817,22 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "ajouter une plateforme";
             this.groupBox6.Visible = false;
+            // 
+            // txtSysteme
+            // 
+            this.txtSysteme.Location = new System.Drawing.Point(161, 110);
+            this.txtSysteme.Name = "txtSysteme";
+            this.txtSysteme.Size = new System.Drawing.Size(142, 22);
+            this.txtSysteme.TabIndex = 48;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(6, 117);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(137, 17);
+            this.label45.TabIndex = 47;
+            this.label45.Text = "Systeme exploitation";
             // 
             // txtTypePlateforme
             // 
@@ -1417,21 +1425,15 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "nom d\'équipe";
             // 
-            // label45
+            // lVRecheche
             // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(6, 117);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(137, 17);
-            this.label45.TabIndex = 47;
-            this.label45.Text = "Systeme exploitation";
-            // 
-            // txtSysteme
-            // 
-            this.txtSysteme.Location = new System.Drawing.Point(161, 110);
-            this.txtSysteme.Name = "txtSysteme";
-            this.txtSysteme.Size = new System.Drawing.Size(142, 22);
-            this.txtSysteme.TabIndex = 48;
+            this.lVRecheche.GridLines = true;
+            this.lVRecheche.Location = new System.Drawing.Point(9, 89);
+            this.lVRecheche.Name = "lVRecheche";
+            this.lVRecheche.Size = new System.Drawing.Size(800, 195);
+            this.lVRecheche.TabIndex = 43;
+            this.lVRecheche.UseCompatibleStateImageBehavior = false;
+            this.lVRecheche.View = System.Windows.Forms.View.Details;
             // 
             // Form1
             // 
@@ -1524,7 +1526,6 @@
         private System.Windows.Forms.DateTimePicker dateDDN;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox txtPlateforme;
         private System.Windows.Forms.Label label29;
@@ -1612,6 +1613,7 @@
         private System.Windows.Forms.ComboBox cmbModifierJeuAfficherJeux;
         private System.Windows.Forms.TextBox txtSysteme;
         private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.ListView lVRecheche;
     }
 }
 

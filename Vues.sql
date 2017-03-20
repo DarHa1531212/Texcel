@@ -23,8 +23,7 @@ GO
 CREATE VIEW VueSystemeExploitation AS 
 
 SELECT idSystemeExploitation,nom,code,edition,versionSysteme,idEmploye,CONCAT(idSystemeExploitation,nom,code,edition,versionSysteme,idEmploye) AS 'tag'
-FROM SystemeExploitation
-
+FROM SystemeExploitation 
 -- vue pour la table plateforme
 GO
 
@@ -99,8 +98,7 @@ GO
 CREATE VIEW VueTest AS 
 
 SELECT idTest,nomTest,descriptionTest,idEmploye,idProjetTest,idCategorieTest
-,CONCAT(idTest,nomTest,descriptionTest,idEmploye,idProjetTest,idCategorieTest) as 'TAG' FROM Test 
-
+,CONCAT(idTest,nomTest,descriptionTest,idEmploye,idProjetTest,idCategorieTest) as 'tag' FROM Test 
 
 -- vue pour la table EmployeEquipe
 GO

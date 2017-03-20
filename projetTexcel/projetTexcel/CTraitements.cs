@@ -9,7 +9,6 @@ namespace projetTexcel
     class CTraitements
     {
         dbProvider Données1 = new dbProvider();
-        ControleurRecherche cRecherche = new ControleurRecherche();
         int idEmploye;
         
         public void CreerJeu(string Nom, string dev, string desc, string configMini, string codeGenre, string classification, string theme)
@@ -37,9 +36,9 @@ namespace projetTexcel
 
         }
 
-        public void Recherche(string InformationCherchee, int tableDeRecherche)
+        public List<List<object>> Recherche(string InformationCherchee, int tableDeRecherche)
         {
-
+            return Données1.VueRecherche(tableDeRecherche,"*",InformationCherchee);
         }
 
         public void gererEmploye(int emplAModiffier, string nom, string prenom, DateTime DDN, string telResidentiel, string posteTel, string matricule, int categorieEmploi, string adresse)
@@ -85,15 +84,6 @@ namespace projetTexcel
         {
             
             return Données1.contenBD();
-        }
-        public void listviewGenre()
-        {
-            cRecherche.rechercheGenre();
-        }
-        public void listRetour(int valeur)
-        {
-            //form.changerGenre(valeur);
-            
         }
 
 
