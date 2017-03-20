@@ -17,10 +17,17 @@ namespace projetTexcel
         {
             ctn = new SqlConnection();
 
+<<<<<<< HEAD
               //   ctn = new SqlConnection("Data Source = INFO-324-1A-124\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
             // ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             ctn = new SqlConnection("Data Source = INFO-324-1A-123\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
            // ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+=======
+         //   ctn = new SqlConnection("Data Source = INFO-324-1A-124\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
+// ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+          //  ctn = new SqlConnection("Data Source = INFO-324-1A-123\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
+            ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+>>>>>>> 442e202a9f9c3042532659d55062c2888aaee4ec
 
 
         }
@@ -37,8 +44,8 @@ namespace projetTexcel
         {
             if (table == 4)
             {
-                VueEquipe();
-                return null;
+                
+                return VueEquipe();
             }
             else
             {
@@ -151,7 +158,7 @@ namespace projetTexcel
                 try
                 {
                 lecteur = cmd.ExecuteReader();
-              }
+                }
                 catch (Exception)
                 {
                     
@@ -203,6 +210,14 @@ namespace projetTexcel
                 case 5:valeur = "VueEmploye";
                     break;
                 case 6:valeur = "VueGenre";
+                    break;
+                case 7: valeur = "VueTheme";
+                        break;
+                case 8:
+                    valeur = "VueTest";
+                    break;
+               case 9:
+                    valeur = "VueProjetTest";
                     break;
             }
             return valeur;

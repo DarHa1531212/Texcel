@@ -18,6 +18,8 @@ namespace projetTexcel
         int niveauPermissionsCreationEMploye = 0;
         int niveauPermissions;
         Form frmCreerJeu = new Form();
+        Form frmCreerProjetTest = new Form();
+
         Form frmCreerEquie = new Form();
         Form frmAfficherBD = new Form();
         Form frmModifierJeu = new Form();
@@ -36,6 +38,7 @@ namespace projetTexcel
             InitializeComponent();
 
             frmCreerTest.FormClosing += new FormClosingEventHandler(Fermerform);
+            frmCreerProjetTest.FormClosing += new FormClosingEventHandler(Fermerform);
             frmCreerJeu.FormClosing += new FormClosingEventHandler(Fermerform);
             frmModifierJeu.FormClosing += new FormClosingEventHandler(Fermerform);
             frmGererEmployes.FormClosing += new FormClosingEventHandler(Fermerform);
@@ -61,19 +64,22 @@ namespace projetTexcel
         {
             modifierJeu();
             modifierJeu();
-            ajouterJeuxDansComboBox(traitements1.requeteInformations(2, "CONCAT(idJeu ,'-',nom)"));
+            ajouterItemsDansComboBox(traitements1.requeteInformations(2, "CONCAT(idJeu ,'-',nom)"), cmbModifierJeuAfficherJeux);
+            ajouterItemsDansComboBox(traitements1.requeteInformations(6, "CONCAT(idGenre ,'-',nom)"), cmbModifierGenre);
+            ajouterItemsDansComboBox(traitements1.requeteInformations(7, "CONCAT(idTheme ,'-',nom)"), cmbModJeuTheme);
+
+
 
         }
 
-        public void ajouterJeuxDansComboBox(List<List<object>> liste2)
+        public void ajouterItemsDansComboBox(List<List<object>> liste2, ComboBox cmbBox)
         {
            
             foreach (var item in liste2)
             {
-                ///*cmbModifierJeuAfficherJeux*/.Items.Add(liste2.item[1]);
                 foreach (var item2 in item)
                 {
-                    cmbModifierJeuAfficherJeux.Items.Add(item2);
+                    cmbBox.Items.Add(item2);
                 }
             }
         }
@@ -274,13 +280,11 @@ namespace projetTexcel
             frmModifierJeu.MdiParent = this;
 
 
-            frmModifierJeu.Controls.Add(this.label45);
+            frmModifierJeu.Controls.Add(this.label45i);
             frmModifierJeu.Controls.Add(this.cmbModifierJeuAfficherJeux);
             frmModifierJeu.Controls.Add(this.cmbModifierGenre);
             frmModifierJeu.Controls.Add(this.btnConfirmerModifierJeu);
-            frmModifierJeu.Controls.Add(this.label28);
-            frmModifierJeu.Controls.Add(this.comboBox4);
-            frmModifierJeu.Controls.Add(this.txtModifTheme);
+            frmModifierJeu.Controls.Add(this.cmbModJeuTheme);
             frmModifierJeu.Controls.Add(this.txtModClassification);
             frmModifierJeu.Controls.Add(this.label8);
             frmModifierJeu.Controls.Add(this.label9);
@@ -534,6 +538,7 @@ namespace projetTexcel
             effetuerUneRechercheToolStripMenuItem.Enabled = true;
             afficherDesInformationsToolStripMenuItem.Enabled = true;
             creerEquipeToolStripMenuItem.Enabled = true;
+            creerUnProjetTestToolStripMenuItem.Enabled = true;
 
         }
 
@@ -579,7 +584,22 @@ namespace projetTexcel
 
         private void btnConfirmerModifierJeu_Click(object sender, EventArgs e)
         {
+            string[] id = cmbModifierJeuAfficherJeux.Text.Split('-');
+            string[] idGenre = cmbModifierGenre.Text.Split('-');
+            string[] idClassification = cmbModJeuTheme.Text.Split('-');
+            if (validationModifierJeu())
+                traitements1.modifierJeu(Convert.ToInt32(id[0]), txtNomJeu.Text, txtModifDev.Text, txtModifDesc.Text, txtModifConfigMin.Text, idGenre[0], txtModClassification.Text, idClassification[0]);
+            else
+                MessageBox.Show("un ou plusieurs champs sont invalides veuillez réessayer.");
+        }
 
+        public bool validationModifierJeu()
+        {
+            bool correct = true;
+            if (cmbModifierJeuAfficherJeux.SelectedIndex == -1 || txtNomJeu.Text ==""|| txtModifDev.Text==""|| txtModifDesc.Text ==""|| txtModifConfigMin.Text ==""|| cmbModifierGenre.SelectedIndex==-1 || txtModClassification.Text==""|| cmbModJeuTheme.Text == "")
+                correct = false;
+
+            return correct;
         }
 
         private void btnConfirmerCreerTest_Click(object sender, EventArgs e)
@@ -821,5 +841,67 @@ namespace projetTexcel
                 }
             }
         }
+
+ 
+
+        private void btnCreerProjetTest_Click(object sender, EventArgs e)
+        {
+            if (validationCreerProjetTeste())
+            {
+                //Bonjour
+
+                string[] id = cmbChoixEquipe.Text.Split('-');
+                string[] id2 = cmbProjetTestChoixEmplloye.Text.Split('-');
+                string[] id3 = cmbProjetTestChoixJeu.Text.Split('-');
+                //txtNomProjetTest
+
+            }
+            else
+            {
+                MessageBox.Show("un ou plusieurs champs sont manquants. veuillez les remplire");
+            }
+
+        }
+
+        public bool validationCreerProjetTeste()
+        {
+            bool correct = true;
+            if (txtNomProjetTest.Text == "" || cmbChoixEquipe.SelectedIndex == -1 || cmbProjetTestChoixEmplloye.SelectedIndex == -1 || cmbProjetTestChoixJeu.SelectedIndex == -1)
+                correct = false;
+            return correct;
+        }
+
+        private void creerUnProjetTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            afficherProjetsTest();
+            afficherProjetsTest();
+
+            ajouterItemsDansComboBox(traitements1.requeteInformations(2, "CONCAT(idJeu ,'-',nom)"), cmbProjetTestChoixJeu);
+            ajouterItemsDansComboBox(traitements1.requeteInformations(5, "CONCAT(idEmploye ,'-',nom)"), cmbProjetTestChoixEmplloye);
+            ajouterItemsDansComboBox(traitements1.requeteInformations(4, "CONCAT(idEquipe ,'-',nomEquipe)"), cmbChoixEquipe);
+
+        }
+
+        public void afficherProjetsTest()
+        {
+            frmCreerProjetTest.MdiParent = this;
+           frmCreerProjetTest.Controls.Add(this.btnCreerProjetTest);
+           frmCreerProjetTest.Controls.Add(this.cmbProjetTestChoixEmplloye);
+           frmCreerProjetTest.Controls.Add(this.cmbProjetTestChoixJeu);
+           frmCreerProjetTest.Controls.Add(this.cmbChoixEquipe);
+           frmCreerProjetTest.Controls.Add(this.txtNomProjetTest);
+           frmCreerProjetTest.Controls.Add(this.label50);
+           frmCreerProjetTest.Controls.Add(this.label49);
+           frmCreerProjetTest.Controls.Add(this.label48);
+           frmCreerProjetTest.Controls.Add(this.label47);
+           frmCreerProjetTest.Location = new System.Drawing.Point(12, 665);
+           frmCreerProjetTest.Size = new System.Drawing.Size(280, 167);
+           frmCreerProjetTest.TabIndex = 52;
+           frmCreerProjetTest.TabStop = false;
+           frmCreerProjetTest.Text = "creer un projet test";
+           frmCreerProjetTest.Visible = true;
+        }
+
+
     }
 }

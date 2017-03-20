@@ -26,14 +26,15 @@ namespace projetTexcel
         }
 
 
-        public void modifierJeu(string Nom, string dev, string desc, string configMini, int codeGenre, int classification, int Employe)
+        public void modifierJeu(int idJeu,  string nom, string dev, string desc, string configMin, string genre, string classification, string theme)
         {
-
+            string changement = "nom = '" + nom + "', developpeur = '" + dev + "',descriptionJeu = '" + desc + "' , configurationMinimale = '" + configMin + "', idGenre =" + genre + ",classification = '" + classification + "', idTheme =" + theme;
+            Données1.VueModificaton(2, changement, "idJeu = " + idJeu);
         }
 
         public void creerTest(string nom, int jeuAssossie, int os, int epmploye)
         {
-
+        //    Données1.VueAjout(8, "  ,[nomTest],[descriptionTest],[idEmploye],[idProjetTest],[idCategorieTest],[TAG]", )
         }
 
         public List<List<object>> Recherche(string InformationCherchee, int tableDeRecherche)
