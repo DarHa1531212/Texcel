@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.cmbEmployeAssossie = new System.Windows.Forms.ComboBox();
             this.btnConfirmerCreerTest = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
@@ -39,13 +41,11 @@
             this.txtNomTest = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.grbModiffierJeu = new System.Windows.Forms.GroupBox();
+            this.cmbModJeuTheme = new System.Windows.Forms.ComboBox();
             this.label45i = new System.Windows.Forms.Label();
             this.cmbModifierJeuAfficherJeux = new System.Windows.Forms.ComboBox();
             this.cmbModifierGenre = new System.Windows.Forms.ComboBox();
             this.btnConfirmerModifierJeu = new System.Windows.Forms.Button();
-            this.label28 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.txtModifTheme = new System.Windows.Forms.TextBox();
             this.txtModClassification = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -90,6 +90,8 @@
             this.lblSelecctionnerEmploye = new System.Windows.Forms.Label();
             this.cmbSelectionEmploye = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtSysteme = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
             this.txtTypePlateforme = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.txtConfiguration = new System.Windows.Forms.TextBox();
@@ -134,6 +136,7 @@
             this.creerEquipeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.afficherDesInformationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONNEXIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creerUnProjetTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grbConnexion = new System.Windows.Forms.GroupBox();
             this.btnConnexion = new System.Windows.Forms.Button();
             this.txtConnexionMotDePasse = new System.Windows.Forms.TextBox();
@@ -155,8 +158,16 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.txtSysteme = new System.Windows.Forms.TextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnCreerProjetTest = new System.Windows.Forms.Button();
+            this.cmbProjetTestChoixEmplloye = new System.Windows.Forms.ComboBox();
+            this.cmbProjetTestChoixJeu = new System.Windows.Forms.ComboBox();
+            this.cmbChoixEquipe = new System.Windows.Forms.ComboBox();
+            this.txtNomProjetTest = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -168,10 +179,13 @@
             this.grbConnexion.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label46);
+            this.groupBox2.Controls.Add(this.label28);
             this.groupBox2.Controls.Add(this.cmbEmployeAssossie);
             this.groupBox2.Controls.Add(this.btnConfirmerCreerTest);
             this.groupBox2.Controls.Add(this.label32);
@@ -183,11 +197,29 @@
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Location = new System.Drawing.Point(12, 342);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(320, 180);
+            this.groupBox2.Size = new System.Drawing.Size(320, 317);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "créer un test";
             this.groupBox2.Visible = false;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(7, 178);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(61, 17);
+            this.label46.TabIndex = 30;
+            this.label46.Text = "employe";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 153);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(77, 17);
+            this.label28.TabIndex = 29;
+            this.label28.Text = "description";
             // 
             // cmbEmployeAssossie
             // 
@@ -206,7 +238,7 @@
             // 
             // btnConfirmerCreerTest
             // 
-            this.btnConfirmerCreerTest.Location = new System.Drawing.Point(8, 145);
+            this.btnConfirmerCreerTest.Location = new System.Drawing.Point(6, 206);
             this.btnConfirmerCreerTest.Name = "btnConfirmerCreerTest";
             this.btnConfirmerCreerTest.Size = new System.Drawing.Size(81, 23);
             this.btnConfirmerCreerTest.TabIndex = 27;
@@ -289,13 +321,11 @@
             // 
             // grbModiffierJeu
             // 
+            this.grbModiffierJeu.Controls.Add(this.cmbModJeuTheme);
             this.grbModiffierJeu.Controls.Add(this.label45i);
             this.grbModiffierJeu.Controls.Add(this.cmbModifierJeuAfficherJeux);
             this.grbModiffierJeu.Controls.Add(this.cmbModifierGenre);
             this.grbModiffierJeu.Controls.Add(this.btnConfirmerModifierJeu);
-            this.grbModiffierJeu.Controls.Add(this.label28);
-            this.grbModiffierJeu.Controls.Add(this.comboBox4);
-            this.grbModiffierJeu.Controls.Add(this.txtModifTheme);
             this.grbModiffierJeu.Controls.Add(this.txtModClassification);
             this.grbModiffierJeu.Controls.Add(this.label8);
             this.grbModiffierJeu.Controls.Add(this.label9);
@@ -316,10 +346,18 @@
             this.grbModiffierJeu.Text = "modifier un jeu";
             this.grbModiffierJeu.Visible = false;
             // 
-            // label45
+            // cmbModJeuTheme
+            // 
+            this.cmbModJeuTheme.FormattingEnabled = true;
+            this.cmbModJeuTheme.Location = new System.Drawing.Point(187, 205);
+            this.cmbModJeuTheme.Name = "cmbModJeuTheme";
+            this.cmbModJeuTheme.Size = new System.Drawing.Size(121, 24);
+            this.cmbModJeuTheme.TabIndex = 30;
+            // 
+            // label45i
             // 
             this.label45i.AutoSize = true;
-            this.label45i.Location = new System.Drawing.Point(12, 23);
+            this.label45i.Location = new System.Drawing.Point(14, 30);
             this.label45i.Name = "label45i";
             this.label45i.Size = new System.Drawing.Size(125, 17);
             this.label45i.TabIndex = 29;
@@ -328,7 +366,7 @@
             // cmbModifierJeuAfficherJeux
             // 
             this.cmbModifierJeuAfficherJeux.FormattingEnabled = true;
-            this.cmbModifierJeuAfficherJeux.Location = new System.Drawing.Point(189, 20);
+            this.cmbModifierJeuAfficherJeux.Location = new System.Drawing.Point(187, 23);
             this.cmbModifierJeuAfficherJeux.Name = "cmbModifierJeuAfficherJeux";
             this.cmbModifierJeuAfficherJeux.Size = new System.Drawing.Size(121, 24);
             this.cmbModifierJeuAfficherJeux.TabIndex = 28;
@@ -337,12 +375,7 @@
             // cmbModifierGenre
             // 
             this.cmbModifierGenre.FormattingEnabled = true;
-            this.cmbModifierGenre.Items.AddRange(new object[] {
-            "Tous les chapms",
-            "employés",
-            "jeux",
-            "employés"});
-            this.cmbModifierGenre.Location = new System.Drawing.Point(187, 149);
+            this.cmbModifierGenre.Location = new System.Drawing.Point(187, 153);
             this.cmbModifierGenre.Name = "cmbModifierGenre";
             this.cmbModifierGenre.Size = new System.Drawing.Size(121, 24);
             this.cmbModifierGenre.TabIndex = 27;
@@ -357,38 +390,9 @@
             this.btnConfirmerModifierJeu.UseVisualStyleBackColor = true;
             this.btnConfirmerModifierJeu.Click += new System.EventHandler(this.btnConfirmerModifierJeu_Click);
             // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(6, 243);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(150, 17);
-            this.label28.TabIndex = 26;
-            this.label28.Text = "Sélectionner l\'employé";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Tous les chapms",
-            "employés",
-            "jeux",
-            "employés"});
-            this.comboBox4.Location = new System.Drawing.Point(187, 236);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 24);
-            this.comboBox4.TabIndex = 25;
-            // 
-            // txtModifTheme
-            // 
-            this.txtModifTheme.Location = new System.Drawing.Point(187, 210);
-            this.txtModifTheme.Name = "txtModifTheme";
-            this.txtModifTheme.Size = new System.Drawing.Size(100, 22);
-            this.txtModifTheme.TabIndex = 16;
-            // 
             // txtModClassification
             // 
-            this.txtModClassification.Location = new System.Drawing.Point(187, 183);
+            this.txtModClassification.Location = new System.Drawing.Point(187, 181);
             this.txtModClassification.Name = "txtModClassification";
             this.txtModClassification.Size = new System.Drawing.Size(100, 22);
             this.txtModClassification.TabIndex = 15;
@@ -396,7 +400,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 193);
+            this.label8.Location = new System.Drawing.Point(14, 186);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 17);
             this.label8.TabIndex = 14;
@@ -405,7 +409,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 221);
+            this.label9.Location = new System.Drawing.Point(14, 212);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 17);
             this.label9.TabIndex = 13;
@@ -413,28 +417,28 @@
             // 
             // txtModifConfigMin
             // 
-            this.txtModifConfigMin.Location = new System.Drawing.Point(187, 129);
+            this.txtModifConfigMin.Location = new System.Drawing.Point(187, 126);
             this.txtModifConfigMin.Name = "txtModifConfigMin";
             this.txtModifConfigMin.Size = new System.Drawing.Size(100, 22);
             this.txtModifConfigMin.TabIndex = 11;
             // 
             // txtModifDesc
             // 
-            this.txtModifDesc.Location = new System.Drawing.Point(187, 102);
+            this.txtModifDesc.Location = new System.Drawing.Point(187, 103);
             this.txtModifDesc.Name = "txtModifDesc";
             this.txtModifDesc.Size = new System.Drawing.Size(100, 22);
             this.txtModifDesc.TabIndex = 10;
             // 
             // txtModifDev
             // 
-            this.txtModifDev.Location = new System.Drawing.Point(187, 75);
+            this.txtModifDev.Location = new System.Drawing.Point(187, 77);
             this.txtModifDev.Name = "txtModifDev";
             this.txtModifDev.Size = new System.Drawing.Size(100, 22);
             this.txtModifDev.TabIndex = 9;
             // 
             // txtNomJeu
             // 
-            this.txtNomJeu.Location = new System.Drawing.Point(187, 48);
+            this.txtNomJeu.Location = new System.Drawing.Point(187, 51);
             this.txtNomJeu.Name = "txtNomJeu";
             this.txtNomJeu.Size = new System.Drawing.Size(100, 22);
             this.txtNomJeu.TabIndex = 8;
@@ -442,7 +446,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 165);
+            this.label10.Location = new System.Drawing.Point(14, 160);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(45, 17);
             this.label10.TabIndex = 4;
@@ -451,7 +455,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 137);
+            this.label11.Location = new System.Drawing.Point(14, 131);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(149, 17);
             this.label11.TabIndex = 3;
@@ -460,7 +464,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 109);
+            this.label12.Location = new System.Drawing.Point(14, 108);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 17);
             this.label12.TabIndex = 2;
@@ -469,7 +473,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 81);
+            this.label13.Location = new System.Drawing.Point(14, 82);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(87, 17);
             this.label13.TabIndex = 1;
@@ -478,7 +482,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 53);
+            this.label14.Location = new System.Drawing.Point(14, 56);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(35, 17);
             this.label14.TabIndex = 0;
@@ -492,7 +496,7 @@
             this.groupBox4.Controls.Add(this.cmbRecherche);
             this.groupBox4.Controls.Add(this.txtRechercheInformation);
             this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Location = new System.Drawing.Point(414, 543);
+            this.groupBox4.Location = new System.Drawing.Point(365, 362);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(327, 268);
             this.groupBox4.TabIndex = 19;
@@ -586,7 +590,7 @@
             this.groupBox5.Size = new System.Drawing.Size(390, 434);
             this.groupBox5.TabIndex = 20;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Gérer des employés";
+            this.groupBox5.Text = " ";
             this.groupBox5.Visible = false;
             // 
             // chkNouvelEmploye
@@ -818,13 +822,29 @@
             this.groupBox6.Controls.Add(this.btnConfirmerAjoutPlateforme);
             this.groupBox6.Controls.Add(this.txtPlateforme);
             this.groupBox6.Controls.Add(this.label29);
-            this.groupBox6.Location = new System.Drawing.Point(12, 580);
+            this.groupBox6.Location = new System.Drawing.Point(1099, 520);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(365, 166);
             this.groupBox6.TabIndex = 21;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "ajouter une plateforme";
             this.groupBox6.Visible = false;
+            // 
+            // txtSysteme
+            // 
+            this.txtSysteme.Location = new System.Drawing.Point(161, 110);
+            this.txtSysteme.Name = "txtSysteme";
+            this.txtSysteme.Size = new System.Drawing.Size(142, 22);
+            this.txtSysteme.TabIndex = 48;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(6, 117);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(137, 17);
+            this.label45.TabIndex = 47;
+            this.label45.Text = "Systeme exploitation";
             // 
             // txtTypePlateforme
             // 
@@ -1042,7 +1062,7 @@
             this.groupBox1.Controls.Add(this.btnConfirmerAjoutOS);
             this.groupBox1.Controls.Add(this.txtOSNom);
             this.groupBox1.Controls.Add(this.label33);
-            this.groupBox1.Location = new System.Drawing.Point(728, 609);
+            this.groupBox1.Location = new System.Drawing.Point(698, 479);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(365, 180);
             this.groupBox1.TabIndex = 43;
@@ -1137,7 +1157,8 @@
             this.ajouterUnOSToolStripMenuItem,
             this.creerEquipeToolStripMenuItem,
             this.afficherDesInformationsToolStripMenuItem,
-            this.cONNEXIONToolStripMenuItem});
+            this.cONNEXIONToolStripMenuItem,
+            this.creerUnProjetTestToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1489, 28);
@@ -1216,6 +1237,13 @@
             this.cONNEXIONToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.cONNEXIONToolStripMenuItem.Text = "Connexion";
             this.cONNEXIONToolStripMenuItem.Click += new System.EventHandler(this.cONNEXIONToolStripMenuItem_Click);
+            // 
+            // creerUnProjetTestToolStripMenuItem
+            // 
+            this.creerUnProjetTestToolStripMenuItem.Name = "creerUnProjetTestToolStripMenuItem";
+            this.creerUnProjetTestToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.creerUnProjetTestToolStripMenuItem.Text = "Creer un projet test";
+            this.creerUnProjetTestToolStripMenuItem.Click += new System.EventHandler(this.creerUnProjetTestToolStripMenuItem_Click);
             // 
             // grbConnexion
             // 
@@ -1417,27 +1445,108 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "nom d\'équipe";
             // 
-            // label45
+            // groupBox8
             // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(6, 117);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(137, 17);
-            this.label45.TabIndex = 47;
-            this.label45.Text = "Systeme exploitation";
+            this.groupBox8.Controls.Add(this.btnCreerProjetTest);
+            this.groupBox8.Controls.Add(this.cmbProjetTestChoixEmplloye);
+            this.groupBox8.Controls.Add(this.cmbProjetTestChoixJeu);
+            this.groupBox8.Controls.Add(this.cmbChoixEquipe);
+            this.groupBox8.Controls.Add(this.txtNomProjetTest);
+            this.groupBox8.Controls.Add(this.label50);
+            this.groupBox8.Controls.Add(this.label49);
+            this.groupBox8.Controls.Add(this.label48);
+            this.groupBox8.Controls.Add(this.label47);
+            this.groupBox8.Location = new System.Drawing.Point(12, 665);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(280, 167);
+            this.groupBox8.TabIndex = 52;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "creer un projet test";
+            this.groupBox8.Visible = false;
             // 
-            // txtSysteme
+            // btnCreerProjetTest
             // 
-            this.txtSysteme.Location = new System.Drawing.Point(161, 110);
-            this.txtSysteme.Name = "txtSysteme";
-            this.txtSysteme.Size = new System.Drawing.Size(142, 22);
-            this.txtSysteme.TabIndex = 48;
+            this.btnCreerProjetTest.Location = new System.Drawing.Point(8, 136);
+            this.btnCreerProjetTest.Name = "btnCreerProjetTest";
+            this.btnCreerProjetTest.Size = new System.Drawing.Size(75, 23);
+            this.btnCreerProjetTest.TabIndex = 8;
+            this.btnCreerProjetTest.Text = "confirmer";
+            this.btnCreerProjetTest.UseVisualStyleBackColor = true;
+            this.btnCreerProjetTest.Click += new System.EventHandler(this.btnCreerProjetTest_Click);
+            // 
+            // cmbProjetTestChoixEmplloye
+            // 
+            this.cmbProjetTestChoixEmplloye.FormattingEnabled = true;
+            this.cmbProjetTestChoixEmplloye.Location = new System.Drawing.Point(133, 80);
+            this.cmbProjetTestChoixEmplloye.Name = "cmbProjetTestChoixEmplloye";
+            this.cmbProjetTestChoixEmplloye.Size = new System.Drawing.Size(121, 24);
+            this.cmbProjetTestChoixEmplloye.TabIndex = 7;
+            // 
+            // cmbProjetTestChoixJeu
+            // 
+            this.cmbProjetTestChoixJeu.FormattingEnabled = true;
+            this.cmbProjetTestChoixJeu.Location = new System.Drawing.Point(133, 109);
+            this.cmbProjetTestChoixJeu.Name = "cmbProjetTestChoixJeu";
+            this.cmbProjetTestChoixJeu.Size = new System.Drawing.Size(121, 24);
+            this.cmbProjetTestChoixJeu.TabIndex = 6;
+            // 
+            // cmbChoixEquipe
+            // 
+            this.cmbChoixEquipe.FormattingEnabled = true;
+            this.cmbChoixEquipe.Location = new System.Drawing.Point(133, 52);
+            this.cmbChoixEquipe.Name = "cmbChoixEquipe";
+            this.cmbChoixEquipe.Size = new System.Drawing.Size(121, 24);
+            this.cmbChoixEquipe.TabIndex = 5;
+            // 
+            // txtNomProjetTest
+            // 
+            this.txtNomProjetTest.Location = new System.Drawing.Point(133, 29);
+            this.txtNomProjetTest.Name = "txtNomProjetTest";
+            this.txtNomProjetTest.Size = new System.Drawing.Size(100, 22);
+            this.txtNomProjetTest.TabIndex = 4;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(9, 116);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(83, 17);
+            this.label50.TabIndex = 3;
+            this.label50.Text = "choix du jeu";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(9, 87);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(123, 17);
+            this.label49.TabIndex = 2;
+            this.label49.Text = "choix de l\'employe";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(9, 59);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(113, 17);
+            this.label48.TabIndex = 1;
+            this.label48.Text = "choix de l\'équipe";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(9, 34);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(122, 17);
+            this.label47.TabIndex = 0;
+            this.label47.Text = "nom du projet test";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1489, 823);
+            this.ClientSize = new System.Drawing.Size(1489, 1047);
+            this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.grbConnexion);
@@ -1477,6 +1586,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1487,7 +1598,6 @@
         private System.Windows.Forms.TextBox txtNomTest;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox grbModiffierJeu;
-        private System.Windows.Forms.TextBox txtModifTheme;
         private System.Windows.Forms.TextBox txtModClassification;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -1522,8 +1632,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtMatricule;
         private System.Windows.Forms.DateTimePicker dateDDN;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox txtPlateforme;
@@ -1612,6 +1720,20 @@
         private System.Windows.Forms.ComboBox cmbModifierJeuAfficherJeux;
         private System.Windows.Forms.TextBox txtSysteme;
         private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.ComboBox cmbModJeuTheme;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Button btnCreerProjetTest;
+        private System.Windows.Forms.ComboBox cmbProjetTestChoixEmplloye;
+        private System.Windows.Forms.ComboBox cmbProjetTestChoixJeu;
+        private System.Windows.Forms.ComboBox cmbChoixEquipe;
+        private System.Windows.Forms.TextBox txtNomProjetTest;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.ToolStripMenuItem creerUnProjetTestToolStripMenuItem;
     }
 }
 
