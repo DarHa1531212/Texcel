@@ -88,6 +88,7 @@ namespace projetTexcel
             cmd = ctn.CreateCommand();
             cmd.CommandText =" SELECT nomEquipe,nom,nomEmploi FROM VueEmployeEquipe JOIN VueEmploye ON VueEmployeEquipe.idEmploye = VueEmploye.idEmploye JOIN VueEquipe ON VueEquipe.idEquipe = VueEmployeEquipe.idEquipe JOIN VueTypeEmploi ON VueEmployeEquipe.idTypeEmploi = VueTypeEmploi.idTypeEmploi";
             lecteur = cmd.ExecuteReader();
+            //PENIS XDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
             while (lecteur.Read())
             {
                 try
