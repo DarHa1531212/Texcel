@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label46 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.cmbEmployeAssossie = new System.Windows.Forms.ComboBox();
+            this.cmbEqiupeAssossiée = new System.Windows.Forms.ComboBox();
             this.btnConfirmerCreerTest = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -59,6 +58,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.btnSupprimer = new System.Windows.Forms.Button();
             this.lVRecheche = new System.Windows.Forms.ListView();
             this.btnConfirmer = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
@@ -115,9 +116,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtClassification = new System.Windows.Forms.TextBox();
-            this.txtTheme = new System.Windows.Forms.TextBox();
             this.grbCreerJeu = new System.Windows.Forms.GroupBox();
-            this.txtGenre = new System.Windows.Forms.TextBox();
+            this.cmbCreerJeuTheme = new System.Windows.Forms.ComboBox();
+            this.cmbCreerJeuGenre = new System.Windows.Forms.ComboBox();
             this.btnConfirmerCreationJeu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCode = new System.Windows.Forms.TextBox();
@@ -172,8 +173,7 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
-            this.btnSupprimer = new System.Windows.Forms.Button();
-            this.label52 = new System.Windows.Forms.Label();
+            this.txtDdescriptionTest = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -190,9 +190,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label46);
+            this.groupBox2.Controls.Add(this.txtDdescriptionTest);
             this.groupBox2.Controls.Add(this.label28);
-            this.groupBox2.Controls.Add(this.cmbEmployeAssossie);
+            this.groupBox2.Controls.Add(this.cmbEqiupeAssossiée);
             this.groupBox2.Controls.Add(this.btnConfirmerCreerTest);
             this.groupBox2.Controls.Add(this.label32);
             this.groupBox2.Controls.Add(this.label31);
@@ -203,20 +203,11 @@
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Location = new System.Drawing.Point(12, 342);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(320, 317);
+            this.groupBox2.Size = new System.Drawing.Size(320, 226);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "créer un test";
             this.groupBox2.Visible = false;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(7, 178);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(61, 17);
-            this.label46.TabIndex = 30;
-            this.label46.Text = "employe";
             // 
             // label28
             // 
@@ -227,24 +218,17 @@
             this.label28.TabIndex = 29;
             this.label28.Text = "description";
             // 
-            // cmbEmployeAssossie
+            // cmbEqiupeAssossiée
             // 
-            this.cmbEmployeAssossie.FormattingEnabled = true;
-            this.cmbEmployeAssossie.Items.AddRange(new object[] {
-            "windows 7",
-            "windows8",
-            "windows 10",
-            "debian/ubuntu",
-            "fedora/red hat",
-            "osX"});
-            this.cmbEmployeAssossie.Location = new System.Drawing.Point(159, 113);
-            this.cmbEmployeAssossie.Name = "cmbEmployeAssossie";
-            this.cmbEmployeAssossie.Size = new System.Drawing.Size(121, 24);
-            this.cmbEmployeAssossie.TabIndex = 28;
+            this.cmbEqiupeAssossiée.FormattingEnabled = true;
+            this.cmbEqiupeAssossiée.Location = new System.Drawing.Point(159, 113);
+            this.cmbEqiupeAssossiée.Name = "cmbEqiupeAssossiée";
+            this.cmbEqiupeAssossiée.Size = new System.Drawing.Size(121, 24);
+            this.cmbEqiupeAssossiée.TabIndex = 28;
             // 
             // btnConfirmerCreerTest
             // 
-            this.btnConfirmerCreerTest.Location = new System.Drawing.Point(6, 206);
+            this.btnConfirmerCreerTest.Location = new System.Drawing.Point(6, 178);
             this.btnConfirmerCreerTest.Name = "btnConfirmerCreerTest";
             this.btnConfirmerCreerTest.Size = new System.Drawing.Size(81, 23);
             this.btnConfirmerCreerTest.TabIndex = 27;
@@ -273,13 +257,6 @@
             // combJeuAssocieCreerTest
             // 
             this.combJeuAssocieCreerTest.FormattingEnabled = true;
-            this.combJeuAssocieCreerTest.Items.AddRange(new object[] {
-            "windows 7",
-            "windows8",
-            "windows 10",
-            "debian/ubuntu",
-            "fedora/red hat",
-            "osX"});
             this.combJeuAssocieCreerTest.Location = new System.Drawing.Point(159, 59);
             this.combJeuAssocieCreerTest.Name = "combJeuAssocieCreerTest";
             this.combJeuAssocieCreerTest.Size = new System.Drawing.Size(121, 24);
@@ -297,13 +274,6 @@
             // cmbOS
             // 
             this.cmbOS.FormattingEnabled = true;
-            this.cmbOS.Items.AddRange(new object[] {
-            "windows 7",
-            "windows8",
-            "windows 10",
-            "debian/ubuntu",
-            "fedora/red hat",
-            "osX"});
             this.cmbOS.Location = new System.Drawing.Point(159, 89);
             this.cmbOS.Name = "cmbOS";
             this.cmbOS.Size = new System.Drawing.Size(121, 24);
@@ -511,6 +481,26 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "effectuer une recherche";
             this.groupBox4.Visible = false;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(141, 353);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(214, 17);
+            this.label52.TabIndex = 45;
+            this.label52.Text = "Selectionnez l\'id pour supprimer.";
+            // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.Enabled = false;
+            this.btnSupprimer.Location = new System.Drawing.Point(224, 303);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(81, 29);
+            this.btnSupprimer.TabIndex = 44;
+            this.btnSupprimer.Text = "supprimer";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // lVRecheche
             // 
@@ -1052,18 +1042,11 @@
             this.txtClassification.Size = new System.Drawing.Size(100, 22);
             this.txtClassification.TabIndex = 15;
             // 
-            // txtTheme
-            // 
-            this.txtTheme.Location = new System.Drawing.Point(187, 189);
-            this.txtTheme.Name = "txtTheme";
-            this.txtTheme.Size = new System.Drawing.Size(100, 22);
-            this.txtTheme.TabIndex = 16;
-            // 
             // grbCreerJeu
             // 
-            this.grbCreerJeu.Controls.Add(this.txtGenre);
+            this.grbCreerJeu.Controls.Add(this.cmbCreerJeuTheme);
+            this.grbCreerJeu.Controls.Add(this.cmbCreerJeuGenre);
             this.grbCreerJeu.Controls.Add(this.btnConfirmerCreationJeu);
-            this.grbCreerJeu.Controls.Add(this.txtTheme);
             this.grbCreerJeu.Controls.Add(this.txtClassification);
             this.grbCreerJeu.Controls.Add(this.label7);
             this.grbCreerJeu.Controls.Add(this.label6);
@@ -1084,12 +1067,21 @@
             this.grbCreerJeu.Text = "créer un jeu";
             this.grbCreerJeu.Visible = false;
             // 
-            // txtGenre
+            // cmbCreerJeuTheme
             // 
-            this.txtGenre.Location = new System.Drawing.Point(187, 134);
-            this.txtGenre.Name = "txtGenre";
-            this.txtGenre.Size = new System.Drawing.Size(100, 22);
-            this.txtGenre.TabIndex = 30;
+            this.cmbCreerJeuTheme.FormattingEnabled = true;
+            this.cmbCreerJeuTheme.Location = new System.Drawing.Point(187, 186);
+            this.cmbCreerJeuTheme.Name = "cmbCreerJeuTheme";
+            this.cmbCreerJeuTheme.Size = new System.Drawing.Size(121, 24);
+            this.cmbCreerJeuTheme.TabIndex = 32;
+            // 
+            // cmbCreerJeuGenre
+            // 
+            this.cmbCreerJeuGenre.FormattingEnabled = true;
+            this.cmbCreerJeuGenre.Location = new System.Drawing.Point(187, 134);
+            this.cmbCreerJeuGenre.Name = "cmbCreerJeuGenre";
+            this.cmbCreerJeuGenre.Size = new System.Drawing.Size(121, 24);
+            this.cmbCreerJeuGenre.TabIndex = 31;
             // 
             // btnConfirmerCreationJeu
             // 
@@ -1217,7 +1209,6 @@
             // 
             // créerUnJeuToolStripMenuItem
             // 
-            this.créerUnJeuToolStripMenuItem.Enabled = false;
             this.créerUnJeuToolStripMenuItem.Name = "créerUnJeuToolStripMenuItem";
             this.créerUnJeuToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.créerUnJeuToolStripMenuItem.Text = "Créer un jeu";
@@ -1225,7 +1216,6 @@
             // 
             // modifierUnJeuToolStripMenuItem
             // 
-            this.modifierUnJeuToolStripMenuItem.Enabled = false;
             this.modifierUnJeuToolStripMenuItem.Name = "modifierUnJeuToolStripMenuItem";
             this.modifierUnJeuToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.modifierUnJeuToolStripMenuItem.Text = "Modifier un jeu";
@@ -1233,7 +1223,6 @@
             // 
             // ajouterUnePlateformeToolStripMenuItem
             // 
-            this.ajouterUnePlateformeToolStripMenuItem.Enabled = false;
             this.ajouterUnePlateformeToolStripMenuItem.Name = "ajouterUnePlateformeToolStripMenuItem";
             this.ajouterUnePlateformeToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
             this.ajouterUnePlateformeToolStripMenuItem.Text = "ajouter une plateforme";
@@ -1241,7 +1230,6 @@
             // 
             // ajouterUnOSToolStripMenuItem
             // 
-            this.ajouterUnOSToolStripMenuItem.Enabled = false;
             this.ajouterUnOSToolStripMenuItem.Name = "ajouterUnOSToolStripMenuItem";
             this.ajouterUnOSToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
             this.ajouterUnOSToolStripMenuItem.Text = "ajouter un OS";
@@ -1249,7 +1237,6 @@
             // 
             // effetuerUneRechercheToolStripMenuItem
             // 
-            this.effetuerUneRechercheToolStripMenuItem.Enabled = false;
             this.effetuerUneRechercheToolStripMenuItem.Name = "effetuerUneRechercheToolStripMenuItem";
             this.effetuerUneRechercheToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
             this.effetuerUneRechercheToolStripMenuItem.Text = "effetuer une recherche";
@@ -1257,7 +1244,6 @@
             // 
             // gérerUnEmployéToolStripMenuItem
             // 
-            this.gérerUnEmployéToolStripMenuItem.Enabled = false;
             this.gérerUnEmployéToolStripMenuItem.Name = "gérerUnEmployéToolStripMenuItem";
             this.gérerUnEmployéToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.gérerUnEmployéToolStripMenuItem.Text = "Gérer un employé";
@@ -1265,7 +1251,6 @@
             // 
             // creerEquipeToolStripMenuItem
             // 
-            this.creerEquipeToolStripMenuItem.Enabled = false;
             this.creerEquipeToolStripMenuItem.Name = "creerEquipeToolStripMenuItem";
             this.creerEquipeToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.creerEquipeToolStripMenuItem.Text = "creer equipe";
@@ -1273,7 +1258,6 @@
             // 
             // créerUnTestToolStripMenuItem
             // 
-            this.créerUnTestToolStripMenuItem.Enabled = false;
             this.créerUnTestToolStripMenuItem.Name = "créerUnTestToolStripMenuItem";
             this.créerUnTestToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.créerUnTestToolStripMenuItem.Text = "Créer un test";
@@ -1281,7 +1265,6 @@
             // 
             // creerUnProjetTestToolStripMenuItem
             // 
-            this.creerUnProjetTestToolStripMenuItem.Enabled = false;
             this.creerUnProjetTestToolStripMenuItem.Name = "creerUnProjetTestToolStripMenuItem";
             this.creerUnProjetTestToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
             this.creerUnProjetTestToolStripMenuItem.Text = "Creer un projet test";
@@ -1289,7 +1272,6 @@
             // 
             // afficherDesInformationsToolStripMenuItem
             // 
-            this.afficherDesInformationsToolStripMenuItem.Enabled = false;
             this.afficherDesInformationsToolStripMenuItem.Name = "afficherDesInformationsToolStripMenuItem";
             this.afficherDesInformationsToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
             this.afficherDesInformationsToolStripMenuItem.Text = "Afficher des informations";
@@ -1598,25 +1580,12 @@
             this.label47.TabIndex = 0;
             this.label47.Text = "nom du projet test";
             // 
-            // btnSupprimer
+            // txtDdescriptionTest
             // 
-            this.btnSupprimer.Enabled = false;
-            this.btnSupprimer.Location = new System.Drawing.Point(224, 303);
-            this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(81, 29);
-            this.btnSupprimer.TabIndex = 44;
-            this.btnSupprimer.Text = "supprimer";
-            this.btnSupprimer.UseVisualStyleBackColor = true;
-            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(141, 353);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(214, 17);
-            this.label52.TabIndex = 45;
-            this.label52.Text = "Selectionnez l\'id pour supprimer.";
+            this.txtDdescriptionTest.Location = new System.Drawing.Point(159, 144);
+            this.txtDdescriptionTest.Name = "txtDdescriptionTest";
+            this.txtDdescriptionTest.Size = new System.Drawing.Size(100, 22);
+            this.txtDdescriptionTest.TabIndex = 31;
             // 
             // Form1
             // 
@@ -1726,7 +1695,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtClassification;
-        private System.Windows.Forms.TextBox txtTheme;
         private System.Windows.Forms.GroupBox grbCreerJeu;
         private System.Windows.Forms.Button btnConfirmerCreationJeu;
         private System.Windows.Forms.Button btnConfirmerModifierJeu;
@@ -1764,7 +1732,7 @@
         private System.Windows.Forms.RadioButton radAucunDroit;
         private System.Windows.Forms.RadioButton radAdmin;
         private System.Windows.Forms.RadioButton radDirecteur;
-        private System.Windows.Forms.ComboBox cmbEmployeAssossie;
+        private System.Windows.Forms.ComboBox cmbEqiupeAssossiée;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cmbAfficherJeux;
         private System.Windows.Forms.ComboBox cmbAfficherPlateformes;
@@ -1783,7 +1751,6 @@
         private System.Windows.Forms.ToolStripMenuItem afficherDesInformationsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creerEquipeToolStripMenuItem;
         private System.Windows.Forms.CheckBox chkNouvelEmploye;
-        private System.Windows.Forms.TextBox txtGenre;
         private System.Windows.Forms.TextBox txtAjouterOSEdition;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtAjouterOSVersion;
@@ -1800,7 +1767,6 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.ListView lVRecheche;
         private System.Windows.Forms.ComboBox cmbModJeuTheme;
-        private System.Windows.Forms.Label label46;
         //private System.Windows.Forms.Label label28;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label48;
@@ -1819,6 +1785,9 @@
         private System.Windows.Forms.TextBox txtMotDePasse;
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.ComboBox cmbCreerJeuTheme;
+        private System.Windows.Forms.ComboBox cmbCreerJeuGenre;
+        private System.Windows.Forms.TextBox txtDdescriptionTest;
     }
 }
 
