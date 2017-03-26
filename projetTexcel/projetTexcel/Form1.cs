@@ -24,7 +24,6 @@ namespace projetTexcel
     {
 
         int champReherche;
-        int idEmploye = -1;
         int niveauPermissionsCreationEMploye = 0;
         int niveauPermissions;
         Form frmCreerJeu = new Form();
@@ -67,7 +66,6 @@ namespace projetTexcel
         private void créerUnJeuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreerJeu();
-            CreerJeu();
             ajouterItemsDansComboBox(traitements1.requeteInformations(6, "CONCAT(idGenre ,'-',nom)"), cmbCreerJeuGenre);
             ajouterItemsDansComboBox(traitements1.requeteInformations(7, "CONCAT(idTheme ,'-',nom)"), cmbCreerJeuTheme);
 
@@ -76,7 +74,6 @@ namespace projetTexcel
 
         private void modifierUnJeuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            modifierJeu();
             modifierJeu();
             ajouterItemsDansComboBox(traitements1.requeteInformations(2, "CONCAT(idJeu ,'-',nom)"), cmbModifierJeuAfficherJeux);
             ajouterItemsDansComboBox(traitements1.requeteInformations(6, "CONCAT(idGenre ,'-',nom)"), cmbModifierGenre);
@@ -101,19 +98,16 @@ namespace projetTexcel
         private void gérerUnEmployéToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gererEmploye();
-            gererEmploye();
         }
 
         private void effetuerUneRechercheToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            recherche();
             recherche();
         }
 
 
         private void ajouterUnOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ajouterOS();
             ajouterOS();
         }
 
@@ -132,14 +126,12 @@ namespace projetTexcel
         private void ajouterUnePlateformeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ajouterPlateforme();
-            ajouterPlateforme();
         }
 
 
 
         private void créerUnTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            creerTest();
             creerTest();
 
             //afficher les équipes, les employes et les jeux dans les combobox
@@ -160,6 +152,7 @@ namespace projetTexcel
             //frmAfficherBD
 
             frmAfficherBD.MdiParent = this;
+            frmAfficherBD.Visible = true;
             frmAfficherBD.Controls.Add(this.cmbAfficherJeux);
             frmAfficherBD.Controls.Add(this.cmbAfficherPlateformes);
             frmAfficherBD.Controls.Add(this.cmbAfficherOS);
@@ -172,7 +165,6 @@ namespace projetTexcel
             frmAfficherBD.TabIndex = 50;
             frmAfficherBD.TabStop = false;
             frmAfficherBD.Text = "Afficher le contenu de la BD";
-            frmAfficherBD.Visible = true;
 
             tableau = traitements1.afficherBD();
             afficherLesOS(tableau);
@@ -250,6 +242,7 @@ namespace projetTexcel
             //groupBox7
             //frmCreerEquie
             frmCreerEquie.MdiParent = this;
+            frmCreerEquie.Visible = true;
             frmCreerEquie.Controls.Add(this.button2);
             frmCreerEquie.Controls.Add(this.cmbChefDEquipe);
             frmCreerEquie.Controls.Add(this.chkLstBxTesteurs);
@@ -263,7 +256,6 @@ namespace projetTexcel
             frmCreerEquie.TabStop = false;
             frmCreerEquie.Text = "Créer une équipe";
 
-            frmCreerEquie.Visible = true;
 
 
         }
@@ -271,6 +263,7 @@ namespace projetTexcel
         private void CreerJeu()
         {
             frmCreerJeu.MdiParent = this;
+            frmCreerJeu.Visible = true;
 
             frmCreerJeu.Controls.Add(this.btnConfirmerCreationJeu);
             frmCreerJeu.Controls.Add(this.cmbCreerJeuTheme);
@@ -294,12 +287,12 @@ namespace projetTexcel
             frmCreerJeu.TabStop = false;
             frmCreerJeu.Text = "créer un jeu";
 
-            frmCreerJeu.Visible = true;
         }
 
         public void modifierJeu()
         {
             frmModifierJeu.MdiParent = this;
+            frmModifierJeu.Visible = true;
 
 
             frmModifierJeu.Controls.Add(this.label45i);
@@ -319,19 +312,19 @@ namespace projetTexcel
             frmModifierJeu.Controls.Add(this.label12);
             frmModifierJeu.Controls.Add(this.label13);
             frmModifierJeu.Controls.Add(this.label14);
-            frmModifierJeu.Location = new System.Drawing.Point(365, 39);
+            frmModifierJeu.Location = new System.Drawing.Point(365, 12);
             frmModifierJeu.Size = new System.Drawing.Size(327, 317);
             frmModifierJeu.TabIndex = 17;
             frmModifierJeu.TabStop = false;
             frmModifierJeu.Text = "modifier un jeu";
 
-            frmModifierJeu.Visible = true;
         }
 
         public void gererEmploye()
         {
 
             frmGererEmployes.MdiParent = this;
+            frmGererEmployes.Visible = true;
             frmGererEmployes.Controls.Add(this.btnConfirmerGestionEmployes);
             frmGererEmployes.Controls.Add(this.radAucunDroit);
             frmGererEmployes.Controls.Add(this.radAdmin);
@@ -365,13 +358,13 @@ namespace projetTexcel
             frmGererEmployes.TabStop = false;
             frmGererEmployes.Text = "Gérer des employés";
 
-            frmGererEmployes.Visible = true;
         }
 
         public void recherche()
         {
 
             frmRecherche.MdiParent = this;
+            frmRecherche.Visible = true;
 
             frmRecherche.Controls.Add(this.btnConfirmer);
             frmRecherche.Controls.Add(this.lVRecheche);
@@ -381,20 +374,18 @@ namespace projetTexcel
             frmRecherche.Controls.Add(this.label16);
             frmRecherche.Controls.Add(this.btnSupprimer);
             frmRecherche.Controls.Add(this.label52);
-
             frmRecherche.Location = new System.Drawing.Point(365, 331);
-
-            frmRecherche.Size = new System.Drawing.Size(327, 268);
+            frmRecherche.Size = new System.Drawing.Size(1000, 400);
             frmRecherche.TabIndex = 19;
             frmRecherche.TabStop = false;
             frmRecherche.Text = "effectuer une recherche";
 
-            frmRecherche.Visible = true;
         }
 
         public void ajouterPlateforme()
         {
             frmAjouterPlateforme.MdiParent = this;
+            frmAjouterPlateforme.Visible = true;
             frmAjouterPlateforme.Controls.Add(this.btnConfirmerAjoutPlateforme);
             frmAjouterPlateforme.Controls.Add(this.txtPlateforme);
             frmAjouterPlateforme.Controls.Add(this.label29);
@@ -406,28 +397,17 @@ namespace projetTexcel
             frmAjouterPlateforme.Controls.Add(this.txtSysteme);
             frmAjouterPlateforme.Location = new System.Drawing.Point(698, 413);
 
-            frmAjouterPlateforme.Size = new System.Drawing.Size(365, 103);
+            frmAjouterPlateforme.Size = new System.Drawing.Size(365, 303);
             frmAjouterPlateforme.TabIndex = 21;
             frmAjouterPlateforme.TabStop = false;
             frmAjouterPlateforme.Text = "ajouter une plateforme";
 
-            frmAjouterPlateforme.Visible = true;
         }
 
         public void ajouterOS()
         {
-            /*frmAjoutOS.MdiParent = this;
-            frmAjoutOS.Controls.Add(this.btnConfirmerAjoutOS);
-            frmAjoutOS.Controls.Add(this.txtOSNom);
-            frmAjoutOS.Controls.Add(this.label33);
-            frmAjoutOS.Location = new System.Drawing.Point(698, 549);
-            frmAjoutOS.Name = "groupBox1";
-            frmAjoutOS.Size = new System.Drawing.Size(365, 103);
-            frmAjoutOS.TabIndex = 43;
-            frmAjoutOS.TabStop = false;
-            frmAjoutOS.Text = "ajouter un OS";
-            frmAjoutOS.Visible = true; */
             frmAjoutOS.MdiParent = this;
+            frmAjoutOS.Visible = true;
             frmAjoutOS.Controls.Add(this.txtAjouterOSVersion);
             frmAjoutOS.Controls.Add(this.label27);
             frmAjoutOS.Controls.Add(this.txtAjouterOSEdition);
@@ -442,7 +422,6 @@ namespace projetTexcel
             frmAjoutOS.TabIndex = 43;
             frmAjoutOS.TabStop = false;
             frmAjoutOS.Text = "ajouter un OS";
-            frmAjoutOS.Visible = true;
 
 
         }
@@ -461,6 +440,7 @@ namespace projetTexcel
         {
 
             frmCreerTest.MdiParent = this;
+            frmCreerTest.Visible = true;
             frmCreerTest.Controls.Add(this.cmbEqiupeAssossiée);
             frmCreerTest.Controls.Add(this.btnConfirmerCreerTest);
             frmCreerTest.Controls.Add(this.label32);
@@ -476,12 +456,12 @@ namespace projetTexcel
             frmCreerTest.TabStop = false;
             frmCreerTest.Text = "créer un test";
 
-            frmCreerTest.Visible = true;
         }
 
         public void afficherConnexion()
         {
             frmConnexion.MdiParent = this;
+            frmConnexion.Visible = true;
             frmConnexion.Controls.Add(this.btnConnexion);
             frmConnexion.Controls.Add(this.txtConnexionMotDePasse);
             frmConnexion.Controls.Add(this.txtConnexionIdentifiant);
@@ -492,7 +472,6 @@ namespace projetTexcel
             frmConnexion.TabStop = false;
             frmConnexion.Text = "Connexion";
 
-            frmConnexion.Visible = true;
             frmConnexion.Location = new System.Drawing.Point(1079, 39);
 
         }
@@ -581,14 +560,12 @@ namespace projetTexcel
         private void afficherDesInformationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             afficherBd();
-            afficherBd();
 
 
         }
 
         private void creerEquipeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            creerEquipe();
             creerEquipe();
 
 
@@ -605,7 +582,7 @@ namespace projetTexcel
             {
 
                 //appel de la bd
-                traitements1.CreerJeu(txtNomCreerJeu.Text, txtCreerDev.Text, txtDescription.Text, txtConfigMin.Text, idGenre[0], txtClassification.Text, idTheme[0], idEmploye);
+                traitements1.CreerJeu(txtNomCreerJeu.Text, txtCreerDev.Text, txtDescription.Text, txtConfigMin.Text, idGenre[0], txtClassification.Text, idTheme[0]);
             }
             else
                 MessageBox.Show("un ou plusieurs champs sont vides. veuillez réessayer");
@@ -652,7 +629,7 @@ namespace projetTexcel
 
             if (validationCreerTestNonVide())
             {
-               traitements1.creerTest(txtNomTest.Text,idJeuAssossie[0], idOS[0], idEmploye, )
+                //traitements1.creerTest(txtNomTest.Text, idJeuAssossie[0], idOS[0], idEmploye, );
 
             }
             else
@@ -926,7 +903,6 @@ namespace projetTexcel
         private void creerUnProjetTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             afficherProjetsTest();
-            afficherProjetsTest();
 
             ajouterItemsDansComboBox(traitements1.requeteInformations(2, "CONCAT(idJeu ,'-',nom)"), cmbProjetTestChoixJeu);
             ajouterItemsDansComboBox(traitements1.requeteInformations(5, "CONCAT(idEmploye ,'-',nom)"), cmbProjetTestChoixEmplloye);
@@ -937,7 +913,8 @@ namespace projetTexcel
         public void afficherProjetsTest()
         {
             frmCreerProjetTest.MdiParent = this;
-           frmCreerProjetTest.Controls.Add(this.btnCreerProjetTest);
+            frmCreerProjetTest.Visible = true;
+            frmCreerProjetTest.Controls.Add(this.btnCreerProjetTest);
            frmCreerProjetTest.Controls.Add(this.cmbProjetTestChoixEmplloye);
            frmCreerProjetTest.Controls.Add(this.cmbProjetTestChoixJeu);
            frmCreerProjetTest.Controls.Add(this.cmbChoixEquipe);
@@ -951,7 +928,6 @@ namespace projetTexcel
            frmCreerProjetTest.TabIndex = 52;
            frmCreerProjetTest.TabStop = false;
            frmCreerProjetTest.Text = "creer un projet test";
-           frmCreerProjetTest.Visible = true;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
