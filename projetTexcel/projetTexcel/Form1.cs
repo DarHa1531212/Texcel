@@ -469,6 +469,8 @@ namespace projetTexcel
             frmCreerTest.Controls.Add(this.label30);
             frmCreerTest.Controls.Add(this.cmbOS);
             frmCreerTest.Controls.Add(this.txtNomTest);
+            frmCreerTest.Controls.Add(this.txtDdescriptionTest);
+            frmCreerTest.Controls.Add(this.btnConfirmerCreationJeu);            
             frmCreerTest.Controls.Add(this.label15);
             frmCreerTest.Location = new System.Drawing.Point(32, 390);
             frmCreerTest.Size = new System.Drawing.Size(327, 254);
@@ -648,11 +650,14 @@ namespace projetTexcel
         {
             string[] idJeuAssossie = combJeuAssocieCreerTest.Text.Split('-');
             string[] idOS = cmbOS.Text.Split('-');
+            string[] idEquipe = cmbEqiupeAssossiée.Text.Split('-');
+
+            //cmbEqiupeAssossiée
 
 
             if (validationCreerTestNonVide())
             {
-               traitements1.creerTest(txtNomTest.Text,idJeuAssossie[0], idOS[0], idEmploye, )
+       //        traitements1.creerTest(txtNomTest.Text,idJeuAssossie[0], idOS[0], idEmploye, )
 
             }
             else

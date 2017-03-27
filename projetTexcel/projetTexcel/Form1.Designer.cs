@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDdescriptionTest = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.cmbEqiupeAssossiée = new System.Windows.Forms.ComboBox();
             this.btnConfirmerCreerTest = new System.Windows.Forms.Button();
@@ -173,7 +174,6 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
-            this.txtDdescriptionTest = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -209,6 +209,13 @@
             this.groupBox2.Text = "créer un test";
             this.groupBox2.Visible = false;
             // 
+            // txtDdescriptionTest
+            // 
+            this.txtDdescriptionTest.Location = new System.Drawing.Point(159, 144);
+            this.txtDdescriptionTest.Name = "txtDdescriptionTest";
+            this.txtDdescriptionTest.Size = new System.Drawing.Size(100, 22);
+            this.txtDdescriptionTest.TabIndex = 31;
+            // 
             // label28
             // 
             this.label28.AutoSize = true;
@@ -221,7 +228,7 @@
             // cmbEqiupeAssossiée
             // 
             this.cmbEqiupeAssossiée.FormattingEnabled = true;
-            this.cmbEqiupeAssossiée.Location = new System.Drawing.Point(159, 113);
+            this.cmbEqiupeAssossiée.Location = new System.Drawing.Point(1870, 298);
             this.cmbEqiupeAssossiée.Name = "cmbEqiupeAssossiée";
             this.cmbEqiupeAssossiée.Size = new System.Drawing.Size(121, 24);
             this.cmbEqiupeAssossiée.TabIndex = 28;
@@ -1579,13 +1586,6 @@
             this.label47.Size = new System.Drawing.Size(122, 17);
             this.label47.TabIndex = 0;
             this.label47.Text = "nom du projet test";
-            // 
-            // txtDdescriptionTest
-            // 
-            this.txtDdescriptionTest.Location = new System.Drawing.Point(159, 144);
-            this.txtDdescriptionTest.Name = "txtDdescriptionTest";
-            this.txtDdescriptionTest.Size = new System.Drawing.Size(100, 22);
-            this.txtDdescriptionTest.TabIndex = 31;
             // 
             // Form1
             // 
