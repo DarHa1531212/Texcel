@@ -259,7 +259,7 @@
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(83, 17);
             this.label31.TabIndex = 25;
-            this.label31.Text = "Jau associé";
+            this.label31.Text = "Jeu associé";
             // 
             // combJeuAssocieCreerTest
             // 
@@ -365,7 +365,7 @@
             // 
             // btnConfirmerModifierJeu
             // 
-            this.btnConfirmerModifierJeu.Location = new System.Drawing.Point(6, 274);
+            this.btnConfirmerModifierJeu.Location = new System.Drawing.Point(6, 241);
             this.btnConfirmerModifierJeu.Name = "btnConfirmerModifierJeu";
             this.btnConfirmerModifierJeu.Size = new System.Drawing.Size(81, 23);
             this.btnConfirmerModifierJeu.TabIndex = 26;
@@ -1216,6 +1216,7 @@
             // 
             // créerUnJeuToolStripMenuItem
             // 
+            this.créerUnJeuToolStripMenuItem.Enabled = false;
             this.créerUnJeuToolStripMenuItem.Name = "créerUnJeuToolStripMenuItem";
             this.créerUnJeuToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.créerUnJeuToolStripMenuItem.Text = "Créer un jeu";
@@ -1223,6 +1224,7 @@
             // 
             // modifierUnJeuToolStripMenuItem
             // 
+            this.modifierUnJeuToolStripMenuItem.Enabled = false;
             this.modifierUnJeuToolStripMenuItem.Name = "modifierUnJeuToolStripMenuItem";
             this.modifierUnJeuToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.modifierUnJeuToolStripMenuItem.Text = "Modifier un jeu";
@@ -1230,6 +1232,7 @@
             // 
             // ajouterUnePlateformeToolStripMenuItem
             // 
+            this.ajouterUnePlateformeToolStripMenuItem.Enabled = false;
             this.ajouterUnePlateformeToolStripMenuItem.Name = "ajouterUnePlateformeToolStripMenuItem";
             this.ajouterUnePlateformeToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
             this.ajouterUnePlateformeToolStripMenuItem.Text = "ajouter une plateforme";
@@ -1237,6 +1240,7 @@
             // 
             // ajouterUnOSToolStripMenuItem
             // 
+            this.ajouterUnOSToolStripMenuItem.Enabled = false;
             this.ajouterUnOSToolStripMenuItem.Name = "ajouterUnOSToolStripMenuItem";
             this.ajouterUnOSToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
             this.ajouterUnOSToolStripMenuItem.Text = "ajouter un OS";
@@ -1244,6 +1248,7 @@
             // 
             // effetuerUneRechercheToolStripMenuItem
             // 
+            this.effetuerUneRechercheToolStripMenuItem.Enabled = false;
             this.effetuerUneRechercheToolStripMenuItem.Name = "effetuerUneRechercheToolStripMenuItem";
             this.effetuerUneRechercheToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
             this.effetuerUneRechercheToolStripMenuItem.Text = "effetuer une recherche";
@@ -1251,6 +1256,7 @@
             // 
             // gérerUnEmployéToolStripMenuItem
             // 
+            this.gérerUnEmployéToolStripMenuItem.Enabled = false;
             this.gérerUnEmployéToolStripMenuItem.Name = "gérerUnEmployéToolStripMenuItem";
             this.gérerUnEmployéToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.gérerUnEmployéToolStripMenuItem.Text = "Gérer un employé";
@@ -1258,6 +1264,7 @@
             // 
             // creerEquipeToolStripMenuItem
             // 
+            this.creerEquipeToolStripMenuItem.Enabled = false;
             this.creerEquipeToolStripMenuItem.Name = "creerEquipeToolStripMenuItem";
             this.creerEquipeToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.creerEquipeToolStripMenuItem.Text = "creer equipe";
@@ -1265,6 +1272,7 @@
             // 
             // créerUnTestToolStripMenuItem
             // 
+            this.créerUnTestToolStripMenuItem.Enabled = false;
             this.créerUnTestToolStripMenuItem.Name = "créerUnTestToolStripMenuItem";
             this.créerUnTestToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.créerUnTestToolStripMenuItem.Text = "Créer un test";
@@ -1272,6 +1280,7 @@
             // 
             // creerUnProjetTestToolStripMenuItem
             // 
+            this.creerUnProjetTestToolStripMenuItem.Enabled = false;
             this.creerUnProjetTestToolStripMenuItem.Name = "creerUnProjetTestToolStripMenuItem";
             this.creerUnProjetTestToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
             this.creerUnProjetTestToolStripMenuItem.Text = "Creer un projet test";
@@ -1279,6 +1288,7 @@
             // 
             // afficherDesInformationsToolStripMenuItem
             // 
+            this.afficherDesInformationsToolStripMenuItem.Enabled = false;
             this.afficherDesInformationsToolStripMenuItem.Name = "afficherDesInformationsToolStripMenuItem";
             this.afficherDesInformationsToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
             this.afficherDesInformationsToolStripMenuItem.Text = "Afficher des informations";
@@ -1335,9 +1345,9 @@
             this.label35.AutoSize = true;
             this.label35.Location = new System.Drawing.Point(15, 52);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(92, 17);
+            this.label35.Size = new System.Drawing.Size(93, 17);
             this.label35.TabIndex = 1;
-            this.label35.Text = "Not de passe";
+            this.label35.Text = "Mot de passe";
             // 
             // label34
             // 

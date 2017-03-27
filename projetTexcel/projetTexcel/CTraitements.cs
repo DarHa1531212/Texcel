@@ -19,7 +19,7 @@ namespace projetTexcel
         dbProvider Données1 = new dbProvider();
         int idEmploye;
         
-        public void CreerJeu(string Nom, string dev, string desc, string configMini, string codeGenre, string classification, string theme, int idEmploye)
+        public void CreerJeu(string Nom, string dev, string desc, string configMini, string codeGenre, string classification, string theme)
         {
             Données1.VueAjout(2,"nom,developpeur,descriptionJeu,configurationMinimale,classification,idEmploye,idTheme,idGenre",("'"+Nom+"','"+dev+"'" + ",'" +desc + "'"+",'" +configMini + "'"+",'" +classification + "'"+"," +idEmploye+"," + theme +"," + codeGenre  ));
         }
