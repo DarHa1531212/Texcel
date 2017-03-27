@@ -449,6 +449,8 @@ namespace projetTexcel
             frmCreerTest.Controls.Add(this.label30);
             frmCreerTest.Controls.Add(this.cmbOS);
             frmCreerTest.Controls.Add(this.txtNomTest);
+            frmCreerTest.Controls.Add(this.txtDdescriptionTest);
+            frmCreerTest.Controls.Add(this.btnConfirmerCreationJeu);            
             frmCreerTest.Controls.Add(this.label15);
             frmCreerTest.Location = new System.Drawing.Point(32, 390);
             frmCreerTest.Size = new System.Drawing.Size(327, 254);
@@ -625,11 +627,15 @@ namespace projetTexcel
         {
             string[] idJeuAssossie = combJeuAssocieCreerTest.Text.Split('-');
             string[] idOS = cmbOS.Text.Split('-');
+            string[] idEquipe = cmbEqiupeAssossiée.Text.Split('-');
+
+            //cmbEqiupeAssossiée
 
 
             if (validationCreerTestNonVide())
             {
-                //traitements1.creerTest(txtNomTest.Text, idJeuAssossie[0], idOS[0], idEmploye, );
+
+         //       traitements1.creerTest(txtNomTest.Text, txtDdescriptionTest.Text, idJeuAssossie[0], idOS[0]);
 
             }
             else
@@ -963,6 +969,33 @@ namespace projetTexcel
             remplirListView();
 
 
+        }
+
+        private void logOffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAfficherBD.Visible = false;
+            frmAjouterPlateforme.Visible = false;
+            frmAjoutOS.Visible = false;
+            frmCreerEquie.Visible = false;
+            frmCreerJeu.Visible = false;
+            frmCreerProjetTest.Visible = false;
+            frmCreerTest.Visible = false;
+            frmGererEmployes.Visible = false;
+            frmModifierJeu.Visible = false;
+            frmRecherche.Visible = false;
+                
+            créerUnJeuToolStripMenuItem.Enabled = false;
+            modifierUnJeuToolStripMenuItem.Enabled = false;
+            ajouterUnePlateformeToolStripMenuItem.Enabled = false;
+            ajouterUnOSToolStripMenuItem.Enabled = false;
+            effetuerUneRechercheToolStripMenuItem.Enabled = false;
+            gérerUnEmployéToolStripMenuItem.Enabled = false;
+            creerEquipeToolStripMenuItem.Enabled = false;
+            créerUnTestToolStripMenuItem.Enabled = false;
+            creerUnProjetTestToolStripMenuItem.Enabled = false;
+            afficherDesInformationsToolStripMenuItem.Enabled = false;
+            cONNEXIONToolStripMenuItem.Enabled = true;
+            frmConnexion.Visible = true;
         }
     }
 }

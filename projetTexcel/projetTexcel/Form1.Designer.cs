@@ -174,6 +174,8 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
+            this.logOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmbEquipe = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -190,6 +192,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cmbEquipe);
             this.groupBox2.Controls.Add(this.txtDdescriptionTest);
             this.groupBox2.Controls.Add(this.label28);
             this.groupBox2.Controls.Add(this.cmbEqiupeAssossiée);
@@ -228,7 +231,7 @@
             // cmbEqiupeAssossiée
             // 
             this.cmbEqiupeAssossiée.FormattingEnabled = true;
-            this.cmbEqiupeAssossiée.Location = new System.Drawing.Point(159, 113);
+            this.cmbEqiupeAssossiée.Location = new System.Drawing.Point(1870, 298);
             this.cmbEqiupeAssossiée.Name = "cmbEqiupeAssossiée";
             this.cmbEqiupeAssossiée.Size = new System.Drawing.Size(121, 24);
             this.cmbEqiupeAssossiée.TabIndex = 28;
@@ -1207,10 +1210,11 @@
             this.créerUnTestToolStripMenuItem,
             this.creerUnProjetTestToolStripMenuItem,
             this.afficherDesInformationsToolStripMenuItem,
-            this.cONNEXIONToolStripMenuItem});
+            this.cONNEXIONToolStripMenuItem,
+            this.logOffToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1489, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1878, 28);
             this.menuStrip1.TabIndex = 45;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1597,11 +1601,26 @@
             this.label47.TabIndex = 0;
             this.label47.Text = "nom du projet test";
             // 
+            // logOffToolStripMenuItem
+            // 
+            this.logOffToolStripMenuItem.Name = "logOffToolStripMenuItem";
+            this.logOffToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.logOffToolStripMenuItem.Text = "LogOff";
+            this.logOffToolStripMenuItem.Click += new System.EventHandler(this.logOffToolStripMenuItem_Click);
+            // 
+            // cmbEquipe
+            // 
+            this.cmbEquipe.FormattingEnabled = true;
+            this.cmbEquipe.Location = new System.Drawing.Point(159, 114);
+            this.cmbEquipe.Name = "cmbEquipe";
+            this.cmbEquipe.Size = new System.Drawing.Size(121, 24);
+            this.cmbEquipe.TabIndex = 32;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1489, 1047);
+            this.ClientSize = new System.Drawing.Size(1878, 1047);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox3);
@@ -1798,6 +1817,8 @@
         private System.Windows.Forms.ComboBox cmbCreerJeuTheme;
         private System.Windows.Forms.ComboBox cmbCreerJeuGenre;
         private System.Windows.Forms.TextBox txtDdescriptionTest;
+        private System.Windows.Forms.ToolStripMenuItem logOffToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cmbEquipe;
     }
 }
 

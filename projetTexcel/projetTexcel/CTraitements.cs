@@ -40,7 +40,7 @@ namespace projetTexcel
             Données1.VueModificaton(2, changement, "idJeu = " + idJeu);
         }
 
-        public void creerTest(string nom, string descriptionTest, int idEmploye, int idProjetTest, int l)
+        public void creerTest(string nom, string descriptionTest, int idProjetTest, int idEquipe, int idOS)
         {
         //    Données1.VueAjout(8, "  ,[nomTest],[descriptionTest],[idEmploye],[idProjetTest],[idCategorieTest],[TAG]", )
         }
