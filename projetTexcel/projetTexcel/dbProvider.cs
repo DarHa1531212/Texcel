@@ -13,7 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-
+using System.Windows.Forms;
 namespace projetTexcel
 {
     class dbProvider
@@ -28,8 +28,8 @@ namespace projetTexcel
 
 
                  //ctn = new SqlConnection("Data Source = INFO-324-1A-124\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
-            // ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-            ctn = new SqlConnection("Data Source = INFO-324-1A-123\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
+             ctn = new SqlConnection("Data Source=Deptinfo420;Initial Catalog=Texcel_Hans_MA;Integrated Security=False;User ID=ducma1532694;Password=19980129;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            //ctn = new SqlConnection("Data Source = INFO-324-1A-123\\SQLEXPRESS; Initial Catalog = Texcel_Hans_MA; Integrated Security = True");
         }
         public List<List<object>>[] contenBD()
         {
@@ -136,7 +136,14 @@ namespace projetTexcel
                 }
                 catch (Exception)
                 {
-                    liste2.Add(liste);
+                    if (liste == null)
+                    {
+                        MessageBox.Show("échec de la recherche dans la bd. ");
+                    }
+                    else
+                    {
+                        liste2.Add(liste);
+                    }
                     
                 }
 
@@ -161,7 +168,7 @@ namespace projetTexcel
         }
             catch (Exception)
             {
-
+                MessageBox.Show("Échec de l'insertion.");
                 
             }
        
@@ -184,7 +191,7 @@ namespace projetTexcel
             catch (Exception)
             {
 
-
+                MessageBox.Show("Échec de la suppresion.");
             }
 
             ctn.Close();
@@ -206,7 +213,7 @@ namespace projetTexcel
             }
             catch (Exception)
             {
-
+                MessageBox.Show("Échec de la modification.");
 
             }
 
