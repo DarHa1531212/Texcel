@@ -635,7 +635,7 @@ namespace projetTexcel
             if (validationCreerTestNonVide())
             {
 
-                //traitements1.creerTest(txtNomTest.Text, idJeuAssossie[0], idOS[0]);
+         //       traitements1.creerTest(txtNomTest.Text, txtDdescriptionTest.Text, idJeuAssossie[0], idOS[0]);
 
             }
             else

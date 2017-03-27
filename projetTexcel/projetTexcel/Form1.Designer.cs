@@ -175,6 +175,7 @@
             this.label48 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.logOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmbEquipe = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.grbModiffierJeu.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -191,6 +192,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cmbEquipe);
             this.groupBox2.Controls.Add(this.txtDdescriptionTest);
             this.groupBox2.Controls.Add(this.label28);
             this.groupBox2.Controls.Add(this.cmbEqiupeAssossiée);
@@ -1606,6 +1608,14 @@
             this.logOffToolStripMenuItem.Text = "LogOff";
             this.logOffToolStripMenuItem.Click += new System.EventHandler(this.logOffToolStripMenuItem_Click);
             // 
+            // cmbEquipe
+            // 
+            this.cmbEquipe.FormattingEnabled = true;
+            this.cmbEquipe.Location = new System.Drawing.Point(159, 114);
+            this.cmbEquipe.Name = "cmbEquipe";
+            this.cmbEquipe.Size = new System.Drawing.Size(121, 24);
+            this.cmbEquipe.TabIndex = 32;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1808,6 +1818,7 @@
         private System.Windows.Forms.ComboBox cmbCreerJeuGenre;
         private System.Windows.Forms.TextBox txtDdescriptionTest;
         private System.Windows.Forms.ToolStripMenuItem logOffToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cmbEquipe;
     }
 }
 
