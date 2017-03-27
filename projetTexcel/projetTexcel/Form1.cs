@@ -634,11 +634,8 @@ namespace projetTexcel
 
             if (validationCreerTestNonVide())
             {
-<<<<<<< HEAD
-       //        traitements1.creerTest(txtNomTest.Text,idJeuAssossie[0], idOS[0], idEmploye, )
-=======
-                //traitements1.creerTest(txtNomTest.Text, idJeuAssossie[0], idOS[0], idEmploye, );
->>>>>>> c8bf75ea72ffa19cac70e81395e559fbfefb9440
+
+                //traitements1.creerTest(txtNomTest.Text, idJeuAssossie[0], idOS[0]);
 
             }
             else
@@ -972,6 +969,33 @@ namespace projetTexcel
             remplirListView();
 
 
+        }
+
+        private void logOffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAfficherBD.Visible = false;
+            frmAjouterPlateforme.Visible = false;
+            frmAjoutOS.Visible = false;
+            frmCreerEquie.Visible = false;
+            frmCreerJeu.Visible = false;
+            frmCreerProjetTest.Visible = false;
+            frmCreerTest.Visible = false;
+            frmGererEmployes.Visible = false;
+            frmModifierJeu.Visible = false;
+            frmRecherche.Visible = false;
+                
+            créerUnJeuToolStripMenuItem.Enabled = false;
+            modifierUnJeuToolStripMenuItem.Enabled = false;
+            ajouterUnePlateformeToolStripMenuItem.Enabled = false;
+            ajouterUnOSToolStripMenuItem.Enabled = false;
+            effetuerUneRechercheToolStripMenuItem.Enabled = false;
+            gérerUnEmployéToolStripMenuItem.Enabled = false;
+            creerEquipeToolStripMenuItem.Enabled = false;
+            créerUnTestToolStripMenuItem.Enabled = false;
+            creerUnProjetTestToolStripMenuItem.Enabled = false;
+            afficherDesInformationsToolStripMenuItem.Enabled = false;
+            cONNEXIONToolStripMenuItem.Enabled = true;
+            frmConnexion.Visible = true;
         }
     }
 }
