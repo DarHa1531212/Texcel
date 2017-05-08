@@ -65,10 +65,12 @@ namespace projetTexcel
 
         private void créerUnJeuToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            cmbCreerJeuGenre.Items.Clear();
+            cmbCreerJeuTheme.Items.Clear();
             CreerJeu();
             ajouterItemsDansComboBox(traitements1.requeteInformations(6, "CONCAT(idGenre ,'-',nom)"), cmbCreerJeuGenre);
             ajouterItemsDansComboBox(traitements1.requeteInformations(7, "CONCAT(idTheme ,'-',nom)"), cmbCreerJeuTheme);
-
+            
             //insérer les themes et les 
         }
 
